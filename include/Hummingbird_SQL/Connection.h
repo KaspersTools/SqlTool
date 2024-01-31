@@ -81,18 +81,13 @@ public:
      * @brief Use scheme
      * @param schemaName The schemaName to use
      */
-    void setSchema(const std::string &schemaName);
+    void setSchema(SchemaInfo* chema);
 
     /**
      * @brief Use table
      * @param table The table to use
      */
     void setTable(TableInfo *table);
-    /**
-     * @brief Use table
-     * @param tableName The tableName to use
-     */
-    void setTable(const std::string &tableName);
 
     /**
      * @brief Fetch the current schema

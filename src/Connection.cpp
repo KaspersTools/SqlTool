@@ -48,9 +48,9 @@ namespace HummingBird::Sql {
 
     fetchSchemas(Settings::OnConnect.FetchTablesOnConnect, Settings::OnConnect.FetchColumnsAndRowsOnConnect);
 
-    if (!database.empty() || database != "" || database != " ") {
-      setSchema(database);
-    }
+//    if (!database.empty() || database != "" || database != " ") {
+//      setSchema(database);
+//    }
   }
 
   void Connection::disconnect() {
@@ -163,14 +163,54 @@ namespace HummingBird::Sql {
     return *tableInfo;
   }
 
-  void Connection::setSchema(const std::string &schemaName) {
-    HUMMINGBIRD_SQL_LOG_FUNCTION("Setting schema to " + schemaName);
+  //  void Connection::setSchema(const std::string &schemaName) {
+  //    HUMMINGBIRD_SQL_LOG_FUNCTION("Setting schema to " + schemaName);
+  //
+  //    SchemaInfo *schemaInfo = getSchemaPtr(schemaName);
+  //    m_currentSchema = schemaInfo;
+  //
+  //    if (schemaInfo == nullptr) {
+  //      HUMMINGBIRD_SQL_ERROR_FUNCTION("Schema not found in cache " + schemaName);
+  //      return;
+  //    }
+  //
+  //    fetchCurrentSchema(true, false);
+  //    m_currentTable = nullptr;
+  //
+  //    if (m_currentSchema->tables.empty()) {
+  //      HUMMINGBIRD_SQL_ERROR_FUNCTION("No tables found in schema " + schemaName);
+  //      return;
+  //    }
+  //
+  //    setTable(m_currentSchema->tables.begin()->first);
+  //  }
+  //
+  //  void Connection::setTable(const std::string &tableName) {
+  //    HUMMINGBIRD_SQL_LOG_FUNCTION("Setting table to " + tableName);
+  //
+  //    if (m_currentSchema == nullptr) {
+  //      HUMMINGBIRD_SQL_ERROR_FUNCTION("No current schema set");
+  //      return;
+  //    }
+  //    TableInfo *tableInfo = getTablePtr(*m_currentSchema, tableName);
+  //    m_currentTable = tableInfo;
+  //
+  //    if (tableInfo == nullptr) {
+  //      HUMMINGBIRD_SQL_ERROR_FUNCTION("Table not found in cache " + tableName);
+  //      return;
+  //    }
+  //
+  //    fetchColumns(*m_currentSchema, *m_currentTable);
+  //    fetchRows(*m_currentSchema, *m_currentTable, Settings::Limits.CurrentRowLimit);
+  //  }]
+  void Connection::setSchema(HummingBird::Sql::SchemaInfo *schema) {
+    HUMMINGBIRD_SQL_LOG_FUNCTION("Setting schema to " + schema->name);
 
-    SchemaInfo *schemaInfo = getSchemaPtr(schemaName);
+    SchemaInfo *schemaInfo = getSchemaPtr(schema->name);
     m_currentSchema = schemaInfo;
 
     if (schemaInfo == nullptr) {
-      HUMMINGBIRD_SQL_ERROR_FUNCTION("Schema not found in cache " + schemaName);
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("Schema not found in cache " + schema->name);
       return;
     }
 
@@ -178,31 +218,27 @@ namespace HummingBird::Sql {
     m_currentTable = nullptr;
 
     if (m_currentSchema->tables.empty()) {
-      HUMMINGBIRD_SQL_ERROR_FUNCTION("No tables found in schema " + schemaName);
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("No tables found in schema " + schema->name);
       return;
     }
-
-    setTable(m_currentSchema->tables.begin()->first);
   }
-
-  void Connection::setTable(const std::string &tableName) {
-    HUMMINGBIRD_SQL_LOG_FUNCTION("Setting table to " + tableName);
+  void Connection::setTable(TableInfo *table) {
+    HUMMINGBIRD_SQL_LOG_FUNCTION("Setting table to " + table->name);
 
     if (m_currentSchema == nullptr) {
       HUMMINGBIRD_SQL_ERROR_FUNCTION("No current schema set");
       return;
     }
-    TableInfo *tableInfo = getTablePtr(*m_currentSchema, tableName);
+
+    TableInfo *tableInfo = getTablePtr(*m_currentSchema, table->name);
     m_currentTable = tableInfo;
 
     if (tableInfo == nullptr) {
-      HUMMINGBIRD_SQL_ERROR_FUNCTION("Table not found in cache " + tableName);
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("Table not found in cache " + table->name);
       return;
     }
-
-    fetchColumns(*m_currentSchema, *m_currentTable);
-    fetchRows(*m_currentSchema, *m_currentTable, Settings::Limits.CurrentRowLimit);
   }
+
 
   std::vector<std::string> Connection::getCurrentColumnLayout() const {
     if (m_currentTable == nullptr) {
