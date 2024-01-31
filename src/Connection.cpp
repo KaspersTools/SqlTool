@@ -53,6 +53,14 @@ namespace HummingBird::Sql {
 //    }
   }
 
+  std::vector<TableInfo*> Connection::getTables(SchemaInfo* schema) {
+    std::vector<TableInfo*> tables = {};
+    for (auto &[tableName, table]: schema->tables) {
+      tables.push_back(&table);
+    }
+    return tables;
+  }
+
   void Connection::disconnect() {
     if (!isConnected()) {
       HUMMINGBIRD_SQL_ASSERT(false && "Not connected to database");

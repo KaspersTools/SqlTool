@@ -229,6 +229,13 @@ public:
     const TableInfo &getTable(SchemaInfo &schema, const std::string &tableName);
 
     /**
+     * @brief Get an list of tables
+     * @param schema The schema to get the table from
+     * @return std::vector<TableInfo> The tables
+     */
+    std::vector<TableInfo *> getTables(SchemaInfo *schema);
+
+    /**
      * @brief Get an table by name
      * @param schemaName The schemaName to get the table from
      * @param tableName The name of the table
