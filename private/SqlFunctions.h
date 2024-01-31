@@ -13,16 +13,20 @@
 
 namespace HummingBird::Sql {
   namespace Server {
-    std::unordered_map<std::string, std::unique_ptr<SchemaInfo>> getSchemas(const Connection &connection,
-                                                                            const bool getTables,
-                                                                            const bool getColumnsAndRows = false);
+    std::unordered_map<std::string, std::unique_ptr<SchemaInfo>,
+                       case_insensitive_unordered_map::hash,
+                       case_insensitive_unordered_map::comp>
+    getSchemas(const Connection &connection,
+               const bool getTables,
+               const bool getColumnsAndRows = false);
+    
     std::unordered_map<std::string, TableInfo> getTables(const Connection &connection,
                                                          const SchemaInfo &databaseInfo,
                                                          const bool getColumnsAndRows = false);
 
     std::unordered_map<std::string, ColumnInfo> getTableColumns(const Connection &connection,
-                                            const SchemaInfo &databaseInfo,
-                                            const TableInfo &tableInfo);
+                                                                const SchemaInfo &databaseInfo,
+                                                                const TableInfo &tableInfo);
     std::vector<Row> getTableRows(const Connection &connection,
                                   const SchemaInfo &databaseInfo,
                                   const TableInfo &tableInfo,

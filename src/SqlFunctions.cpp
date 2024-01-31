@@ -6,14 +6,20 @@
 
 namespace HummingBird::Sql {
   namespace Server {
-    std::unordered_map<std::string, std::unique_ptr<SchemaInfo>> getSchemas(const Connection &connection,
-                                                                            const bool getTables,
-                                                                            const bool getColumnsAndRows) {
+    std::unordered_map<std::string, std::unique_ptr<SchemaInfo>,
+                       case_insensitive_unordered_map::hash,
+                       case_insensitive_unordered_map::comp>
+    getSchemas(const Connection &connection,
+               const bool getTables,
+               const bool getColumnsAndRows) {
       if (!connection.isConnected()) {
         HUMMINGBIRD_SQL_ASSERT(false && "Connection is not established");
         return {};
       }
-      std::unordered_map<std::string, std::unique_ptr<SchemaInfo>> schemaInfos = {};
+      std::unordered_map<std::string, std::unique_ptr<SchemaInfo>,
+                         case_insensitive_unordered_map::hash,
+                         case_insensitive_unordered_map::comp>
+              schemaInfos = {};
       std::vector<mysqlx::Schema> serverSchemas = {};
 
       try {
@@ -76,8 +82,8 @@ namespace HummingBird::Sql {
         tbInfo.schemaName = databaseInfo.name;
         tbInfo.name = table.getName();
 
-//        HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION << "Fetching table from database: "
-//                                              << databaseInfo.name << " table: " << tbInfo.name << " (" << tableIndex + 1 << "/" << serverTables.size() << ")" << std::endl;
+        //        HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION << "Fetching table from database: "
+        //                                              << databaseInfo.name << " table: " << tbInfo.name << " (" << tableIndex + 1 << "/" << serverTables.size() << ")" << std::endl;
         HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION("Fetching table from database: " + databaseInfo.name + " table: " + tbInfo.name + " (" + std::to_string(tableIndex + 1) + "/" + std::to_string(serverTables.size()) + ")");
 
         if (getColumnsAndRows) {
@@ -127,7 +133,7 @@ namespace HummingBird::Sql {
         //                                              << std::endl;
         std::string lbl = rowResult.getColumn(i).getColumnLabel();
         HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION("Fetching column from database: " + databaseInfo.name +
-                                              " table: "  + tableInfo.name +
+                                              " table: " + tableInfo.name +
                                               " column: " + lbl +
                                               " (" + std::to_string(i + 1) + "/" + std::to_string(columnCount) + ")");
 
