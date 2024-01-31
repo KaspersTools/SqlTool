@@ -98,13 +98,13 @@ public:
     void fetchCurrentSchema(const bool fetchTables, const bool fetchColumnsAndRows, const uint rowLimit = Settings::Limits.DefaultRowLimit);
 
     //TODO: implement
-//    /**
-//     * @brief Fetch the current schema
-//     * @param fetchTables Fetch all tables
-//     * @param fetchColumnsAndRows Fetch all columns and rows
-//     * @return void
-//     */
-        // void fetchSchema(const std::string &schemaName, const bool fetchTables, const bool fetchColumnsAndRows);
+    //    /**
+    //     * @brief Fetch the current schema
+    //     * @param fetchTables Fetch all tables
+    //     * @param fetchColumnsAndRows Fetch all columns and rows
+    //     * @return void
+    //     */
+    // void fetchSchema(const std::string &schemaName, const bool fetchTables, const bool fetchColumnsAndRows);
 
     /**
      * @brief Fetch all schemas, tables, columns and rows
@@ -180,6 +180,18 @@ public:
      */
     void fetchRows(const std::string &schemaNames, const std::string &tableName, uint limit = Settings::Limits.DefaultRowLimit);
 
+    ///Getters///
+    /**
+     * @brief Get all schema names
+     */
+    std::vector<std::string> getSchemaNames() const {
+      std::vector<std::string> schemaNames;
+      for (auto &schema: m_schemas) {
+        schemaNames.push_back(schema.first);
+      }
+      return schemaNames;
+    }
+
     /**
       * @brief Get an schema by name
       * @param schemaName The name of the schema
@@ -191,7 +203,7 @@ public:
      * @brief Get the current schema
      * @return SchemaInfo The schema
      */
-    const SchemaInfo &getCurrentSchema() const{
+    const SchemaInfo &getCurrentSchema() const {
       return *m_currentSchema;
     }
 
@@ -265,7 +277,7 @@ private:
     bool m_isConnected = false;
 
     SchemaInfo *m_currentSchema = nullptr;
-    TableInfo  *m_currentTable = nullptr;
+    TableInfo *m_currentTable = nullptr;
     std::string m_host;
     std::string m_user;
     std::string m_password;
