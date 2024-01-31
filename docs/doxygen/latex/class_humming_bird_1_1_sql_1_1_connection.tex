@@ -1,0 +1,376 @@
+\doxysection{Humming\+Bird\+::Sql\+::Connection Class Reference}
+\label{class_humming_bird_1_1_sql_1_1_connection}\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+
+
+\doxyref{Connection}{p.}{class_humming_bird_1_1_sql_1_1_connection} class for connecting to a My\+SQL database.  
+
+
+
+
+{\ttfamily \#include $<$Connection.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Connection} ()
+\item 
+\textbf{ $\sim$\+Connection} ()
+\item 
+void \textbf{ connect} (const std\+::string \&hostname, const std\+::string \&username, const std\+::string \&password, const std\+::string \&schema\+Name, uint16\+\_\+t port)
+\begin{DoxyCompactList}\small\item\em Connect to a My\+SQL database. \end{DoxyCompactList}\item 
+void \textbf{ disconnect} ()
+\begin{DoxyCompactList}\small\item\em Disconnect from the My\+SQL database. \end{DoxyCompactList}\item 
+void \textbf{ fetch\+Schemas} (const bool \textbf{ fetch\+Tables}, const bool fetch\+Columns\+And\+Rows)
+\begin{DoxyCompactList}\small\item\em Fetch all schemas, tables, columns and rows. \end{DoxyCompactList}\item 
+void \textbf{ fetch\+Tables} (\textbf{ Schema\+Info} \&schema, const bool fetch\+Columns\+And\+Rows)
+\begin{DoxyCompactList}\small\item\em Fetch all tables, columns and rows. \end{DoxyCompactList}\item 
+void \textbf{ fetch\+Tables} (const std\+::string \&schema\+Name, const bool fetch\+Columns\+And\+Rows)
+\begin{DoxyCompactList}\small\item\em Fetch all columns and rows. \end{DoxyCompactList}\item 
+void \textbf{ fetch\+Columns} (\textbf{ Schema\+Info} \&schema, \textbf{ Table\+Info} \&table)
+\begin{DoxyCompactList}\small\item\em Fetch all tables, columns and rows. \end{DoxyCompactList}\item 
+void \textbf{ fetch\+Columns} (\textbf{ Schema\+Info} \&schema, const std\+::string \&table\+Name)
+\begin{DoxyCompactList}\small\item\em Fetch all columns and rows. \end{DoxyCompactList}\item 
+void \textbf{ fetch\+Columns} (const std\+::string \&schema\+Name, const std\+::string \&table\+Name)
+\begin{DoxyCompactList}\small\item\em Fetch all columns and rows. \end{DoxyCompactList}\item 
+void \textbf{ fetch\+Rows} (\textbf{ Schema\+Info} \&schema, \textbf{ Table\+Info} \&table)
+\begin{DoxyCompactList}\small\item\em Fetch all rows. \end{DoxyCompactList}\item 
+void \textbf{ fetch\+Rows} (\textbf{ Schema\+Info} \&schema, const std\+::string \&table\+Name)
+\begin{DoxyCompactList}\small\item\em Fetch all rows. \end{DoxyCompactList}\item 
+void \textbf{ fetch\+Rows} (const std\+::string \&schema\+Names, const std\+::string \&table\+Name)
+\begin{DoxyCompactList}\small\item\em Fetch all rows. \end{DoxyCompactList}\item 
+const \textbf{ Schema\+Info} \& \textbf{ get\+Schema} (const std\+::string \&schema\+Name)
+\begin{DoxyCompactList}\small\item\em Get an schema by name. \end{DoxyCompactList}\item 
+const \textbf{ Table\+Info} \& \textbf{ get\+Table} (\textbf{ Schema\+Info} \&schema, const std\+::string \&table\+Name)
+\begin{DoxyCompactList}\small\item\em Get an table by name. \end{DoxyCompactList}\item 
+const \textbf{ Table\+Info} \& \textbf{ get\+Table} (const std\+::string \&schema, const std\+::string \&table\+Name)
+\begin{DoxyCompactList}\small\item\em Get an table by name. \end{DoxyCompactList}\item 
+bool \textbf{ is\+Connected} () const
+\begin{DoxyCompactList}\small\item\em Get connection status. \end{DoxyCompactList}\item 
+mysqlx\+::\+Session \& \textbf{ get\+Session} () const
+\begin{DoxyCompactList}\small\item\em Get the current session ptr. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxyref{Connection}{p.}{class_humming_bird_1_1_sql_1_1_connection} class for connecting to a My\+SQL database. 
+
+This class is used to connect to a My\+SQL database and fetch the schemas, tables, columns and rows. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\label{class_humming_bird_1_1_sql_1_1_connection_a11dd47b3aa64db0e4818758d74e905e4} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!Connection@{Connection}}
+\index{Connection@{Connection}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{Connection()}
+{\footnotesize\ttfamily Humming\+Bird\+::\+Sql\+::\+Connection\+::\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\label{class_humming_bird_1_1_sql_1_1_connection_a119f44987d4e342f88eace7f9f0ce012} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!````~Connection@{$\sim$Connection}}
+\index{````~Connection@{$\sim$Connection}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{$\sim$Connection()}
+{\footnotesize\ttfamily Humming\+Bird\+::\+Sql\+::\+Connection\+::$\sim$\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\label{class_humming_bird_1_1_sql_1_1_connection_a8287ef082a37903e197d263a38a04d03} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!connect@{connect}}
+\index{connect@{connect}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{connect()}
+{\footnotesize\ttfamily void Humming\+Bird\+::\+Sql\+::\+Connection\+::connect (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hostname,  }\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{password,  }\item[{const std\+::string \&}]{schema\+Name,  }\item[{uint16\+\_\+t}]{port }\end{DoxyParamCaption})}
+
+
+
+Connect to a My\+SQL database. 
+
+Connect to a My\+SQL database with the given hostname, username, password, schema\+Name and port. 
+\begin{DoxyParams}{Parameters}
+{\em hostname} & The hostname of the My\+SQL database \\
+\hline
+{\em username} & The username of the My\+SQL database \\
+\hline
+{\em password} & The password of the My\+SQL database \\
+\hline
+{\em schema\+Name} & The default\+Schema\+Name of the My\+SQL database \\
+\hline
+{\em port} & The port of the My\+SQL database \\
+\hline
+\end{DoxyParams}
+\label{class_humming_bird_1_1_sql_1_1_connection_a19f0aff4ef660d6025bb11eb0b810268} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{disconnect()}
+{\footnotesize\ttfamily void Humming\+Bird\+::\+Sql\+::\+Connection\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disconnect from the My\+SQL database. 
+
+Disconnect from the My\+SQL database \label{class_humming_bird_1_1_sql_1_1_connection_a0f5ed72c4e86064e01a9eff3eb50be10} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!fetchColumns@{fetchColumns}}
+\index{fetchColumns@{fetchColumns}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{fetchColumns()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Humming\+Bird\+::\+Sql\+::\+Connection\+::fetch\+Columns (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{schema\+Name,  }\item[{const std\+::string \&}]{table\+Name }\end{DoxyParamCaption})}
+
+
+
+Fetch all columns and rows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schema\+Name} & The schema\+Name to fetch the columns and rows from \\
+\hline
+{\em table\+Name} & The table\+Name to fetch the columns and rows from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\label{class_humming_bird_1_1_sql_1_1_connection_a1330adfbdf07b4cf889bc9ce066b8176} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!fetchColumns@{fetchColumns}}
+\index{fetchColumns@{fetchColumns}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{fetchColumns()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Humming\+Bird\+::\+Sql\+::\+Connection\+::fetch\+Columns (\begin{DoxyParamCaption}\item[{\textbf{ Schema\+Info} \&}]{schema,  }\item[{const std\+::string \&}]{table\+Name }\end{DoxyParamCaption})}
+
+
+
+Fetch all columns and rows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schema} & The schema to fetch the columns and rows from \\
+\hline
+{\em table} & The table name to fetch the columns and rows from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\label{class_humming_bird_1_1_sql_1_1_connection_a97058387622bc6460ad1fafea058524a} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!fetchColumns@{fetchColumns}}
+\index{fetchColumns@{fetchColumns}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{fetchColumns()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Humming\+Bird\+::\+Sql\+::\+Connection\+::fetch\+Columns (\begin{DoxyParamCaption}\item[{\textbf{ Schema\+Info} \&}]{schema,  }\item[{\textbf{ Table\+Info} \&}]{table }\end{DoxyParamCaption})}
+
+
+
+Fetch all tables, columns and rows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schema} & The schema to fetch the tables from \\
+\hline
+{\em table} & The table to fetch the columns and rows from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\label{class_humming_bird_1_1_sql_1_1_connection_af2d5636e1d930c255b6c8ac67d363944} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!fetchRows@{fetchRows}}
+\index{fetchRows@{fetchRows}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{fetchRows()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Humming\+Bird\+::\+Sql\+::\+Connection\+::fetch\+Rows (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{schema\+Names,  }\item[{const std\+::string \&}]{table\+Name }\end{DoxyParamCaption})}
+
+
+
+Fetch all rows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schema\+Name} & The schema\+Name to fetch the rows from \\
+\hline
+{\em table\+Name} & The table\+Name to fetch the rows from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\label{class_humming_bird_1_1_sql_1_1_connection_a9da9c12070223cdce58d7fbeb306d38c} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!fetchRows@{fetchRows}}
+\index{fetchRows@{fetchRows}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{fetchRows()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Humming\+Bird\+::\+Sql\+::\+Connection\+::fetch\+Rows (\begin{DoxyParamCaption}\item[{\textbf{ Schema\+Info} \&}]{schema,  }\item[{const std\+::string \&}]{table\+Name }\end{DoxyParamCaption})}
+
+
+
+Fetch all rows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schema\+Name} & The schema\+Name to fetch the rows from \\
+\hline
+{\em table\+Name} & The table\+Name to fetch the rows from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\label{class_humming_bird_1_1_sql_1_1_connection_ad864503f0c2cf6a9aced4e9bf0c6b631} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!fetchRows@{fetchRows}}
+\index{fetchRows@{fetchRows}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{fetchRows()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Humming\+Bird\+::\+Sql\+::\+Connection\+::fetch\+Rows (\begin{DoxyParamCaption}\item[{\textbf{ Schema\+Info} \&}]{schema,  }\item[{\textbf{ Table\+Info} \&}]{table }\end{DoxyParamCaption})}
+
+
+
+Fetch all rows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schema} & The schema to fetch the rows from \\
+\hline
+{\em table} & The table to fetch the rows from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\label{class_humming_bird_1_1_sql_1_1_connection_af1ab3a26099425eaa7938109221f2099} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!fetchSchemas@{fetchSchemas}}
+\index{fetchSchemas@{fetchSchemas}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{fetchSchemas()}
+{\footnotesize\ttfamily void Humming\+Bird\+::\+Sql\+::\+Connection\+::fetch\+Schemas (\begin{DoxyParamCaption}\item[{const bool}]{fetch\+Tables,  }\item[{const bool}]{fetch\+Columns\+And\+Rows }\end{DoxyParamCaption})}
+
+
+
+Fetch all schemas, tables, columns and rows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fetch\+Tables} & Fetch all tables \\
+\hline
+{\em fetch\+Columns\+And\+Rows} & Fetch all columns and rows \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\label{class_humming_bird_1_1_sql_1_1_connection_ab7d1c7bfae27629cbac4ec7a275cde50} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!fetchTables@{fetchTables}}
+\index{fetchTables@{fetchTables}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{fetchTables()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Humming\+Bird\+::\+Sql\+::\+Connection\+::fetch\+Tables (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{schema\+Name,  }\item[{const bool}]{fetch\+Columns\+And\+Rows }\end{DoxyParamCaption})}
+
+
+
+Fetch all columns and rows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schema\+Name} & The schema\+Name to fetch the columns and rows from \\
+\hline
+{\em fetch\+Columns\+And\+Rows} & Fetch all columns and rows \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\label{class_humming_bird_1_1_sql_1_1_connection_ac6f602f44d586e7f9278af8b68c737f0} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!fetchTables@{fetchTables}}
+\index{fetchTables@{fetchTables}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{fetchTables()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Humming\+Bird\+::\+Sql\+::\+Connection\+::fetch\+Tables (\begin{DoxyParamCaption}\item[{\textbf{ Schema\+Info} \&}]{schema,  }\item[{const bool}]{fetch\+Columns\+And\+Rows }\end{DoxyParamCaption})}
+
+
+
+Fetch all tables, columns and rows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schema} & The schema to fetch the tables from \\
+\hline
+{\em fetch\+Columns\+And\+Rows} & Fetch all columns and rows \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\label{class_humming_bird_1_1_sql_1_1_connection_a07b5aeb9ea5dac4347c777a72c8e1eb2} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!getSchema@{getSchema}}
+\index{getSchema@{getSchema}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{getSchema()}
+{\footnotesize\ttfamily const \textbf{ Schema\+Info} \& Humming\+Bird\+::\+Sql\+::\+Connection\+::get\+Schema (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{schema\+Name }\end{DoxyParamCaption})}
+
+
+
+Get an schema by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schema\+Name} & The name of the schema \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Schema\+Info}{p.}{struct_humming_bird_1_1_sql_1_1_schema_info} The schema 
+\end{DoxyReturn}
+\label{class_humming_bird_1_1_sql_1_1_connection_ae64b880c6aefa583e1e5f86f56ca9e07} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!getSession@{getSession}}
+\index{getSession@{getSession}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{getSession()}
+{\footnotesize\ttfamily mysqlx\+::\+Session \& Humming\+Bird\+::\+Sql\+::\+Connection\+::get\+Session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the current session ptr. 
+
+\begin{DoxyReturn}{Returns}
+Session ptr The session ptr 
+\end{DoxyReturn}
+\label{class_humming_bird_1_1_sql_1_1_connection_ac542254dc7d946b92b5bf4da438a1d78} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!getTable@{getTable}}
+\index{getTable@{getTable}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{getTable()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \textbf{ Table\+Info} \& Humming\+Bird\+::\+Sql\+::\+Connection\+::get\+Table (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{schema,  }\item[{const std\+::string \&}]{table\+Name }\end{DoxyParamCaption})}
+
+
+
+Get an table by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schema\+Name} & The schema\+Name to get the table from \\
+\hline
+{\em table\+Name} & The name of the table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Table\+Info}{p.}{struct_humming_bird_1_1_sql_1_1_table_info} The table 
+\end{DoxyReturn}
+\label{class_humming_bird_1_1_sql_1_1_connection_ad7d577e472d7bef648a105d5fff2b1d3} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!getTable@{getTable}}
+\index{getTable@{getTable}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{getTable()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \textbf{ Table\+Info} \& Humming\+Bird\+::\+Sql\+::\+Connection\+::get\+Table (\begin{DoxyParamCaption}\item[{\textbf{ Schema\+Info} \&}]{schema,  }\item[{const std\+::string \&}]{table\+Name }\end{DoxyParamCaption})}
+
+
+
+Get an table by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schema} & The schema to get the table from \\
+\hline
+{\em table\+Name} & The name of the table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Table\+Info}{p.}{struct_humming_bird_1_1_sql_1_1_table_info} The table 
+\end{DoxyReturn}
+\label{class_humming_bird_1_1_sql_1_1_connection_addae0ad7881e55df7b0e1275ec6b78c2} 
+\index{HummingBird::Sql::Connection@{HummingBird::Sql::Connection}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!HummingBird::Sql::Connection@{HummingBird::Sql::Connection}}
+\doxysubsubsection{isConnected()}
+{\footnotesize\ttfamily bool Humming\+Bird\+::\+Sql\+::\+Connection\+::is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get connection status. 
+
+\begin{DoxyReturn}{Returns}
+bool True if connected 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Hummingbird\+\_\+\+SQL/\textbf{ Connection.\+h}\item 
+src/\textbf{ Connection.\+cpp}\end{DoxyCompactItemize}

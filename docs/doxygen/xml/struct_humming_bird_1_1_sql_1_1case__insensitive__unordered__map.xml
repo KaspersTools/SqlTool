@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map" kind="struct" language="C++" prot="public">
+    <compoundname>HummingBird::Sql::case_insensitive_unordered_map</compoundname>
+    <includes refid="_connection_8h" local="no">Connection.h</includes>
+    <innerclass refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp" prot="public">HummingBird::Sql::case_insensitive_unordered_map::comp</innerclass>
+    <innerclass refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash" prot="public">HummingBird::Sql::case_insensitive_unordered_map::hash</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Hummingbird_SQL/Connection.h" line="33" column="3" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="33" bodyend="49"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

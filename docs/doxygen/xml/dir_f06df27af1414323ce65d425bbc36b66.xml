@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_f06df27af1414323ce65d425bbc36b66" kind="dir">
+    <compoundname>include/Hummingbird_SQL</compoundname>
+    <innerfile refid="_config_8h">Config.h</innerfile>
+    <innerfile refid="_connection_8h">Connection.h</innerfile>
+    <innerfile refid="_structures_8h">Structures.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Hummingbird_SQL/"/>
+  </compounddef>
+</doxygen>

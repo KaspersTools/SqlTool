@@ -1,0 +1,122 @@
+\doxysection{Config.\+h}
+\label{_config_8h_source}\index{include/Hummingbird\_SQL/Config.h@{include/Hummingbird\_SQL/Config.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Kasper\ de\ Bruin\ on\ 29/01/2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ HUMMINGBIRD\_SQL\_ASSERT}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_ASSERT(\_EXPR)\ assert(\_EXPR)}\textcolor{comment}{//\ You\ can\ override\ in\ your\ Config.h}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }Logging\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{struct\ }source\_loc\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{constexpr}\ source\_loc()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{constexpr}\ source\_loc(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename\_in,\ \textcolor{keywordtype}{int}\ line\_in,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *funcname\_in)}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ :\ filename\{filename\_in\},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ line\{line\_in\},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ funcname\{funcname\_in\}\ \{\}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ empty()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ line\ ==\ 0;\ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ line\{0\};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *funcname\{\textcolor{keyword}{nullptr}\};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ toString()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string(filename)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::string(funcname)\ +\ \textcolor{stringliteral}{"{}:"{}}\ +\ std::to\_string(line)\ +\ \textcolor{stringliteral}{"{}\ |"{}};}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ showTrace(source\_loc\ src,\ std::string\ msg)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}TRACE:\ "{}}\ <<\ src.toString()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ msg\ <<\ std::endl;}
+\DoxyCodeLine{00038\ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ showLog(source\_loc\ src,\ std::string\ msg)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}LOG:\ "{}}\ <<\ src.toString()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ msg\ <<\ std::endl;}
+\DoxyCodeLine{00042\ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ showError(source\_loc\ src,\ std::string\ msg)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}ERROR:\ "{}}\ <<\ src.toString()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ msg\ <<\ std::endl;}
+\DoxyCodeLine{00046\ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ showFatal(source\_loc\ src,\ std::string\ msg)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}FATAL:\ "{}}\ <<\ src.toString()\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ msg\ <<\ std::endl;}
+\DoxyCodeLine{00050\ \ \ \}}
+\DoxyCodeLine{00051\ \}\textcolor{comment}{//\ namespace\ Logging}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ HUMMINGBIRD\_SQL\_LOG\_LEVEL}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_TRACE\ 0}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_LOG\ 1}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_ERROR\ 2}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_FATAL\ 3}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_NONE\ 4}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_TRACE}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#ifndef\ HUMMINGBIRD\_SQL\_LOG\_ACTIVE}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_LOG\_ACTIVE\ true}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#ifndef\ HUMMINGBIRD\_SQL\_SERVER\_TRACE\_FUNCTION}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_SERVER\_TRACE\_FUNCTION(...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\ \ if\ (HUMMINGBIRD\_SQL\_LOG\_ACTIVE\ \&\&\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\ <=\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_TRACE)\ \(\backslash\)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\ \ ::Logging::showTrace(::Logging::source\_loc(\_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_FUNCTION\_\_),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#ifndef\ HUMMINGBIRD\_SQL\_SERVER\_LOG\_FUNCTION}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_SERVER\_LOG\_FUNCTION(...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\ \ if\ (HUMMINGBIRD\_SQL\_LOG\_ACTIVE\ \&\&\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\ <=\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_LOG)\ \(\backslash\)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\ \ ::Logging::showLog(::Logging::source\_loc(\_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_FUNCTION\_\_),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#ifndef\ HUMMINGBIRD\_SQL\_SERVER\_ERROR\_FUNCTION}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_SERVER\_ERROR\_FUNCTION(...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\ \ if\ (HUMMINGBIRD\_SQL\_LOG\_ACTIVE\ \&\&\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\ <=\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_ERROR)\ \(\backslash\)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\ \ ::Logging::showError(::Logging::source\_loc(\_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_FUNCTION\_\_),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#ifndef\ HUMMINGBIRD\_SQL\_SERVER\_FATAL\_FUNCTION}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_SERVER\_FATAL\_FUNCTION(...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\ \ if\ (HUMMINGBIRD\_SQL\_LOG\_ACTIVE\ \&\&\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\ <=\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_FATAL)\ \(\backslash\)}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ ::Logging::showFatal(::Logging::source\_loc(\_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_FUNCTION\_\_),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{namespace\ }Settings\ \{}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#ifndef\ HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_TABLES\_ON\_CONNECT}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_TABLES\_ON\_CONNECT\ true}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#ifndef\ HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_COLUMNS\_ON\_CONNECT}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_COLUMNS\_AND\_ROWS\_ON\_CONNECT\ false}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#ifndef\ HUMMINGBIRD\_SQL\_SETTINGS\_DEFAULT\_ROW\_LIMIT}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_SETTINGS\_DEFAULT\_ROW\_LIMIT\ 1000}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{bool}\ FetchTablesOnConnect\ =\ HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_TABLES\_ON\_CONNECT;}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{bool}\ FetchColumnsAndRowsOnConnect\ =\ HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_COLUMNS\_AND\_ROWS\_ON\_CONNECT;}
+\DoxyCodeLine{00111\ \ \ \}\ OnConnect;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00114\ \ \ \ \ uint32\_t\ DefaultRowLimit\ =\ HUMMINGBIRD\_SQL\_SETTINGS\_DEFAULT\_ROW\_LIMIT;}
+\DoxyCodeLine{00115\ \ \ \}\ Limits;}
+\DoxyCodeLine{00116\ \}\textcolor{comment}{//\ namespace\ Settings}}
+
+\end{DoxyCode}

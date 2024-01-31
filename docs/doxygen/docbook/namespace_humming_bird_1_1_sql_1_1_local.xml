@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_humming_bird_1_1_sql_1_1_local" xml:lang="en-US">
+<title>HummingBird::Sql::Local Namespace Reference</title>
+<indexterm><primary>HummingBird::Sql::Local</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_namespace_humming_bird_1_1_sql_1_1_local_1af37310181f24d67bbcb829c3b14166f5">getDatabases</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_namespace_humming_bird_1_1_sql_1_1_local_1a67c654b1b4944a9b182434ba6b5f276e">getTables</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_namespace_humming_bird_1_1_sql_1_1_local_1aaec6c4a67b1dd87effea33ccdebada76">getTableColumns</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_namespace_humming_bird_1_1_sql_1_1_local_1a6072e6c4e4d27043dcff8f8d91fbe54e">getTableRows</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespace_humming_bird_1_1_sql_1_1_local_1af37310181f24d67bbcb829c3b14166f5"/><section>
+    <title>getDatabases()</title>
+<indexterm><primary>getDatabases</primary><secondary>HummingBird::Sql::Local</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Local</primary><secondary>getDatabases</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Local::getDatabases ( )</computeroutput></para></section>
+<anchor xml:id="_namespace_humming_bird_1_1_sql_1_1_local_1aaec6c4a67b1dd87effea33ccdebada76"/><section>
+    <title>getTableColumns()</title>
+<indexterm><primary>getTableColumns</primary><secondary>HummingBird::Sql::Local</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Local</primary><secondary>getTableColumns</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Local::getTableColumns ( )</computeroutput></para></section>
+<anchor xml:id="_namespace_humming_bird_1_1_sql_1_1_local_1a6072e6c4e4d27043dcff8f8d91fbe54e"/><section>
+    <title>getTableRows()</title>
+<indexterm><primary>getTableRows</primary><secondary>HummingBird::Sql::Local</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Local</primary><secondary>getTableRows</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Local::getTableRows ( )</computeroutput></para></section>
+<anchor xml:id="_namespace_humming_bird_1_1_sql_1_1_local_1a67c654b1b4944a9b182434ba6b5f276e"/><section>
+    <title>getTables()</title>
+<indexterm><primary>getTables</primary><secondary>HummingBird::Sql::Local</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Local</primary><secondary>getTables</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Local::getTables ( )</computeroutput></para></section>
+</section>
+</section>

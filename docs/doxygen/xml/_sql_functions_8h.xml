@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_sql_functions_8h" kind="file" language="C++">
+    <compoundname>SqlFunctions.h</compoundname>
+    <includes local="no">xdevapi.h</includes>
+    <includes refid="_config_8h" local="no">Hummingbird_SQL/Config.h</includes>
+    <includes refid="_connection_8h" local="no">Hummingbird_SQL/Connection.h</includes>
+    <includes refid="_structures_8h" local="no">Hummingbird_SQL/Structures.h</includes>
+    <includes local="no">iostream</includes>
+    <includedby refid="_connection_8cpp" local="yes">src/Connection.cpp</includedby>
+    <includedby refid="_sql_functions_8cpp" local="no">src/SqlFunctions.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>Hummingbird_SQL/Config.h</label>
+        <link refid="_config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Hummingbird_SQL/Connection.h</label>
+        <link refid="_connection_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Hummingbird_SQL/Structures.h</label>
+        <link refid="_structures_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>private/SqlFunctions.h</label>
+        <link refid="_sql_functions_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>assert.h</label>
+      </node>
+      <node id="10">
+        <label>cctype</label>
+      </node>
+      <node id="4">
+        <label>exception</label>
+      </node>
+      <node id="8">
+        <label>iostream</label>
+      </node>
+      <node id="11">
+        <label>map</label>
+      </node>
+      <node id="5">
+        <label>optional</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="12">
+        <label>unordered_map</label>
+      </node>
+      <node id="13">
+        <label>utility</label>
+      </node>
+      <node id="15">
+        <label>variant</label>
+      </node>
+      <node id="16">
+        <label>vector</label>
+      </node>
+      <node id="2">
+        <label>xdevapi.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>private/SqlFunctions.h</label>
+        <link refid="_sql_functions_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/Connection.cpp</label>
+        <link refid="_connection_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/SqlFunctions.cpp</label>
+        <link refid="_sql_functions_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_humming_bird">HummingBird</innernamespace>
+    <innernamespace refid="namespace_humming_bird_1_1_sql">HummingBird::Sql</innernamespace>
+    <innernamespace refid="namespace_humming_bird_1_1_sql_1_1_server">HummingBird::Sql::Server</innernamespace>
+    <innernamespace refid="namespace_humming_bird_1_1_sql_1_1_local">HummingBird::Sql::Local</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>Kasper<sp/>de<sp/>Bruin<sp/>on<sp/>31/01/2024.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HUMMINGBIRD_SQL_TOOL_SQLFUNCTIONS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_TOOL_SQLFUNCTIONS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;xdevapi.h&gt;</highlight><highlight class="comment">//at<sp/>top<sp/>for<sp/>forward<sp/>declare</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_config_8h" kindref="compound">Hummingbird_SQL/Config.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_connection_8h" kindref="compound">Hummingbird_SQL/Connection.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_structures_8h" kindref="compound">Hummingbird_SQL/Structures.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_humming_bird_1_1_sql" kindref="compound">HummingBird::Sql</ref><sp/>{</highlight></codeline>
+<codeline lineno="15" refid="namespace_humming_bird_1_1_sql_1_1_server" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Server<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::unique_ptr&lt;SchemaInfo&gt;,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash" kindref="compound">case_insensitive_unordered_map::hash</ref>,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp" kindref="compound">case_insensitive_unordered_map::comp</ref>&gt;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_humming_bird_1_1_sql_1_1_server_1a7e0921ae2051d2cd1c1f231bc4173b61" kindref="member">getSchemas</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection" kindref="compound">Connection</ref><sp/>&amp;connection,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" kindref="member">getTables</ref>,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>getColumnsAndRows<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>TableInfo&gt;<sp/><ref refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" kindref="member">getTables</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection" kindref="compound">Connection</ref><sp/>&amp;connection,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>&amp;databaseInfo,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>getColumnsAndRows<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>ColumnInfo&gt;<sp/><ref refid="namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2" kindref="member">getTableColumns</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection" kindref="compound">Connection</ref><sp/>&amp;connection,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>&amp;databaseInfo,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref><sp/>&amp;tableInfo);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Row&gt;<sp/><ref refid="namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f" kindref="member">getTableRows</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection" kindref="compound">Connection</ref><sp/>&amp;connection,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>&amp;databaseInfo,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref><sp/>&amp;tableInfo,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>limit<sp/>=<sp/>Settings::Limits.DefaultRowLimit);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>};</highlight><highlight class="comment">//<sp/>namespace<sp/>Server</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="namespace_humming_bird_1_1_sql_1_1_local" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Local<sp/>{</highlight></codeline>
+<codeline lineno="37" refid="namespace_humming_bird_1_1_sql_1_1_local_1af37310181f24d67bbcb829c3b14166f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespace_humming_bird_1_1_sql_1_1_local_1af37310181f24d67bbcb829c3b14166f5" kindref="member">getDatabases</ref>();</highlight></codeline>
+<codeline lineno="38" refid="namespace_humming_bird_1_1_sql_1_1_local_1a67c654b1b4944a9b182434ba6b5f276e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespace_humming_bird_1_1_sql_1_1_local_1a67c654b1b4944a9b182434ba6b5f276e" kindref="member">getTables</ref>();</highlight></codeline>
+<codeline lineno="39" refid="namespace_humming_bird_1_1_sql_1_1_local_1aaec6c4a67b1dd87effea33ccdebada76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespace_humming_bird_1_1_sql_1_1_local_1aaec6c4a67b1dd87effea33ccdebada76" kindref="member">getTableColumns</ref>();</highlight></codeline>
+<codeline lineno="40" refid="namespace_humming_bird_1_1_sql_1_1_local_1a6072e6c4e4d27043dcff8f8d91fbe54e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespace_humming_bird_1_1_sql_1_1_local_1a6072e6c4e4d27043dcff8f8d91fbe54e" kindref="member">getTableRows</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>}</highlight><highlight class="comment">//<sp/>namespace<sp/>Local</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight><highlight class="comment">//<sp/>namespace<sp/>HummingBird::Sql</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="comment">//HUMMINGBIRD_SQL_TOOL_SQLFUNCTIONS_H</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="private/SqlFunctions.h"/>
+  </compounddef>
+</doxygen>

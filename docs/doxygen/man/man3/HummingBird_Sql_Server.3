@@ -1,0 +1,51 @@
+.TH "HummingBird::Sql::Server" 3 "Version 0.1" "Hummingbird sql" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HummingBird::Sql::Server
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::unordered_map< std::string, std::unique_ptr< \fBSchemaInfo\fP >, \fBcase_insensitive_unordered_map::hash\fP, \fBcase_insensitive_unordered_map::comp\fP > \fBgetSchemas\fP (const \fBConnection\fP &connection, const bool \fBgetTables\fP, const bool getColumnsAndRows=false)"
+.br
+.ti -1c
+.RI "std::unordered_map< std::string, \fBTableInfo\fP > \fBgetTables\fP (const \fBConnection\fP &connection, const \fBSchemaInfo\fP &databaseInfo, const bool getColumnsAndRows=false)"
+.br
+.ti -1c
+.RI "std::unordered_map< std::string, \fBColumnInfo\fP > \fBgetTableColumns\fP (const \fBConnection\fP &connection, const \fBSchemaInfo\fP &databaseInfo, const \fBTableInfo\fP &tableInfo)"
+.br
+.ti -1c
+.RI "std::vector< \fBRow\fP > \fBgetTableRows\fP (const \fBConnection\fP &connection, const \fBSchemaInfo\fP &databaseInfo, const \fBTableInfo\fP &tableInfo, int limit=Settings::Limits\&.DefaultRowLimit)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::unordered_map< std::string, std::unique_ptr< \fBSchemaInfo\fP >, \fBcase_insensitive_unordered_map::hash\fP, \fBcase_insensitive_unordered_map::comp\fP > HummingBird::Sql::Server::getSchemas (const \fBConnection\fP & connection, const bool getTables, const bool getColumnsAndRows = \fRfalse\fP)"
+
+.SS "std::unordered_map< std::string, \fBColumnInfo\fP > HummingBird::Sql::Server::getTableColumns (const \fBConnection\fP & connection, const \fBSchemaInfo\fP & databaseInfo, const \fBTableInfo\fP & tableInfo)"
+
+.SS "std::vector< \fBRow\fP > HummingBird::Sql::Server::getTableRows (const \fBConnection\fP & connection, const \fBSchemaInfo\fP & databaseInfo, const \fBTableInfo\fP & tableInfo, int limit = \fRSettings::Limits\&.DefaultRowLimit\fP)"
+< Null value
+.PP
+< Unsigned integer
+.PP
+< Signed integer
+.PP
+< Float number
+.PP
+< Double number
+.PP
+< Boolean
+.PP
+< String
+.PP
+< Raw bytes
+.SS "std::unordered_map< std::string, \fBTableInfo\fP > HummingBird::Sql::Server::getTables (const \fBConnection\fP & connection, const \fBSchemaInfo\fP & databaseInfo, const bool getColumnsAndRows = \fRfalse\fP)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Hummingbird sql from the source code\&.

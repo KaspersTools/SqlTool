@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__sql_functions_8h" xml:lang="en-US">
+<title>private/SqlFunctions.h File Reference</title>
+<indexterm><primary>private/SqlFunctions.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;xdevapi.h&gt;<?linebreak?>#include &lt;Hummingbird_SQL/Config.h&gt;<?linebreak?>#include &lt;Hummingbird_SQL/Connection.h&gt;<?linebreak?>#include &lt;Hummingbird_SQL/Structures.h&gt;<?linebreak?>#include &lt;iostream&gt;<?linebreak?></programlisting><simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_humming_bird">HummingBird</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_humming_bird_1_1_sql">HummingBird::Sql</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_humming_bird_1_1_sql_1_1_server">HummingBird::Sql::Server</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_humming_bird_1_1_sql_1_1_local">HummingBird::Sql::Local</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>std::unordered_map&lt; std::string, std::unique_ptr&lt; <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &gt;, <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">case_insensitive_unordered_map::hash</link>, <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp">case_insensitive_unordered_map::comp</link> &gt; <link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a7e0921ae2051d2cd1c1f231bc4173b61">HummingBird::Sql::Server::getSchemas</link> (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp;connection, const bool <link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc">getTables</link>, const bool getColumnsAndRows=false)</para>
+</listitem>
+            <listitem><para>std::unordered_map&lt; std::string, <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &gt; <link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc">HummingBird::Sql::Server::getTables</link> (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp;connection, const <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp;databaseInfo, const bool getColumnsAndRows=false)</para>
+</listitem>
+            <listitem><para>std::unordered_map&lt; std::string, <link linkend="_struct_humming_bird_1_1_sql_1_1_column_info">ColumnInfo</link> &gt; <link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2">HummingBird::Sql::Server::getTableColumns</link> (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp;connection, const <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp;databaseInfo, const <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp;tableInfo)</para>
+</listitem>
+            <listitem><para>std::vector&lt; <link linkend="_class_humming_bird_1_1_sql_1_1_row">Row</link> &gt; <link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f">HummingBird::Sql::Server::getTableRows</link> (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp;connection, const <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp;databaseInfo, const <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp;tableInfo, int limit=Settings::Limits.DefaultRowLimit)</para>
+</listitem>
+            <listitem><para>void <link linkend="_namespace_humming_bird_1_1_sql_1_1_local_1af37310181f24d67bbcb829c3b14166f5">HummingBird::Sql::Local::getDatabases</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_namespace_humming_bird_1_1_sql_1_1_local_1a67c654b1b4944a9b182434ba6b5f276e">HummingBird::Sql::Local::getTables</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_namespace_humming_bird_1_1_sql_1_1_local_1aaec6c4a67b1dd87effea33ccdebada76">HummingBird::Sql::Local::getTableColumns</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_namespace_humming_bird_1_1_sql_1_1_local_1a6072e6c4e4d27043dcff8f8d91fbe54e">HummingBird::Sql::Local::getTableRows</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

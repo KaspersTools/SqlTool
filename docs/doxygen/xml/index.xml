@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.10.0" xml:lang="en-US">
+  <compound refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map" kind="struct"><name>HummingBird::Sql::case_insensitive_unordered_map</name>
+  </compound>
+  <compound refid="struct_humming_bird_1_1_sql_1_1_column_info" kind="struct"><name>HummingBird::Sql::ColumnInfo</name>
+    <member refid="struct_humming_bird_1_1_sql_1_1_column_info_1acc6b28006de5396fd26aaa79291c024d" kind="variable"><name>name</name></member>
+  </compound>
+  <compound refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp" kind="struct"><name>HummingBird::Sql::case_insensitive_unordered_map::comp</name>
+    <member refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp_1a9168f153ab513f19081d78c46eeaee88" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="class_humming_bird_1_1_sql_1_1_connection" kind="class"><name>HummingBird::Sql::Connection</name>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1adc29deef6111415dd756b7f3a3364b26" kind="variable"><name>m_isConnected</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a48d93d0394b219f38b0d18a7eb841fc8" kind="variable"><name>m_currentDatabaseName</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a7bcb1b5665607cb4862c829c8e7a98dd" kind="variable"><name>m_host</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a9aecb12bdae3de2d06444c41796cde5a" kind="variable"><name>m_user</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a9f3772c114af6c30078ee1970f6ea822" kind="variable"><name>m_password</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a640b9dd106d51820fd18df2e95151d0b" kind="variable"><name>m_port</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1ab5bd6e24fa8c561647def8dac2e99df8" kind="variable"><name>session</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1ae37294cb3ade93f56c488ea9df510889" kind="variable"><name>m_schemas</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a11dd47b3aa64db0e4818758d74e905e4" kind="function"><name>Connection</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a119f44987d4e342f88eace7f9f0ce012" kind="function"><name>~Connection</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a8287ef082a37903e197d263a38a04d03" kind="function"><name>connect</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a19f0aff4ef660d6025bb11eb0b810268" kind="function"><name>disconnect</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1af1ab3a26099425eaa7938109221f2099" kind="function"><name>fetchSchemas</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1ac6f602f44d586e7f9278af8b68c737f0" kind="function"><name>fetchTables</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1ab7d1c7bfae27629cbac4ec7a275cde50" kind="function"><name>fetchTables</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" kind="function"><name>fetchColumns</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a1330adfbdf07b4cf889bc9ce066b8176" kind="function"><name>fetchColumns</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a0f5ed72c4e86064e01a9eff3eb50be10" kind="function"><name>fetchColumns</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631" kind="function"><name>fetchRows</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a9da9c12070223cdce58d7fbeb306d38c" kind="function"><name>fetchRows</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1af2d5636e1d930c255b6c8ac67d363944" kind="function"><name>fetchRows</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a07b5aeb9ea5dac4347c777a72c8e1eb2" kind="function"><name>getSchema</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1ad7d577e472d7bef648a105d5fff2b1d3" kind="function"><name>getTable</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1ac542254dc7d946b92b5bf4da438a1d78" kind="function"><name>getTable</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2" kind="function"><name>isConnected</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1ae64b880c6aefa583e1e5f86f56ca9e07" kind="function"><name>getSession</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a0a4f9f5e10f8824eacb93414cdf98b60" kind="function"><name>getSchemaPtr</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_connection_1a808c9e1107b9fd342eac250a585dff86" kind="function"><name>getTablePtr</name></member>
+  </compound>
+  <compound refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash" kind="struct"><name>HummingBird::Sql::case_insensitive_unordered_map::hash</name>
+    <member refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash_1a29189a3b7bd25f96c54ddc2e9dd0f6f6" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="class_humming_bird_1_1_sql_1_1_row" kind="class"><name>HummingBird::Sql::Row</name>
+    <member refid="class_humming_bird_1_1_sql_1_1_row_1aba5cba5346af314e060d7917ce1d9a24" kind="variable"><name>m_columns</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_row_1aef9918fd5095e36e999d5f32f4e0698c" kind="function"><name>Row</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_row_1a9fcb94918d66e4f91f389e1adf320a95" kind="function"><name>~Row</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_row_1a075318c4cb28cab33d76b3de9428271a" kind="function"><name>addColumn</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_row_1a54fcce0c35a832a07ab0293ca8718eb4" kind="function"><name>getColumn</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_row_1aa894eef940f9fecb4d774e411ddc9e27" kind="function"><name>getColumns</name></member>
+    <member refid="class_humming_bird_1_1_sql_1_1_row_1ab9e18951c77f78f284f8ce2ba188943a" kind="function"><name>setColumns</name></member>
+  </compound>
+  <compound refid="struct_humming_bird_1_1_sql_1_1_schema_info" kind="struct"><name>HummingBird::Sql::SchemaInfo</name>
+    <member refid="struct_humming_bird_1_1_sql_1_1_schema_info_1acba50063acf5de44aa298fa38749efd8" kind="variable"><name>name</name></member>
+    <member refid="struct_humming_bird_1_1_sql_1_1_schema_info_1ab58f39d0e05b41ebe9b59bd8e6a4762f" kind="variable"><name>tables</name></member>
+    <member refid="struct_humming_bird_1_1_sql_1_1_schema_info_1a01c90ea533af1ad0912c28bed745f2c6" kind="function"><name>getTable</name></member>
+  </compound>
+  <compound refid="struct_logging_1_1source__loc" kind="struct"><name>Logging::source_loc</name>
+    <member refid="struct_logging_1_1source__loc_1a43c4bb392c0ce7cb349dcefa1784374d" kind="variable"><name>filename</name></member>
+    <member refid="struct_logging_1_1source__loc_1acb6ae2cbb3523d3932840d6dff63e3ef" kind="variable"><name>line</name></member>
+    <member refid="struct_logging_1_1source__loc_1a8028d4f344979c8fdfe177b4d54c8d06" kind="variable"><name>funcname</name></member>
+    <member refid="struct_logging_1_1source__loc_1a830c5efc34cf67cc723e2e6cb272a57f" kind="function"><name>source_loc</name></member>
+    <member refid="struct_logging_1_1source__loc_1a466a91da264d27bcc4f174eb752722c8" kind="function"><name>source_loc</name></member>
+    <member refid="struct_logging_1_1source__loc_1a03355b8c2febac449f103bee39863580" kind="function"><name>empty</name></member>
+    <member refid="struct_logging_1_1source__loc_1ae9d456750e967fa8dc99d886b3950a4e" kind="function"><name>toString</name></member>
+  </compound>
+  <compound refid="struct_humming_bird_1_1_sql_1_1_table_info" kind="struct"><name>HummingBird::Sql::TableInfo</name>
+    <member refid="struct_humming_bird_1_1_sql_1_1_table_info_1a6c2a40c9c7d5d3ac732365508bbf20e2" kind="variable"><name>name</name></member>
+    <member refid="struct_humming_bird_1_1_sql_1_1_table_info_1acad7204f43cf88e287ce1dd82c4369da" kind="variable"><name>schemaName</name></member>
+    <member refid="struct_humming_bird_1_1_sql_1_1_table_info_1a954c077ad6b196fbacdff24a16fea937" kind="variable"><name>columns</name></member>
+    <member refid="struct_humming_bird_1_1_sql_1_1_table_info_1a7ee7758cd92b037afc6751ec6647c843" kind="variable"><name>rows</name></member>
+  </compound>
+  <compound refid="namespace_humming_bird" kind="namespace"><name>HummingBird</name>
+  </compound>
+  <compound refid="namespace_humming_bird_1_1_sql" kind="namespace"><name>HummingBird::Sql</name>
+    <member refid="namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc" kind="typedef"><name>ColumnValue</name></member>
+  </compound>
+  <compound refid="namespace_humming_bird_1_1_sql_1_1_local" kind="namespace"><name>HummingBird::Sql::Local</name>
+    <member refid="namespace_humming_bird_1_1_sql_1_1_local_1af37310181f24d67bbcb829c3b14166f5" kind="function"><name>getDatabases</name></member>
+    <member refid="namespace_humming_bird_1_1_sql_1_1_local_1a67c654b1b4944a9b182434ba6b5f276e" kind="function"><name>getTables</name></member>
+    <member refid="namespace_humming_bird_1_1_sql_1_1_local_1aaec6c4a67b1dd87effea33ccdebada76" kind="function"><name>getTableColumns</name></member>
+    <member refid="namespace_humming_bird_1_1_sql_1_1_local_1a6072e6c4e4d27043dcff8f8d91fbe54e" kind="function"><name>getTableRows</name></member>
+  </compound>
+  <compound refid="namespace_humming_bird_1_1_sql_1_1_server" kind="namespace"><name>HummingBird::Sql::Server</name>
+    <member refid="namespace_humming_bird_1_1_sql_1_1_server_1a7e0921ae2051d2cd1c1f231bc4173b61" kind="function"><name>getSchemas</name></member>
+    <member refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" kind="function"><name>getTables</name></member>
+    <member refid="namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2" kind="function"><name>getTableColumns</name></member>
+    <member refid="namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f" kind="function"><name>getTableRows</name></member>
+  </compound>
+  <compound refid="namespace_logging" kind="namespace"><name>Logging</name>
+    <member refid="namespace_logging_1adbd755737db52bbf41bd8b2b3b2bb0eb" kind="function"><name>showTrace</name></member>
+    <member refid="namespace_logging_1a53abf260f2599ecdd1a950c434a980ef" kind="function"><name>showLog</name></member>
+    <member refid="namespace_logging_1a4a62a00c4c9c2e26ee5e2856a52af7e8" kind="function"><name>showError</name></member>
+    <member refid="namespace_logging_1a1cf9cd5870d06e0f9041cef6c0ef36cd" kind="function"><name>showFatal</name></member>
+  </compound>
+  <compound refid="namespacemysqlx" kind="namespace"><name>mysqlx</name>
+  </compound>
+  <compound refid="namespacemysqlx_1_1abi2" kind="namespace"><name>mysqlx::abi2</name>
+  </compound>
+  <compound refid="namespacemysqlx_1_1abi2_1_1r0" kind="namespace"><name>mysqlx::abi2::r0</name>
+  </compound>
+  <compound refid="namespace_settings" kind="namespace"><name>Settings</name>
+    <member refid="namespace_settings_1af8df46cc2ffa19c6ca0ccc25c15bbdd5" kind="variable"><name>FetchTablesOnConnect</name></member>
+    <member refid="namespace_settings_1aba170b6586f1922b3883c09b9f8c9388" kind="variable"><name>FetchColumnsAndRowsOnConnect</name></member>
+    <member refid="namespace_settings_1a07cc5f18e6ee3aaaadc757021f5b3538" kind="variable"><name>OnConnect</name></member>
+    <member refid="namespace_settings_1a3f8daea41391188e8743c89b8558d50b" kind="variable"><name>DefaultRowLimit</name></member>
+    <member refid="namespace_settings_1aba4f3bfffe6d738eb9f3c5b777e5109d" kind="variable"><name>Limits</name></member>
+  </compound>
+  <compound refid="_c_make_c_compiler_id_8c" kind="file"><name>CMakeCCompilerId.c</name>
+    <member refid="_c_make_c_compiler_id_8c_1ae5510d82e4946f1656f4969911c54736" kind="define"><name>__has_include</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1a81dee0709ded976b2e0319239f72d174" kind="define"><name>COMPILER_ID</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1a2ae9b72bb13abaabfcf2ee0ba7d3fa1d" kind="define"><name>STRINGIFY_HELPER</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1a43e1cad902b6477bec893cb6430bd6c8" kind="define"><name>STRINGIFY</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1adbc5372f40838899018fadbc89bd588b" kind="define"><name>PLATFORM_ID</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1aba35d0d200deaeb06aee95ca297acb28" kind="define"><name>ARCHITECTURE_ID</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1ad1280362da42492bbc11aa78cbf776ad" kind="define"><name>DEC</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1a46d5d95daa1bef867bd0179594310ed5" kind="define"><name>HEX</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1adaee3ee7c5a7a22451ea25e762e1d7d5" kind="define"><name>C_VERSION</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1a4b0efeb7a5d59313986b3a0390f050f6" kind="variable"><name>info_compiler</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1a2321403dee54ee23f0c2fa849c60f7d4" kind="variable"><name>info_platform</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1a59647e99d304ed33b15cb284c27ed391" kind="variable"><name>info_arch</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1a4607cccf070750927b458473ca82c090" kind="variable"><name>info_language_standard_default</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1a0f46a8a39e09d9b803c4766904fd7e99" kind="variable"><name>info_language_extensions_default</name></member>
+    <member refid="_c_make_c_compiler_id_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_c_make_c_x_x_compiler_id_8cpp" kind="file"><name>CMakeCXXCompilerId.cpp</name>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1ae5510d82e4946f1656f4969911c54736" kind="define"><name>__has_include</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a81dee0709ded976b2e0319239f72d174" kind="define"><name>COMPILER_ID</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a2ae9b72bb13abaabfcf2ee0ba7d3fa1d" kind="define"><name>STRINGIFY_HELPER</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a43e1cad902b6477bec893cb6430bd6c8" kind="define"><name>STRINGIFY</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1adbc5372f40838899018fadbc89bd588b" kind="define"><name>PLATFORM_ID</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1aba35d0d200deaeb06aee95ca297acb28" kind="define"><name>ARCHITECTURE_ID</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1ad1280362da42492bbc11aa78cbf776ad" kind="define"><name>DEC</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a46d5d95daa1bef867bd0179594310ed5" kind="define"><name>HEX</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a34cc889e576a1ae6c84ae9e0a851ba21" kind="define"><name>CXX_STD</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a4b0efeb7a5d59313986b3a0390f050f6" kind="variable"><name>info_compiler</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a2321403dee54ee23f0c2fa849c60f7d4" kind="variable"><name>info_platform</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a59647e99d304ed33b15cb284c27ed391" kind="variable"><name>info_arch</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a4607cccf070750927b458473ca82c090" kind="variable"><name>info_language_standard_default</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a0f46a8a39e09d9b803c4766904fd7e99" kind="variable"><name>info_language_extensions_default</name></member>
+    <member refid="_c_make_c_x_x_compiler_id_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_config_8h" kind="file"><name>Config.h</name>
+    <member refid="_config_8h_1acf0f41eba0fd761746cf3eb9c900e030" kind="define"><name>HUMMINGBIRD_SQL_ASSERT</name></member>
+    <member refid="_config_8h_1a06d1258eda4150e8933668fb7db7cf96" kind="define"><name>HUMMINGBIRD_SQL_LOG_LEVEL_TRACE</name></member>
+    <member refid="_config_8h_1ab123c15574a81f66ce36926c162c2cf8" kind="define"><name>HUMMINGBIRD_SQL_LOG_LEVEL_LOG</name></member>
+    <member refid="_config_8h_1ae357661fe0ff8bbd08cdf503400adc4c" kind="define"><name>HUMMINGBIRD_SQL_LOG_LEVEL_ERROR</name></member>
+    <member refid="_config_8h_1a585fb591d8027c09c18681a7e415cbe1" kind="define"><name>HUMMINGBIRD_SQL_LOG_LEVEL_FATAL</name></member>
+    <member refid="_config_8h_1aa3778262e4b8c744ab8b48ba9f9e6ebe" kind="define"><name>HUMMINGBIRD_SQL_LOG_LEVEL_NONE</name></member>
+    <member refid="_config_8h_1aff144c0ab491308722b9700f6622a4b3" kind="define"><name>HUMMINGBIRD_SQL_LOG_LEVEL</name></member>
+    <member refid="_config_8h_1a608df755229e6a3858530cd65c8bfffc" kind="define"><name>HUMMINGBIRD_SQL_LOG_ACTIVE</name></member>
+    <member refid="_config_8h_1a7ca7c3f197541717d16a8755985fa1ec" kind="define"><name>HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION</name></member>
+    <member refid="_config_8h_1a9c4811b8d6f3b58111a7fdac28766095" kind="define"><name>HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION</name></member>
+    <member refid="_config_8h_1af9aec3c5b10db82c21f96426322c6ab9" kind="define"><name>HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION</name></member>
+    <member refid="_config_8h_1a4d548edca0a2b9c8c0b14e5b20b35af6" kind="define"><name>HUMMINGBIRD_SQL_SERVER_FATAL_FUNCTION</name></member>
+    <member refid="_config_8h_1aee25cbb1419b856d16a2713cd09e1d94" kind="define"><name>HUMMINGBIRD_SQL_SETTINGS_FETCH_TABLES_ON_CONNECT</name></member>
+    <member refid="_config_8h_1af2e140ca4b91e1925f7e7ca652e45b64" kind="define"><name>HUMMINGBIRD_SQL_SETTINGS_FETCH_COLUMNS_AND_ROWS_ON_CONNECT</name></member>
+    <member refid="_config_8h_1a36b93bb4ec221fb7728b2fb390c1535b" kind="define"><name>HUMMINGBIRD_SQL_SETTINGS_DEFAULT_ROW_LIMIT</name></member>
+  </compound>
+  <compound refid="_connection_8h" kind="file"><name>Connection.h</name>
+  </compound>
+  <compound refid="_structures_8h" kind="file"><name>Structures.h</name>
+  </compound>
+  <compound refid="_sql_functions_8h" kind="file"><name>SqlFunctions.h</name>
+  </compound>
+  <compound refid="_connection_8cpp" kind="file"><name>Connection.cpp</name>
+  </compound>
+  <compound refid="_sql_functions_8cpp" kind="file"><name>SqlFunctions.cpp</name>
+  </compound>
+  <compound refid="_structures_8cpp" kind="file"><name>Structures.cpp</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_a30f206eb85b936aebf778f8ca08be7c" kind="dir"><name>cmake-build-debug/CMakeFiles/3.27.8</name>
+  </compound>
+  <compound refid="dir_95e29a8b8ee7c54052c171a88bb95675" kind="dir"><name>cmake-build-debug</name>
+  </compound>
+  <compound refid="dir_f89abcb304c928c7d889aa5625570de5" kind="dir"><name>cmake-build-debug/CMakeFiles</name>
+  </compound>
+  <compound refid="dir_36a319fdfa90daea3fe65386bde15ea1" kind="dir"><name>cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC</name>
+  </compound>
+  <compound refid="dir_d27ff1c24db4b8ed35c08a97f94ed8ec" kind="dir"><name>cmake-build-debug/CMakeFiles/3.27.8/CompilerIdCXX</name>
+  </compound>
+  <compound refid="dir_f06df27af1414323ce65d425bbc36b66" kind="dir"><name>include/Hummingbird_SQL</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_5e8a7bbde1a4928aae401de5a4a8708b" kind="dir"><name>private</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_59425e443f801f1f2fd8bbe4959a3ccf" kind="dir"><name>tests</name>
+  </compound>
+</doxygenindex>

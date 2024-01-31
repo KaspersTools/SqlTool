@@ -1,0 +1,144 @@
+.TH "include/Hummingbird_SQL/Config.h" 3 "Version 0.1" "Hummingbird sql" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/Hummingbird_SQL/Config.h
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <exception>\fP
+.br
+\fR#include <optional>\fP
+.br
+\fR#include <string>\fP
+.br
+\fR#include <assert\&.h>\fP
+.br
+\fR#include <iostream>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBLogging::source_loc\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBLogging\fP"
+.br
+.ti -1c
+.RI "namespace \fBSettings\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_ASSERT\fP(_EXPR)   assert(_EXPR)"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_LOG_LEVEL_TRACE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_LOG_LEVEL_LOG\fP   1"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_LOG_LEVEL_ERROR\fP   2"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_LOG_LEVEL_FATAL\fP   3"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_LOG_LEVEL_NONE\fP   4"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_LOG_LEVEL\fP   \fBHUMMINGBIRD_SQL_LOG_LEVEL_TRACE\fP"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_LOG_ACTIVE\fP   true"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION\fP(\&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_SERVER_LOG_FUNCTION\fP(\&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION\fP(\&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_SERVER_FATAL_FUNCTION\fP(\&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_SETTINGS_FETCH_TABLES_ON_CONNECT\fP   true"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_SETTINGS_FETCH_COLUMNS_AND_ROWS_ON_CONNECT\fP   false"
+.br
+.ti -1c
+.RI "#define \fBHUMMINGBIRD_SQL_SETTINGS_DEFAULT_ROW_LIMIT\fP   1000"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define HUMMINGBIRD_SQL_ASSERT(_EXPR)   assert(_EXPR)"
+
+.SS "#define HUMMINGBIRD_SQL_LOG_ACTIVE   true"
+
+.SS "#define HUMMINGBIRD_SQL_LOG_LEVEL   \fBHUMMINGBIRD_SQL_LOG_LEVEL_TRACE\fP"
+
+.SS "#define HUMMINGBIRD_SQL_LOG_LEVEL_ERROR   2"
+
+.SS "#define HUMMINGBIRD_SQL_LOG_LEVEL_FATAL   3"
+
+.SS "#define HUMMINGBIRD_SQL_LOG_LEVEL_LOG   1"
+
+.SS "#define HUMMINGBIRD_SQL_LOG_LEVEL_NONE   4"
+
+.SS "#define HUMMINGBIRD_SQL_LOG_LEVEL_TRACE   0"
+
+.SS "#define HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION( \&.\&.\&.)"
+\fBValue:\fP.PP
+.nf
+  if (HUMMINGBIRD_SQL_LOG_ACTIVE && HUMMINGBIRD_SQL_LOG_LEVEL <= HUMMINGBIRD_SQL_LOG_LEVEL_ERROR) \\
+  ::Logging::showError(::Logging::source_loc(__FILE__, __LINE__, __FUNCTION__),                   \\
+                       __VA_ARGS__)
+.fi
+
+.SS "#define HUMMINGBIRD_SQL_SERVER_FATAL_FUNCTION( \&.\&.\&.)"
+\fBValue:\fP.PP
+.nf
+  if (HUMMINGBIRD_SQL_LOG_ACTIVE && HUMMINGBIRD_SQL_LOG_LEVEL <= HUMMINGBIRD_SQL_LOG_LEVEL_FATAL) \\
+  ::Logging::showFatal(::Logging::source_loc(__FILE__, __LINE__, __FUNCTION__),                   \\
+                       __VA_ARGS__)
+.fi
+
+.SS "#define HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION( \&.\&.\&.)"
+\fBValue:\fP.PP
+.nf
+  if (HUMMINGBIRD_SQL_LOG_ACTIVE && HUMMINGBIRD_SQL_LOG_LEVEL <= HUMMINGBIRD_SQL_LOG_LEVEL_LOG) \\
+  ::Logging::showLog(::Logging::source_loc(__FILE__, __LINE__, __FUNCTION__),                   \\
+                     __VA_ARGS__)
+.fi
+
+.SS "#define HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION( \&.\&.\&.)"
+\fBValue:\fP.PP
+.nf
+  if (HUMMINGBIRD_SQL_LOG_ACTIVE && HUMMINGBIRD_SQL_LOG_LEVEL <= HUMMINGBIRD_SQL_LOG_LEVEL_TRACE) \\
+  ::Logging::showTrace(::Logging::source_loc(__FILE__, __LINE__, __FUNCTION__),                   \\
+                       __VA_ARGS__)
+.fi
+
+.SS "#define HUMMINGBIRD_SQL_SETTINGS_DEFAULT_ROW_LIMIT   1000"
+
+.SS "#define HUMMINGBIRD_SQL_SETTINGS_FETCH_COLUMNS_AND_ROWS_ON_CONNECT   false"
+
+.SS "#define HUMMINGBIRD_SQL_SETTINGS_FETCH_TABLES_ON_CONNECT   true"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Hummingbird sql from the source code\&.

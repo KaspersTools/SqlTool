@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_humming_bird_1_1_sql" xml:lang="en-US">
+<title>HummingBird::Sql Namespace Reference</title>
+<indexterm><primary>HummingBird::Sql</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_humming_bird_1_1_sql_1_1_local">Local</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_humming_bird_1_1_sql_1_1_server">Server</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map">case_insensitive_unordered_map</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_humming_bird_1_1_sql_1_1_column_info">ColumnInfo</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link></para>
+
+<para><link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> class for connecting to a MySQL database. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_humming_bird_1_1_sql_1_1_row">Row</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para>using <link linkend="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc">ColumnValue</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Typedef Documentation</title>
+<anchor xml:id="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc"/><section>
+    <title>ColumnValue</title>
+<indexterm><primary>ColumnValue</primary><secondary>HummingBird::Sql</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql</primary><secondary>ColumnValue</secondary></indexterm>
+<para><computeroutput>using <link linkend="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc">HummingBird::Sql::ColumnValue</link></computeroutput></para><emphasis role="strong">Initial value:</emphasis><programlisting linenumbering="unnumbered">&#32;std::variant&lt;uint64_t,&#32;int64_t,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;float,&#32;double,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bool,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string,
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::nullopt_t&gt;
+</programlisting></section>
+</section>
+</section>

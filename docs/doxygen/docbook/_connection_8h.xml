@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__connection_8h" xml:lang="en-US">
+<title>include/Hummingbird_SQL/Connection.h File Reference</title>
+<indexterm><primary>include/Hummingbird_SQL/Connection.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;Hummingbird_SQL/Config.h&gt;<?linebreak?>#include &lt;cctype&gt;<?linebreak?>#include &lt;exception&gt;<?linebreak?>#include &lt;iostream&gt;<?linebreak?>#include &lt;map&gt;<?linebreak?>#include &lt;string&gt;<?linebreak?>#include &lt;unordered_map&gt;<?linebreak?>#include &lt;utility&gt;<?linebreak?></programlisting><simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map">HummingBird::Sql::case_insensitive_unordered_map</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp">HummingBird::Sql::case_insensitive_unordered_map::comp</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">HummingBird::Sql::case_insensitive_unordered_map::hash</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_humming_bird_1_1_sql_1_1_connection">HummingBird::Sql::Connection</link></para>
+
+<para><link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> class for connecting to a MySQL database. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespacemysqlx">mysqlx</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespacemysqlx_1_1abi2">mysqlx::abi2</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespacemysqlx_1_1abi2_1_1r0">mysqlx::abi2::r0</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_humming_bird">HummingBird</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_humming_bird_1_1_sql">HummingBird::Sql</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

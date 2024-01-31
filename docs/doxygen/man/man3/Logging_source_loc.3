@@ -1,0 +1,63 @@
+.TH "Logging::source_loc" 3 "Version 0.1" "Hummingbird sql" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Logging::source_loc
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <Config\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "constexpr \fBsource_loc\fP ()=default"
+.br
+.ti -1c
+.RI "constexpr \fBsource_loc\fP (const char *filename_in, int line_in, const char *funcname_in)"
+.br
+.ti -1c
+.RI "constexpr bool \fBempty\fP () const noexcept"
+.br
+.ti -1c
+.RI "std::string \fBtoString\fP () const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBfilename\fP {nullptr}"
+.br
+.ti -1c
+.RI "int \fBline\fP {0}"
+.br
+.ti -1c
+.RI "const char * \fBfuncname\fP {nullptr}"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "constexpr Logging::source_loc::source_loc ()\fR [constexpr]\fP, \fR [default]\fP"
+
+.SS "constexpr Logging::source_loc::source_loc (const char * filename_in, int line_in, const char * funcname_in)\fR [inline]\fP, \fR [constexpr]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "constexpr bool Logging::source_loc::empty () const\fR [inline]\fP, \fR [constexpr]\fP, \fR [noexcept]\fP"
+
+.SS "std::string Logging::source_loc::toString () const\fR [inline]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "const char* Logging::source_loc::filename {nullptr}"
+
+.SS "const char* Logging::source_loc::funcname {nullptr}"
+
+.SS "int Logging::source_loc::line {0}"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Hummingbird sql from the source code\&.

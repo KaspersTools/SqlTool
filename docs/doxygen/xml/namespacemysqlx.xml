@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespacemysqlx" kind="namespace" language="C++">
+    <compoundname>mysqlx</compoundname>
+    <innernamespace refid="namespacemysqlx_1_1abi2">mysqlx::abi2</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Hummingbird_SQL/Connection.h" line="6" column="1"/>
+  </compounddef>
+</doxygen>

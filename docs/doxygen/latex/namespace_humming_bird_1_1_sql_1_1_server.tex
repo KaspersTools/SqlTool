@@ -1,0 +1,54 @@
+\doxysection{Humming\+Bird\+::Sql\+::Server Namespace Reference}
+\label{namespace_humming_bird_1_1_sql_1_1_server}\index{HummingBird::Sql::Server@{HummingBird::Sql::Server}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \textbf{ Schema\+Info} $>$, \textbf{ case\+\_\+insensitive\+\_\+unordered\+\_\+map\+::hash}, \textbf{ case\+\_\+insensitive\+\_\+unordered\+\_\+map\+::comp} $>$ \textbf{ get\+Schemas} (const \textbf{ Connection} \&connection, const bool \textbf{ get\+Tables}, const bool get\+Columns\+And\+Rows=false)
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \textbf{ Table\+Info} $>$ \textbf{ get\+Tables} (const \textbf{ Connection} \&connection, const \textbf{ Schema\+Info} \&database\+Info, const bool get\+Columns\+And\+Rows=false)
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \textbf{ Column\+Info} $>$ \textbf{ get\+Table\+Columns} (const \textbf{ Connection} \&connection, const \textbf{ Schema\+Info} \&database\+Info, const \textbf{ Table\+Info} \&table\+Info)
+\item 
+std\+::vector$<$ \textbf{ Row} $>$ \textbf{ get\+Table\+Rows} (const \textbf{ Connection} \&connection, const \textbf{ Schema\+Info} \&database\+Info, const \textbf{ Table\+Info} \&table\+Info, int limit=Settings\+::\+Limits.\+Default\+Row\+Limit)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\label{namespace_humming_bird_1_1_sql_1_1_server_a7e0921ae2051d2cd1c1f231bc4173b61} 
+\index{HummingBird::Sql::Server@{HummingBird::Sql::Server}!getSchemas@{getSchemas}}
+\index{getSchemas@{getSchemas}!HummingBird::Sql::Server@{HummingBird::Sql::Server}}
+\doxysubsubsection{getSchemas()}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \textbf{ Schema\+Info} $>$, \textbf{ case\+\_\+insensitive\+\_\+unordered\+\_\+map\+::hash}, \textbf{ case\+\_\+insensitive\+\_\+unordered\+\_\+map\+::comp} $>$ Humming\+Bird\+::\+Sql\+::\+Server\+::get\+Schemas (\begin{DoxyParamCaption}\item[{const \textbf{ Connection} \&}]{connection,  }\item[{const bool}]{get\+Tables,  }\item[{const bool}]{get\+Columns\+And\+Rows = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\label{namespace_humming_bird_1_1_sql_1_1_server_ad7c9b1d96bc8e2398be9b958c49e60c2} 
+\index{HummingBird::Sql::Server@{HummingBird::Sql::Server}!getTableColumns@{getTableColumns}}
+\index{getTableColumns@{getTableColumns}!HummingBird::Sql::Server@{HummingBird::Sql::Server}}
+\doxysubsubsection{getTableColumns()}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, \textbf{ Column\+Info} $>$ Humming\+Bird\+::\+Sql\+::\+Server\+::get\+Table\+Columns (\begin{DoxyParamCaption}\item[{const \textbf{ Connection} \&}]{connection,  }\item[{const \textbf{ Schema\+Info} \&}]{database\+Info,  }\item[{const \textbf{ Table\+Info} \&}]{table\+Info }\end{DoxyParamCaption})}
+
+\label{namespace_humming_bird_1_1_sql_1_1_server_a7b2f2a4b166529086f53a89ad341731f} 
+\index{HummingBird::Sql::Server@{HummingBird::Sql::Server}!getTableRows@{getTableRows}}
+\index{getTableRows@{getTableRows}!HummingBird::Sql::Server@{HummingBird::Sql::Server}}
+\doxysubsubsection{getTableRows()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ Row} $>$ Humming\+Bird\+::\+Sql\+::\+Server\+::get\+Table\+Rows (\begin{DoxyParamCaption}\item[{const \textbf{ Connection} \&}]{connection,  }\item[{const \textbf{ Schema\+Info} \&}]{database\+Info,  }\item[{const \textbf{ Table\+Info} \&}]{table\+Info,  }\item[{int}]{limit = {\ttfamily Settings\+:\+:Limits.DefaultRowLimit} }\end{DoxyParamCaption})}
+
+$<$ Null value
+
+$<$ Unsigned integer
+
+$<$ Signed integer
+
+$<$ Float number
+
+$<$ Double number
+
+$<$ Boolean
+
+$<$ String
+
+$<$ Raw bytes\label{namespace_humming_bird_1_1_sql_1_1_server_a616ae81f35bc0bbf66d44665e44f25bc} 
+\index{HummingBird::Sql::Server@{HummingBird::Sql::Server}!getTables@{getTables}}
+\index{getTables@{getTables}!HummingBird::Sql::Server@{HummingBird::Sql::Server}}
+\doxysubsubsection{getTables()}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, \textbf{ Table\+Info} $>$ Humming\+Bird\+::\+Sql\+::\+Server\+::get\+Tables (\begin{DoxyParamCaption}\item[{const \textbf{ Connection} \&}]{connection,  }\item[{const \textbf{ Schema\+Info} \&}]{database\+Info,  }\item[{const bool}]{get\+Columns\+And\+Rows = {\ttfamily false} }\end{DoxyParamCaption})}
+

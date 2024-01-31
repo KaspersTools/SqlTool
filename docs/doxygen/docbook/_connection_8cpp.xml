@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__connection_8cpp" xml:lang="en-US">
+<title>src/Connection.cpp File Reference</title>
+<indexterm><primary>src/Connection.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;xdevapi.h&gt;<?linebreak?>#include &quot;../include/Hummingbird_SQL/Config.h&quot;<?linebreak?>#include &quot;../include/Hummingbird_SQL/Connection.h&quot;<?linebreak?>#include &quot;../include/Hummingbird_SQL/Structures.h&quot;<?linebreak?>#include &quot;SqlFunctions.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_humming_bird">HummingBird</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_humming_bird_1_1_sql">HummingBird::Sql</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp" xml:lang="en-US">
+<title>HummingBird::Sql::case_insensitive_unordered_map::comp Struct Reference</title>
+<indexterm><primary>HummingBird::Sql::case_insensitive_unordered_map::comp</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Connection.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">bool</link> <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp_1a9168f153ab513f19081d78c46eeaee88">operator()</link> (<link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">const</link> std::string &amp;<link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">lhs</link>, <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">const</link> std::string &amp;<link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">rhs</link>) <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">const</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp_1a9168f153ab513f19081d78c46eeaee88"/><section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>HummingBird::Sql::case_insensitive_unordered_map::comp</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::case_insensitive_unordered_map::comp</primary><secondary>operator()</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">bool</link> HummingBird::Sql::case_insensitive_unordered_map::comp::operator() (<link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">const</link> std::string &amp; lhs, <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">const</link> std::string &amp; rhs) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+include/Hummingbird_SQL/<link linkend="__connection_8h">Connection.h</link></section>
+</section>

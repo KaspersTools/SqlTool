@@ -1,0 +1,37 @@
+.TH "src/SqlFunctions.cpp" 3 "Version 0.1" "Hummingbird sql" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/SqlFunctions.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <SqlFunctions\&.h>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBHummingBird\fP"
+.br
+.ti -1c
+.RI "namespace \fBHummingBird::Sql\fP"
+.br
+.ti -1c
+.RI "namespace \fBHummingBird::Sql::Server\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::unordered_map< std::string, std::unique_ptr< \fBSchemaInfo\fP >, \fBcase_insensitive_unordered_map::hash\fP, \fBcase_insensitive_unordered_map::comp\fP > \fBHummingBird::Sql::Server::getSchemas\fP (const \fBConnection\fP &connection, const bool \fBgetTables\fP, const bool getColumnsAndRows=false)"
+.br
+.ti -1c
+.RI "std::unordered_map< std::string, \fBTableInfo\fP > \fBHummingBird::Sql::Server::getTables\fP (const \fBConnection\fP &connection, const \fBSchemaInfo\fP &databaseInfo, const bool getColumnsAndRows=false)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Hummingbird sql from the source code\&.

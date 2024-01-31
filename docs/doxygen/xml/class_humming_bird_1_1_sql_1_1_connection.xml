@@ -1,0 +1,945 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="class_humming_bird_1_1_sql_1_1_connection" kind="class" language="C++" prot="public">
+    <compoundname>HummingBird::Sql::Connection</compoundname>
+    <includes refid="_connection_8h" local="no">Connection.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_humming_bird_1_1_sql_1_1_connection_1adc29deef6111415dd756b7f3a3364b26" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HummingBird::Sql::Connection::m_isConnected</definition>
+        <argsstring></argsstring>
+        <name>m_isConnected</name>
+        <qualifiedname>HummingBird::Sql::Connection::m_isConnected</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="213" column="10" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_humming_bird_1_1_sql_1_1_connection_1a48d93d0394b219f38b0d18a7eb841fc8" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string HummingBird::Sql::Connection::m_currentDatabaseName</definition>
+        <argsstring></argsstring>
+        <name>m_currentDatabaseName</name>
+        <qualifiedname>HummingBird::Sql::Connection::m_currentDatabaseName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="215" column="17" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_humming_bird_1_1_sql_1_1_connection_1a7bcb1b5665607cb4862c829c8e7a98dd" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string HummingBird::Sql::Connection::m_host</definition>
+        <argsstring></argsstring>
+        <name>m_host</name>
+        <qualifiedname>HummingBird::Sql::Connection::m_host</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="216" column="17" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_humming_bird_1_1_sql_1_1_connection_1a9aecb12bdae3de2d06444c41796cde5a" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string HummingBird::Sql::Connection::m_user</definition>
+        <argsstring></argsstring>
+        <name>m_user</name>
+        <qualifiedname>HummingBird::Sql::Connection::m_user</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="217" column="17" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_humming_bird_1_1_sql_1_1_connection_1a9f3772c114af6c30078ee1970f6ea822" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string HummingBird::Sql::Connection::m_password</definition>
+        <argsstring></argsstring>
+        <name>m_password</name>
+        <qualifiedname>HummingBird::Sql::Connection::m_password</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="218" column="17" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_humming_bird_1_1_sql_1_1_connection_1a640b9dd106d51820fd18df2e95151d0b" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t HummingBird::Sql::Connection::m_port</definition>
+        <argsstring></argsstring>
+        <name>m_port</name>
+        <qualifiedname>HummingBird::Sql::Connection::m_port</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="219" column="14" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_humming_bird_1_1_sql_1_1_connection_1ab5bd6e24fa8c561647def8dac2e99df8" prot="private" static="no" mutable="no">
+        <type>mysqlx::Session *</type>
+        <definition>mysqlx::Session* HummingBird::Sql::Connection::session</definition>
+        <argsstring></argsstring>
+        <name>session</name>
+        <qualifiedname>HummingBird::Sql::Connection::session</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="221" column="21" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_humming_bird_1_1_sql_1_1_connection_1ae37294cb3ade93f56c488ea9df510889" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::unique_ptr&lt; <ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> &gt;, <ref refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash" kindref="compound">case_insensitive_unordered_map::hash</ref>, <ref refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp" kindref="compound">case_insensitive_unordered_map::comp</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::unique_ptr&lt;SchemaInfo&gt;, case_insensitive_unordered_map::hash, case_insensitive_unordered_map::comp&gt; HummingBird::Sql::Connection::m_schemas</definition>
+        <argsstring></argsstring>
+        <name>m_schemas</name>
+        <qualifiedname>HummingBird::Sql::Connection::m_schemas</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="225" column="13" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1a11dd47b3aa64db0e4818758d74e905e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HummingBird::Sql::Connection::Connection</definition>
+        <argsstring>()</argsstring>
+        <name>Connection</name>
+        <qualifiedname>HummingBird::Sql::Connection::Connection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="57" column="5" bodyfile="src/Connection.cpp" bodystart="13" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1a119f44987d4e342f88eace7f9f0ce012" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HummingBird::Sql::Connection::~Connection</definition>
+        <argsstring>()</argsstring>
+        <name>~Connection</name>
+        <qualifiedname>HummingBird::Sql::Connection::~Connection</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="58" column="5" bodyfile="src/Connection.cpp" bodystart="16" bodyend="23"/>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1a19f0aff4ef660d6025bb11eb0b810268" compoundref="_connection_8cpp" startline="51" endline="63">disconnect</references>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2" compoundref="_connection_8h" startline="181" endline="183">isConnected</references>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1a8287ef082a37903e197d263a38a04d03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Connection::connect</definition>
+        <argsstring>(const std::string &amp;hostname, const std::string &amp;username, const std::string &amp;password, const std::string &amp;schemaName, uint16_t port)</argsstring>
+        <name>connect</name>
+        <qualifiedname>HummingBird::Sql::Connection::connect</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hostname</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>username</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>schemaName</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+<para>Connect to a MySQL database. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Connect to a MySQL database with the given hostname, username, password, schemaName and port. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hostname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The hostname of the MySQL database </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>username</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The username of the MySQL database </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>password</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The password of the MySQL database </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>schemaName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The defaultSchemaName of the MySQL database </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The port of the MySQL database </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="69" column="10" bodyfile="src/Connection.cpp" bodystart="25" bodyend="49"/>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" compoundref="_connection_8cpp" startline="87" endline="90">fetchColumns</references>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1af1ab3a26099425eaa7938109221f2099" compoundref="_connection_8cpp" startline="66" endline="73">fetchSchemas</references>
+        <references refid="_config_8h_1acf0f41eba0fd761746cf3eb9c900e030" compoundref="_config_8h" startline="15">HUMMINGBIRD_SQL_ASSERT</references>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2" compoundref="_connection_8h" startline="181" endline="183">isConnected</references>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="8" endline="18">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1a19f0aff4ef660d6025bb11eb0b810268" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Connection::disconnect</definition>
+        <argsstring>()</argsstring>
+        <name>disconnect</name>
+        <qualifiedname>HummingBird::Sql::Connection::disconnect</qualifiedname>
+        <briefdescription>
+<para>Disconnect from the MySQL database. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Disconnect from the MySQL database </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="76" column="10" bodyfile="src/Connection.cpp" bodystart="51" bodyend="63"/>
+        <references refid="_config_8h_1acf0f41eba0fd761746cf3eb9c900e030" compoundref="_config_8h" startline="15">HUMMINGBIRD_SQL_ASSERT</references>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2" compoundref="_connection_8h" startline="181" endline="183">isConnected</references>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1a119f44987d4e342f88eace7f9f0ce012" compoundref="_connection_8cpp" startline="16" endline="23">~Connection</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1af1ab3a26099425eaa7938109221f2099" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Connection::fetchSchemas</definition>
+        <argsstring>(const bool fetchTables, const bool fetchColumnsAndRows)</argsstring>
+        <name>fetchSchemas</name>
+        <qualifiedname>HummingBird::Sql::Connection::fetchSchemas</qualifiedname>
+        <param>
+          <type>const bool</type>
+          <declname>fetchTables</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>fetchColumnsAndRows</declname>
+        </param>
+        <briefdescription>
+<para>Fetch all schemas, tables, columns and rows. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fetchTables</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fetch all tables </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fetchColumnsAndRows</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fetch all columns and rows </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="84" column="10" bodyfile="src/Connection.cpp" bodystart="66" bodyend="73"/>
+        <references refid="namespace_humming_bird_1_1_sql_1_1_server_1a7e0921ae2051d2cd1c1f231bc4173b61" compoundref="_sql_functions_8cpp" startline="12" endline="52">HummingBird::Sql::Server::getSchemas</references>
+        <references refid="_config_8h_1af9aec3c5b10db82c21f96426322c6ab9" compoundref="_config_8h" startline="81" endline="84">HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION</references>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1a8287ef082a37903e197d263a38a04d03" compoundref="_connection_8cpp" startline="25" endline="49">connect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1ac6f602f44d586e7f9278af8b68c737f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Connection::fetchTables</definition>
+        <argsstring>(SchemaInfo &amp;schema, const bool fetchColumnsAndRows)</argsstring>
+        <name>fetchTables</name>
+        <qualifiedname>HummingBird::Sql::Connection::fetchTables</qualifiedname>
+        <param>
+          <type><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> &amp;</type>
+          <declname>schema</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>fetchColumnsAndRows</declname>
+        </param>
+        <briefdescription>
+<para>Fetch all tables, columns and rows. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>schema</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The schema to fetch the tables from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fetchColumnsAndRows</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fetch all columns and rows </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="92" column="10" bodyfile="src/Connection.cpp" bodystart="75" bodyend="78"/>
+        <references refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" compoundref="_sql_functions_8cpp" startline="54" endline="99">HummingBird::Sql::Server::getTables</references>
+        <references refid="struct_humming_bird_1_1_sql_1_1_schema_info_1ab58f39d0e05b41ebe9b59bd8e6a4762f" compoundref="_structures_8h" startline="62" endline="62">HummingBird::Sql::SchemaInfo::tables</references>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1ab7d1c7bfae27629cbac4ec7a275cde50" compoundref="_connection_8cpp" startline="79" endline="85">fetchTables</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1ab7d1c7bfae27629cbac4ec7a275cde50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Connection::fetchTables</definition>
+        <argsstring>(const std::string &amp;schemaName, const bool fetchColumnsAndRows)</argsstring>
+        <name>fetchTables</name>
+        <qualifiedname>HummingBird::Sql::Connection::fetchTables</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>schemaName</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>fetchColumnsAndRows</declname>
+        </param>
+        <briefdescription>
+<para>Fetch all columns and rows. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>schemaName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The schemaName to fetch the columns and rows from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fetchColumnsAndRows</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fetch all columns and rows </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="100" column="10" bodyfile="src/Connection.cpp" bodystart="79" bodyend="85"/>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1ac6f602f44d586e7f9278af8b68c737f0" compoundref="_connection_8cpp" startline="75" endline="78">fetchTables</references>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Connection::fetchColumns</definition>
+        <argsstring>(SchemaInfo &amp;schema, TableInfo &amp;table)</argsstring>
+        <name>fetchColumns</name>
+        <qualifiedname>HummingBird::Sql::Connection::fetchColumns</qualifiedname>
+        <param>
+          <type><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> &amp;</type>
+          <declname>schema</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref> &amp;</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+<para>Fetch all tables, columns and rows. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>schema</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The schema to fetch the tables from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The table to fetch the columns and rows from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="108" column="10" bodyfile="src/Connection.cpp" bodystart="87" bodyend="90"/>
+        <references refid="struct_humming_bird_1_1_sql_1_1_table_info_1a954c077ad6b196fbacdff24a16fea937" compoundref="_structures_8h" startline="56">HummingBird::Sql::TableInfo::columns</references>
+        <references refid="namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2" compoundref="_sql_functions_8cpp" startline="101" endline="147">HummingBird::Sql::Server::getTableColumns</references>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1a8287ef082a37903e197d263a38a04d03" compoundref="_connection_8cpp" startline="25" endline="49">connect</referencedby>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1a0f5ed72c4e86064e01a9eff3eb50be10" compoundref="_connection_8cpp" startline="98" endline="104">fetchColumns</referencedby>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1a1330adfbdf07b4cf889bc9ce066b8176" compoundref="_connection_8cpp" startline="91" endline="97">fetchColumns</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1a1330adfbdf07b4cf889bc9ce066b8176" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Connection::fetchColumns</definition>
+        <argsstring>(SchemaInfo &amp;schema, const std::string &amp;tableName)</argsstring>
+        <name>fetchColumns</name>
+        <qualifiedname>HummingBird::Sql::Connection::fetchColumns</qualifiedname>
+        <param>
+          <type><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> &amp;</type>
+          <declname>schema</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tableName</declname>
+        </param>
+        <briefdescription>
+<para>Fetch all columns and rows. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>schema</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The schema to fetch the columns and rows from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The table name to fetch the columns and rows from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="116" column="10" bodyfile="src/Connection.cpp" bodystart="91" bodyend="97"/>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" compoundref="_connection_8cpp" startline="87" endline="90">fetchColumns</references>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1a0f5ed72c4e86064e01a9eff3eb50be10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Connection::fetchColumns</definition>
+        <argsstring>(const std::string &amp;schemaName, const std::string &amp;tableName)</argsstring>
+        <name>fetchColumns</name>
+        <qualifiedname>HummingBird::Sql::Connection::fetchColumns</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>schemaName</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tableName</declname>
+        </param>
+        <briefdescription>
+<para>Fetch all columns and rows. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>schemaName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The schemaName to fetch the columns and rows from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tableName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tableName to fetch the columns and rows from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="124" column="10" bodyfile="src/Connection.cpp" bodystart="98" bodyend="104"/>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" compoundref="_connection_8cpp" startline="87" endline="90">fetchColumns</references>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Connection::fetchRows</definition>
+        <argsstring>(SchemaInfo &amp;schema, TableInfo &amp;table)</argsstring>
+        <name>fetchRows</name>
+        <qualifiedname>HummingBird::Sql::Connection::fetchRows</qualifiedname>
+        <param>
+          <type><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> &amp;</type>
+          <declname>schema</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref> &amp;</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+<para>Fetch all rows. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>schema</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The schema to fetch the rows from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The table to fetch the rows from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="133" column="10" bodyfile="src/Connection.cpp" bodystart="106" bodyend="109"/>
+        <references refid="namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f" compoundref="_sql_functions_8cpp" startline="149" endline="240">HummingBird::Sql::Server::getTableRows</references>
+        <references refid="struct_humming_bird_1_1_sql_1_1_table_info_1a7ee7758cd92b037afc6751ec6647c843" compoundref="_structures_8h" startline="57">HummingBird::Sql::TableInfo::rows</references>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1af2d5636e1d930c255b6c8ac67d363944" compoundref="_connection_8cpp" startline="117" endline="123">fetchRows</referencedby>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1a9da9c12070223cdce58d7fbeb306d38c" compoundref="_connection_8cpp" startline="110" endline="116">fetchRows</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1a9da9c12070223cdce58d7fbeb306d38c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Connection::fetchRows</definition>
+        <argsstring>(SchemaInfo &amp;schema, const std::string &amp;tableName)</argsstring>
+        <name>fetchRows</name>
+        <qualifiedname>HummingBird::Sql::Connection::fetchRows</qualifiedname>
+        <param>
+          <type><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> &amp;</type>
+          <declname>schema</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tableName</declname>
+        </param>
+        <briefdescription>
+<para>Fetch all rows. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>schemaName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The schemaName to fetch the rows from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tableName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tableName to fetch the rows from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="142" column="10" bodyfile="src/Connection.cpp" bodystart="110" bodyend="116"/>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631" compoundref="_connection_8cpp" startline="106" endline="109">fetchRows</references>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1af2d5636e1d930c255b6c8ac67d363944" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Connection::fetchRows</definition>
+        <argsstring>(const std::string &amp;schemaNames, const std::string &amp;tableName)</argsstring>
+        <name>fetchRows</name>
+        <qualifiedname>HummingBird::Sql::Connection::fetchRows</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>schemaNames</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tableName</declname>
+        </param>
+        <briefdescription>
+<para>Fetch all rows. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>schemaName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The schemaName to fetch the rows from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tableName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tableName to fetch the rows from </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="150" column="10" bodyfile="src/Connection.cpp" bodystart="117" bodyend="123"/>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631" compoundref="_connection_8cpp" startline="106" endline="109">fetchRows</references>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1a07b5aeb9ea5dac4347c777a72c8e1eb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> &amp;</type>
+        <definition>const SchemaInfo &amp; HummingBird::Sql::Connection::getSchema</definition>
+        <argsstring>(const std::string &amp;schemaName)</argsstring>
+        <name>getSchema</name>
+        <qualifiedname>HummingBird::Sql::Connection::getSchema</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>schemaName</declname>
+        </param>
+        <briefdescription>
+<para>Get an schema by name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>schemaName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the schema </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> The schema </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="159" column="22" bodyfile="src/Connection.cpp" bodystart="126" bodyend="132"/>
+        <references refid="_config_8h_1af9aec3c5b10db82c21f96426322c6ab9" compoundref="_config_8h" startline="81" endline="84">HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION</references>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1ad7d577e472d7bef648a105d5fff2b1d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref> &amp;</type>
+        <definition>const TableInfo &amp; HummingBird::Sql::Connection::getTable</definition>
+        <argsstring>(SchemaInfo &amp;schema, const std::string &amp;tableName)</argsstring>
+        <name>getTable</name>
+        <qualifiedname>HummingBird::Sql::Connection::getTable</qualifiedname>
+        <param>
+          <type><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> &amp;</type>
+          <declname>schema</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tableName</declname>
+        </param>
+        <briefdescription>
+<para>Get an table by name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>schema</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The schema to get the table from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tableName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the table </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref> The table </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="167" column="21" bodyfile="src/Connection.cpp" bodystart="133" bodyend="139"/>
+        <references refid="_config_8h_1af9aec3c5b10db82c21f96426322c6ab9" compoundref="_config_8h" startline="81" endline="84">HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION</references>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1ac542254dc7d946b92b5bf4da438a1d78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref> &amp;</type>
+        <definition>const TableInfo &amp; HummingBird::Sql::Connection::getTable</definition>
+        <argsstring>(const std::string &amp;schema, const std::string &amp;tableName)</argsstring>
+        <name>getTable</name>
+        <qualifiedname>HummingBird::Sql::Connection::getTable</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>schema</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tableName</declname>
+        </param>
+        <briefdescription>
+<para>Get an table by name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>schemaName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The schemaName to get the table from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tableName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the table </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref> The table </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="175" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool HummingBird::Sql::Connection::isConnected</definition>
+        <argsstring>() const</argsstring>
+        <name>isConnected</name>
+        <qualifiedname>HummingBird::Sql::Connection::isConnected</qualifiedname>
+        <briefdescription>
+<para>Get connection status. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>bool True if connected </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="181" column="10" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="181" bodyend="183"/>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1a8287ef082a37903e197d263a38a04d03" compoundref="_connection_8cpp" startline="25" endline="49">connect</referencedby>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1a19f0aff4ef660d6025bb11eb0b810268" compoundref="_connection_8cpp" startline="51" endline="63">disconnect</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a7e0921ae2051d2cd1c1f231bc4173b61" compoundref="_sql_functions_8cpp" startline="12" endline="52">HummingBird::Sql::Server::getSchemas</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2" compoundref="_sql_functions_8cpp" startline="101" endline="147">HummingBird::Sql::Server::getTableColumns</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f" compoundref="_sql_functions_8cpp" startline="149" endline="240">HummingBird::Sql::Server::getTableRows</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" compoundref="_sql_functions_8cpp" startline="54" endline="99">HummingBird::Sql::Server::getTables</referencedby>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1a119f44987d4e342f88eace7f9f0ce012" compoundref="_connection_8cpp" startline="16" endline="23">~Connection</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1ae64b880c6aefa583e1e5f86f56ca9e07" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>mysqlx::Session &amp;</type>
+        <definition>mysqlx::Session &amp; HummingBird::Sql::Connection::getSession</definition>
+        <argsstring>() const</argsstring>
+        <name>getSession</name>
+        <qualifiedname>HummingBird::Sql::Connection::getSession</qualifiedname>
+        <briefdescription>
+<para>Get the current session ptr. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Session ptr The session ptr </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="189" column="21" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="189" bodyend="191"/>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a7e0921ae2051d2cd1c1f231bc4173b61" compoundref="_sql_functions_8cpp" startline="12" endline="52">HummingBird::Sql::Server::getSchemas</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2" compoundref="_sql_functions_8cpp" startline="101" endline="147">HummingBird::Sql::Server::getTableColumns</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f" compoundref="_sql_functions_8cpp" startline="149" endline="240">HummingBird::Sql::Server::getTableRows</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" compoundref="_sql_functions_8cpp" startline="54" endline="99">HummingBird::Sql::Server::getTables</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1a0a4f9f5e10f8824eacb93414cdf98b60" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> *</type>
+        <definition>SchemaInfo * HummingBird::Sql::Connection::getSchemaPtr</definition>
+        <argsstring>(const std::string &amp;schemaName)</argsstring>
+        <name>getSchemaPtr</name>
+        <qualifiedname>HummingBird::Sql::Connection::getSchemaPtr</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>schemaName</declname>
+        </param>
+        <briefdescription>
+<para>Get an schema by name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>schemaName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the schema </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> ptr The schema </para>
+</simplesect>
+<simplesect kind="return"><para>nullptr if the schema is not found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="201" column="16" bodyfile="src/Connection.cpp" bodystart="142" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="class_humming_bird_1_1_sql_1_1_connection_1a808c9e1107b9fd342eac250a585dff86" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref> *</type>
+        <definition>TableInfo * HummingBird::Sql::Connection::getTablePtr</definition>
+        <argsstring>(SchemaInfo &amp;schema, const std::string &amp;tableName)</argsstring>
+        <name>getTablePtr</name>
+        <qualifiedname>HummingBird::Sql::Connection::getTablePtr</qualifiedname>
+        <param>
+          <type><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> &amp;</type>
+          <declname>schema</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tableName</declname>
+        </param>
+        <briefdescription>
+<para>Get an table by name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>schema</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The schema to get the table from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tableName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the table </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref> ptr The table </para>
+</simplesect>
+<simplesect kind="return"><para>nullptr if the table is not found </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="210" column="15" bodyfile="src/Connection.cpp" bodystart="152" bodyend="161"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="class_humming_bird_1_1_sql_1_1_connection" kindref="compound">Connection</ref> class for connecting to a MySQL database. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class is used to connect to a MySQL database and fetch the schemas, tables, columns and rows. </para>
+    </detaileddescription>
+    <location file="include/Hummingbird_SQL/Connection.h" line="55" column="3" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="55" bodyend="226"/>
+    <listofallmembers>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a8287ef082a37903e197d263a38a04d03" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>connect</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a11dd47b3aa64db0e4818758d74e905e4" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>Connection</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a19f0aff4ef660d6025bb11eb0b810268" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>disconnect</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>fetchColumns</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a1330adfbdf07b4cf889bc9ce066b8176" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>fetchColumns</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a0f5ed72c4e86064e01a9eff3eb50be10" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>fetchColumns</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>fetchRows</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a9da9c12070223cdce58d7fbeb306d38c" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>fetchRows</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1af2d5636e1d930c255b6c8ac67d363944" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>fetchRows</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1af1ab3a26099425eaa7938109221f2099" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>fetchSchemas</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1ac6f602f44d586e7f9278af8b68c737f0" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>fetchTables</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1ab7d1c7bfae27629cbac4ec7a275cde50" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>fetchTables</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a07b5aeb9ea5dac4347c777a72c8e1eb2" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>getSchema</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a0a4f9f5e10f8824eacb93414cdf98b60" prot="private" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>getSchemaPtr</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1ae64b880c6aefa583e1e5f86f56ca9e07" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>getSession</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1ad7d577e472d7bef648a105d5fff2b1d3" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>getTable</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1ac542254dc7d946b92b5bf4da438a1d78" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>getTable</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a808c9e1107b9fd342eac250a585dff86" prot="private" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>getTablePtr</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>isConnected</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a48d93d0394b219f38b0d18a7eb841fc8" prot="private" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>m_currentDatabaseName</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a7bcb1b5665607cb4862c829c8e7a98dd" prot="private" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>m_host</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1adc29deef6111415dd756b7f3a3364b26" prot="private" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>m_isConnected</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a9f3772c114af6c30078ee1970f6ea822" prot="private" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>m_password</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a640b9dd106d51820fd18df2e95151d0b" prot="private" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>m_port</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1ae37294cb3ade93f56c488ea9df510889" prot="private" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>m_schemas</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a9aecb12bdae3de2d06444c41796cde5a" prot="private" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>m_user</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1ab5bd6e24fa8c561647def8dac2e99df8" prot="private" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>session</name></member>
+      <member refid="class_humming_bird_1_1_sql_1_1_connection_1a119f44987d4e342f88eace7f9f0ce012" prot="public" virt="non-virtual"><scope>HummingBird::Sql::Connection</scope><name>~Connection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

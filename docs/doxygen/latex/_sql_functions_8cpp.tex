@@ -1,0 +1,19 @@
+\doxysection{src/\+Sql\+Functions.cpp File Reference}
+\label{_sql_functions_8cpp}\index{src/SqlFunctions.cpp@{src/SqlFunctions.cpp}}
+{\ttfamily \#include $<$Sql\+Functions.\+h$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \textbf{ Humming\+Bird}
+\item 
+namespace \textbf{ Humming\+Bird\+::\+Sql}
+\item 
+namespace \textbf{ Humming\+Bird\+::\+Sql\+::\+Server}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \textbf{ Schema\+Info} $>$, \textbf{ case\+\_\+insensitive\+\_\+unordered\+\_\+map\+::hash}, \textbf{ case\+\_\+insensitive\+\_\+unordered\+\_\+map\+::comp} $>$ \textbf{ Humming\+Bird\+::\+Sql\+::\+Server\+::get\+Schemas} (const \textbf{ Connection} \&connection, const bool \textbf{ get\+Tables}, const bool get\+Columns\+And\+Rows=false)
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \textbf{ Table\+Info} $>$ \textbf{ Humming\+Bird\+::\+Sql\+::\+Server\+::get\+Tables} (const \textbf{ Connection} \&connection, const \textbf{ Schema\+Info} \&database\+Info, const bool get\+Columns\+And\+Rows=false)
+\end{DoxyCompactItemize}

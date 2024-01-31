@@ -1,0 +1,361 @@
+.TH "HummingBird::Sql::Connection" 3 "Version 0.1" "Hummingbird sql" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HummingBird::Sql::Connection \- \fBConnection\fP class for connecting to a MySQL database\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <Connection\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBConnection\fP ()"
+.br
+.ti -1c
+.RI "\fB~Connection\fP ()"
+.br
+.ti -1c
+.RI "void \fBconnect\fP (const std::string &hostname, const std::string &username, const std::string &password, const std::string &schemaName, uint16_t port)"
+.br
+.RI "Connect to a MySQL database\&. "
+.ti -1c
+.RI "void \fBdisconnect\fP ()"
+.br
+.RI "Disconnect from the MySQL database\&. "
+.ti -1c
+.RI "void \fBfetchSchemas\fP (const bool \fBfetchTables\fP, const bool fetchColumnsAndRows)"
+.br
+.RI "Fetch all schemas, tables, columns and rows\&. "
+.ti -1c
+.RI "void \fBfetchTables\fP (\fBSchemaInfo\fP &schema, const bool fetchColumnsAndRows)"
+.br
+.RI "Fetch all tables, columns and rows\&. "
+.ti -1c
+.RI "void \fBfetchTables\fP (const std::string &schemaName, const bool fetchColumnsAndRows)"
+.br
+.RI "Fetch all columns and rows\&. "
+.ti -1c
+.RI "void \fBfetchColumns\fP (\fBSchemaInfo\fP &schema, \fBTableInfo\fP &table)"
+.br
+.RI "Fetch all tables, columns and rows\&. "
+.ti -1c
+.RI "void \fBfetchColumns\fP (\fBSchemaInfo\fP &schema, const std::string &tableName)"
+.br
+.RI "Fetch all columns and rows\&. "
+.ti -1c
+.RI "void \fBfetchColumns\fP (const std::string &schemaName, const std::string &tableName)"
+.br
+.RI "Fetch all columns and rows\&. "
+.ti -1c
+.RI "void \fBfetchRows\fP (\fBSchemaInfo\fP &schema, \fBTableInfo\fP &table)"
+.br
+.RI "Fetch all rows\&. "
+.ti -1c
+.RI "void \fBfetchRows\fP (\fBSchemaInfo\fP &schema, const std::string &tableName)"
+.br
+.RI "Fetch all rows\&. "
+.ti -1c
+.RI "void \fBfetchRows\fP (const std::string &schemaNames, const std::string &tableName)"
+.br
+.RI "Fetch all rows\&. "
+.ti -1c
+.RI "const \fBSchemaInfo\fP & \fBgetSchema\fP (const std::string &schemaName)"
+.br
+.RI "Get an schema by name\&. "
+.ti -1c
+.RI "const \fBTableInfo\fP & \fBgetTable\fP (\fBSchemaInfo\fP &schema, const std::string &tableName)"
+.br
+.RI "Get an table by name\&. "
+.ti -1c
+.RI "const \fBTableInfo\fP & \fBgetTable\fP (const std::string &schema, const std::string &tableName)"
+.br
+.RI "Get an table by name\&. "
+.ti -1c
+.RI "bool \fBisConnected\fP () const"
+.br
+.RI "Get connection status\&. "
+.ti -1c
+.RI "mysqlx::Session & \fBgetSession\fP () const"
+.br
+.RI "Get the current session ptr\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBConnection\fP class for connecting to a MySQL database\&. 
+
+This class is used to connect to a MySQL database and fetch the schemas, tables, columns and rows\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HummingBird::Sql::Connection::Connection ()"
+
+.SS "HummingBird::Sql::Connection::~Connection ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void HummingBird::Sql::Connection::connect (const std::string & hostname, const std::string & username, const std::string & password, const std::string & schemaName, uint16_t port)"
+
+.PP
+Connect to a MySQL database\&. Connect to a MySQL database with the given hostname, username, password, schemaName and port\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhostname\fP The hostname of the MySQL database 
+.br
+\fIusername\fP The username of the MySQL database 
+.br
+\fIpassword\fP The password of the MySQL database 
+.br
+\fIschemaName\fP The defaultSchemaName of the MySQL database 
+.br
+\fIport\fP The port of the MySQL database 
+.RE
+.PP
+
+.SS "void HummingBird::Sql::Connection::disconnect ()"
+
+.PP
+Disconnect from the MySQL database\&. Disconnect from the MySQL database 
+.SS "void HummingBird::Sql::Connection::fetchColumns (const std::string & schemaName, const std::string & tableName)"
+
+.PP
+Fetch all columns and rows\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschemaName\fP The schemaName to fetch the columns and rows from 
+.br
+\fItableName\fP The tableName to fetch the columns and rows from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void HummingBird::Sql::Connection::fetchColumns (\fBSchemaInfo\fP & schema, const std::string & tableName)"
+
+.PP
+Fetch all columns and rows\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschema\fP The schema to fetch the columns and rows from 
+.br
+\fItable\fP The table name to fetch the columns and rows from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void HummingBird::Sql::Connection::fetchColumns (\fBSchemaInfo\fP & schema, \fBTableInfo\fP & table)"
+
+.PP
+Fetch all tables, columns and rows\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschema\fP The schema to fetch the tables from 
+.br
+\fItable\fP The table to fetch the columns and rows from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void HummingBird::Sql::Connection::fetchRows (const std::string & schemaNames, const std::string & tableName)"
+
+.PP
+Fetch all rows\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschemaName\fP The schemaName to fetch the rows from 
+.br
+\fItableName\fP The tableName to fetch the rows from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void HummingBird::Sql::Connection::fetchRows (\fBSchemaInfo\fP & schema, const std::string & tableName)"
+
+.PP
+Fetch all rows\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschemaName\fP The schemaName to fetch the rows from 
+.br
+\fItableName\fP The tableName to fetch the rows from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void HummingBird::Sql::Connection::fetchRows (\fBSchemaInfo\fP & schema, \fBTableInfo\fP & table)"
+
+.PP
+Fetch all rows\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschema\fP The schema to fetch the rows from 
+.br
+\fItable\fP The table to fetch the rows from 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void HummingBird::Sql::Connection::fetchSchemas (const bool fetchTables, const bool fetchColumnsAndRows)"
+
+.PP
+Fetch all schemas, tables, columns and rows\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfetchTables\fP Fetch all tables 
+.br
+\fIfetchColumnsAndRows\fP Fetch all columns and rows 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void HummingBird::Sql::Connection::fetchTables (const std::string & schemaName, const bool fetchColumnsAndRows)"
+
+.PP
+Fetch all columns and rows\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschemaName\fP The schemaName to fetch the columns and rows from 
+.br
+\fIfetchColumnsAndRows\fP Fetch all columns and rows 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void HummingBird::Sql::Connection::fetchTables (\fBSchemaInfo\fP & schema, const bool fetchColumnsAndRows)"
+
+.PP
+Fetch all tables, columns and rows\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschema\fP The schema to fetch the tables from 
+.br
+\fIfetchColumnsAndRows\fP Fetch all columns and rows 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "const \fBSchemaInfo\fP & HummingBird::Sql::Connection::getSchema (const std::string & schemaName)"
+
+.PP
+Get an schema by name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschemaName\fP The name of the schema 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBSchemaInfo\fP The schema 
+.RE
+.PP
+
+.SS "mysqlx::Session & HummingBird::Sql::Connection::getSession () const\fR [inline]\fP"
+
+.PP
+Get the current session ptr\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Session ptr The session ptr 
+.RE
+.PP
+
+.SS "const \fBTableInfo\fP & HummingBird::Sql::Connection::getTable (const std::string & schema, const std::string & tableName)"
+
+.PP
+Get an table by name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschemaName\fP The schemaName to get the table from 
+.br
+\fItableName\fP The name of the table 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBTableInfo\fP The table 
+.RE
+.PP
+
+.SS "const \fBTableInfo\fP & HummingBird::Sql::Connection::getTable (\fBSchemaInfo\fP & schema, const std::string & tableName)"
+
+.PP
+Get an table by name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIschema\fP The schema to get the table from 
+.br
+\fItableName\fP The name of the table 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBTableInfo\fP The table 
+.RE
+.PP
+
+.SS "bool HummingBird::Sql::Connection::isConnected () const\fR [inline]\fP"
+
+.PP
+Get connection status\&. 
+.PP
+\fBReturns\fP
+.RS 4
+bool True if connected 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Hummingbird sql from the source code\&.

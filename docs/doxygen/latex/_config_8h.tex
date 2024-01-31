@@ -1,0 +1,173 @@
+\doxysection{include/\+Hummingbird\+\_\+\+SQL/\+Config.h File Reference}
+\label{_config_8h}\index{include/Hummingbird\_SQL/Config.h@{include/Hummingbird\_SQL/Config.h}}
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$optional$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Logging\+::source\+\_\+loc}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \textbf{ Logging}
+\item 
+namespace \textbf{ Settings}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+ASSERT}(\+\_\+\+EXPR)~assert(\+\_\+\+EXPR)
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+TRACE}~0
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+LOG}~1
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+ERROR}~2
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+FATAL}~3
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+NONE}~4
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL}~\textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+TRACE}
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+ACTIVE}~true
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SERVER\+\_\+\+TRACE\+\_\+\+FUNCTION}(...)
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SERVER\+\_\+\+LOG\+\_\+\+FUNCTION}(...)
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SERVER\+\_\+\+ERROR\+\_\+\+FUNCTION}(...)
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SERVER\+\_\+\+FATAL\+\_\+\+FUNCTION}(...)
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SETTINGS\+\_\+\+FETCH\+\_\+\+TABLES\+\_\+\+ON\+\_\+\+CONNECT}~true
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SETTINGS\+\_\+\+FETCH\+\_\+\+COLUMNS\+\_\+\+AND\+\_\+\+ROWS\+\_\+\+ON\+\_\+\+CONNECT}~false
+\item 
+\#define \textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SETTINGS\+\_\+\+DEFAULT\+\_\+\+ROW\+\_\+\+LIMIT}~1000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\label{_config_8h_acf0f41eba0fd761746cf3eb9c900e030} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_ASSERT@{HUMMINGBIRD\_SQL\_ASSERT}}
+\index{HUMMINGBIRD\_SQL\_ASSERT@{HUMMINGBIRD\_SQL\_ASSERT}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_ASSERT}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+EXPR }\end{DoxyParamCaption})~assert(\+\_\+\+EXPR)}
+
+\label{_config_8h_a608df755229e6a3858530cd65c8bfffc} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_LOG\_ACTIVE@{HUMMINGBIRD\_SQL\_LOG\_ACTIVE}}
+\index{HUMMINGBIRD\_SQL\_LOG\_ACTIVE@{HUMMINGBIRD\_SQL\_LOG\_ACTIVE}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_LOG\_ACTIVE}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+ACTIVE~true}
+
+\label{_config_8h_aff144c0ab491308722b9700f6622a4b3} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_LOG\_LEVEL@{HUMMINGBIRD\_SQL\_LOG\_LEVEL}}
+\index{HUMMINGBIRD\_SQL\_LOG\_LEVEL@{HUMMINGBIRD\_SQL\_LOG\_LEVEL}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_LOG\_LEVEL}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL~\textbf{ HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+TRACE}}
+
+\label{_config_8h_ae357661fe0ff8bbd08cdf503400adc4c} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_LOG\_LEVEL\_ERROR@{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_ERROR}}
+\index{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_ERROR@{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_ERROR}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_ERROR}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+ERROR~2}
+
+\label{_config_8h_a585fb591d8027c09c18681a7e415cbe1} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_LOG\_LEVEL\_FATAL@{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_FATAL}}
+\index{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_FATAL@{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_FATAL}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_FATAL}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+FATAL~3}
+
+\label{_config_8h_ab123c15574a81f66ce36926c162c2cf8} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_LOG\_LEVEL\_LOG@{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_LOG}}
+\index{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_LOG@{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_LOG}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_LOG}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+LOG~1}
+
+\label{_config_8h_aa3778262e4b8c744ab8b48ba9f9e6ebe} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_LOG\_LEVEL\_NONE@{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_NONE}}
+\index{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_NONE@{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_NONE}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_NONE}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+NONE~4}
+
+\label{_config_8h_a06d1258eda4150e8933668fb7db7cf96} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_LOG\_LEVEL\_TRACE@{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_TRACE}}
+\index{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_TRACE@{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_TRACE}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_LOG\_LEVEL\_TRACE}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+TRACE~0}
+
+\label{_config_8h_af9aec3c5b10db82c21f96426322c6ab9} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_SERVER\_ERROR\_FUNCTION@{HUMMINGBIRD\_SQL\_SERVER\_ERROR\_FUNCTION}}
+\index{HUMMINGBIRD\_SQL\_SERVER\_ERROR\_FUNCTION@{HUMMINGBIRD\_SQL\_SERVER\_ERROR\_FUNCTION}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_SERVER\_ERROR\_FUNCTION}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SERVER\+\_\+\+ERROR\+\_\+\+FUNCTION(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (HUMMINGBIRD\_SQL\_LOG\_ACTIVE\ \&\&\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\ <=\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_ERROR)\ \(\backslash\)}
+\DoxyCodeLine{\ \ ::Logging::showError(::Logging::source\_loc(\_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_FUNCTION\_\_),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+\label{_config_8h_a4d548edca0a2b9c8c0b14e5b20b35af6} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_SERVER\_FATAL\_FUNCTION@{HUMMINGBIRD\_SQL\_SERVER\_FATAL\_FUNCTION}}
+\index{HUMMINGBIRD\_SQL\_SERVER\_FATAL\_FUNCTION@{HUMMINGBIRD\_SQL\_SERVER\_FATAL\_FUNCTION}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_SERVER\_FATAL\_FUNCTION}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SERVER\+\_\+\+FATAL\+\_\+\+FUNCTION(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (HUMMINGBIRD\_SQL\_LOG\_ACTIVE\ \&\&\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\ <=\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_FATAL)\ \(\backslash\)}
+\DoxyCodeLine{\ \ ::Logging::showFatal(::Logging::source\_loc(\_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_FUNCTION\_\_),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+\label{_config_8h_a9c4811b8d6f3b58111a7fdac28766095} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_SERVER\_LOG\_FUNCTION@{HUMMINGBIRD\_SQL\_SERVER\_LOG\_FUNCTION}}
+\index{HUMMINGBIRD\_SQL\_SERVER\_LOG\_FUNCTION@{HUMMINGBIRD\_SQL\_SERVER\_LOG\_FUNCTION}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_SERVER\_LOG\_FUNCTION}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SERVER\+\_\+\+LOG\+\_\+\+FUNCTION(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (HUMMINGBIRD\_SQL\_LOG\_ACTIVE\ \&\&\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\ <=\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_LOG)\ \(\backslash\)}
+\DoxyCodeLine{\ \ ::Logging::showLog(::Logging::source\_loc(\_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_FUNCTION\_\_),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+\label{_config_8h_a7ca7c3f197541717d16a8755985fa1ec} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_SERVER\_TRACE\_FUNCTION@{HUMMINGBIRD\_SQL\_SERVER\_TRACE\_FUNCTION}}
+\index{HUMMINGBIRD\_SQL\_SERVER\_TRACE\_FUNCTION@{HUMMINGBIRD\_SQL\_SERVER\_TRACE\_FUNCTION}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_SERVER\_TRACE\_FUNCTION}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SERVER\+\_\+\+TRACE\+\_\+\+FUNCTION(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}\ (HUMMINGBIRD\_SQL\_LOG\_ACTIVE\ \&\&\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\ <=\ HUMMINGBIRD\_SQL\_LOG\_LEVEL\_TRACE)\ \(\backslash\)}
+\DoxyCodeLine{\ \ ::Logging::showTrace(::Logging::source\_loc(\_\_FILE\_\_,\ \_\_LINE\_\_,\ \_\_FUNCTION\_\_),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+\label{_config_8h_a36b93bb4ec221fb7728b2fb390c1535b} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_SETTINGS\_DEFAULT\_ROW\_LIMIT@{HUMMINGBIRD\_SQL\_SETTINGS\_DEFAULT\_ROW\_LIMIT}}
+\index{HUMMINGBIRD\_SQL\_SETTINGS\_DEFAULT\_ROW\_LIMIT@{HUMMINGBIRD\_SQL\_SETTINGS\_DEFAULT\_ROW\_LIMIT}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_SETTINGS\_DEFAULT\_ROW\_LIMIT}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SETTINGS\+\_\+\+DEFAULT\+\_\+\+ROW\+\_\+\+LIMIT~1000}
+
+\label{_config_8h_af2e140ca4b91e1925f7e7ca652e45b64} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_COLUMNS\_AND\_ROWS\_ON\_CONNECT@{HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_COLUMNS\_AND\_ROWS\_ON\_CONNECT}}
+\index{HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_COLUMNS\_AND\_ROWS\_ON\_CONNECT@{HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_COLUMNS\_AND\_ROWS\_ON\_CONNECT}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_COLUMNS\_AND\_ROWS\_ON\_CONNECT}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SETTINGS\+\_\+\+FETCH\+\_\+\+COLUMNS\+\_\+\+AND\+\_\+\+ROWS\+\_\+\+ON\+\_\+\+CONNECT~false}
+
+\label{_config_8h_aee25cbb1419b856d16a2713cd09e1d94} 
+\index{Config.h@{Config.h}!HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_TABLES\_ON\_CONNECT@{HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_TABLES\_ON\_CONNECT}}
+\index{HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_TABLES\_ON\_CONNECT@{HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_TABLES\_ON\_CONNECT}!Config.h@{Config.h}}
+\doxysubsubsection{HUMMINGBIRD\_SQL\_SETTINGS\_FETCH\_TABLES\_ON\_CONNECT}
+{\footnotesize\ttfamily \#define HUMMINGBIRD\+\_\+\+SQL\+\_\+\+SETTINGS\+\_\+\+FETCH\+\_\+\+TABLES\+\_\+\+ON\+\_\+\+CONNECT~true}
+

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash" xml:lang="en-US">
+<title>HummingBird::Sql::case_insensitive_unordered_map::hash Struct Reference</title>
+<indexterm><primary>HummingBird::Sql::case_insensitive_unordered_map::hash</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Connection.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>std::size_t <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash_1a29189a3b7bd25f96c54ddc2e9dd0f6f6">operator()</link> (std::string <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">str</link>) <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">const</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash_1a29189a3b7bd25f96c54ddc2e9dd0f6f6"/><section>
+    <title>operator()()</title>
+<indexterm><primary>operator()</primary><secondary>HummingBird::Sql::case_insensitive_unordered_map::hash</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::case_insensitive_unordered_map::hash</primary><secondary>operator()</secondary></indexterm>
+<para><computeroutput>std::size_t HummingBird::Sql::case_insensitive_unordered_map::hash::operator() (std::string str) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+include/Hummingbird_SQL/<link linkend="__connection_8h">Connection.h</link></section>
+</section>

@@ -1,0 +1,52 @@
+.TH "HummingBird::Sql::Row" 3 "Version 0.1" "Hummingbird sql" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HummingBird::Sql::Row
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <Structures\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRow\fP ()=default"
+.br
+.ti -1c
+.RI "\fB~Row\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBaddColumn\fP (const std::string &columnName, const \fBColumnValue\fP &columnValue)"
+.br
+.ti -1c
+.RI "\fBColumnValue\fP \fBgetColumn\fP (const std::string &columnName) const"
+.br
+.ti -1c
+.RI "std::unordered_map< std::string, \fBColumnValue\fP > \fBgetColumns\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetColumns\fP (const std::unordered_map< std::string, \fBColumnValue\fP > &columns)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HummingBird::Sql::Row::Row ()\fR [default]\fP"
+
+.SS "HummingBird::Sql::Row::~Row ()\fR [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void HummingBird::Sql::Row::addColumn (const std::string & columnName, const \fBColumnValue\fP & columnValue)\fR [inline]\fP"
+
+.SS "\fBColumnValue\fP HummingBird::Sql::Row::getColumn (const std::string & columnName) const\fR [inline]\fP"
+
+.SS "std::unordered_map< std::string, \fBColumnValue\fP > HummingBird::Sql::Row::getColumns () const\fR [inline]\fP"
+
+.SS "void HummingBird::Sql::Row::setColumns (const std::unordered_map< std::string, \fBColumnValue\fP > & columns)\fR [inline]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Hummingbird sql from the source code\&.

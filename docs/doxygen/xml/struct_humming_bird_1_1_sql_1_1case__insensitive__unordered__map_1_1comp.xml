@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp" kind="struct" language="C++" prot="public">
+    <compoundname>HummingBird::Sql::case_insensitive_unordered_map::comp</compoundname>
+    <includes refid="_connection_8h" local="no">Connection.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp_1a9168f153ab513f19081d78c46eeaee88" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash" kindref="compound">bool</ref></type>
+        <definition>bool HummingBird::Sql::case_insensitive_unordered_map::comp::operator()</definition>
+        <argsstring>(const std::string &amp;lhs, const std::string &amp;rhs) const</argsstring>
+        <name>operator()</name>
+        <qualifiedname>HummingBird::Sql::case_insensitive_unordered_map::comp::operator()</qualifiedname>
+        <param>
+          <type><ref refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash" kindref="compound">const</ref> std::string &amp;</type>
+          <declname>lhs</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash" kindref="compound">const</ref> std::string &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Connection.h" line="35" column="12" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="35" bodyend="38"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Hummingbird_SQL/Connection.h" line="34" column="5" bodyfile="include/Hummingbird_SQL/Connection.h" bodystart="34" bodyend="39"/>
+    <listofallmembers>
+      <member refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp_1a9168f153ab513f19081d78c46eeaee88" prot="public" virt="non-virtual"><scope>HummingBird::Sql::case_insensitive_unordered_map::comp</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

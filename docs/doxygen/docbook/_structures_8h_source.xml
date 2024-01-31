@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__structures_8h_source" xml:lang="en-US">
+<title>Structures.h</title>
+<indexterm><primary>include/Hummingbird_SQL/Structures.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//</emphasis>
+2 <emphasis role="comment">//&#32;Created&#32;by&#32;Kasper&#32;de&#32;Bruin&#32;on&#32;29/01/2024.</emphasis>
+3 <emphasis role="comment">//</emphasis>
+4 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+5 
+6 <emphasis role="preprocessor">#include&#32;&lt;<link linkend="__config_8h">Hummingbird_SQL/Config.h</link>&gt;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&lt;<link linkend="__connection_8h">Hummingbird_SQL/Connection.h</link>&gt;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+9 <emphasis role="preprocessor">#include&#32;&lt;unordered_map&gt;</emphasis>
+10 <emphasis role="preprocessor">#include&#32;&lt;variant&gt;</emphasis>
+11 <emphasis role="preprocessor">#include&#32;&lt;vector&gt;</emphasis>
+12 
+13 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_humming_bird_1_1_sql">HummingBird::Sql</link>&#32;{
+14 &#32;&#32;<emphasis role="keyword">using&#32;</emphasis><link linkend="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc">ColumnValue</link>&#32;=&#32;std::variant&lt;uint64_t,&#32;int64_t,
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;float,&#32;double,
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bool,
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::string,
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::nullopt_t&gt;;<emphasis role="comment">//&#32;Add&#32;more&#32;types&#32;as&#32;needed</emphasis>
+19 
+20 &#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_humming_bird_1_1_sql_1_1_row">Row</link>&#32;{
+21 <emphasis role="keyword">public</emphasis>:
+22 &#32;&#32;&#32;&#32;<link linkend="_class_humming_bird_1_1_sql_1_1_row_1aef9918fd5095e36e999d5f32f4e0698c">Row</link>()&#32;=&#32;<emphasis role="keywordflow">default</emphasis>;
+23 &#32;&#32;&#32;&#32;<link linkend="_class_humming_bird_1_1_sql_1_1_row_1a9fcb94918d66e4f91f389e1adf320a95">~Row</link>()&#32;=&#32;<emphasis role="keywordflow">default</emphasis>;
+24 
+25 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_humming_bird_1_1_sql_1_1_row_1a075318c4cb28cab33d76b3de9428271a">addColumn</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&#32;&amp;columnName,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc">ColumnValue</link>&#32;&amp;columnValue)&#32;{
+26 &#32;&#32;&#32;&#32;&#32;&#32;m_columns[columnName]&#32;=&#32;columnValue;
+27 &#32;&#32;&#32;&#32;}
+28 
+29 &#32;&#32;&#32;&#32;<link linkend="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc">ColumnValue</link>&#32;<link linkend="_class_humming_bird_1_1_sql_1_1_row_1a54fcce0c35a832a07ab0293ca8718eb4">getColumn</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&#32;&amp;columnName)<emphasis role="keyword">&#32;const&#32;</emphasis>{
+30 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;it&#32;=&#32;m_columns.find(columnName);
+31 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(it&#32;!=&#32;m_columns.end())&#32;{
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;it-&gt;second;
+33 &#32;&#32;&#32;&#32;&#32;&#32;}
+34 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::nullopt;
+35 &#32;&#32;&#32;&#32;}
+36 
+37 &#32;&#32;&#32;&#32;std::unordered_map&lt;std::string,&#32;ColumnValue&gt;&#32;<link linkend="_class_humming_bird_1_1_sql_1_1_row_1aa894eef940f9fecb4d774e411ddc9e27">getColumns</link>()<emphasis role="keyword">&#32;const&#32;</emphasis>{
+38 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;m_columns;
+39 &#32;&#32;&#32;&#32;}
+40 
+41 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_humming_bird_1_1_sql_1_1_row_1ab9e18951c77f78f284f8ce2ba188943a">setColumns</link>(<emphasis role="keyword">const</emphasis>&#32;std::unordered_map&lt;std::string,&#32;ColumnValue&gt;&#32;&amp;columns)&#32;{
+42 &#32;&#32;&#32;&#32;&#32;&#32;m_columns&#32;=&#32;columns;
+43 &#32;&#32;&#32;&#32;}
+44 
+45 <emphasis role="keyword">private</emphasis>:
+46 &#32;&#32;&#32;&#32;std::unordered_map&lt;std::string,&#32;ColumnValue&gt;&#32;m_columns;
+47 &#32;&#32;};
+48 
+49 &#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_humming_bird_1_1_sql_1_1_column_info">ColumnInfo</link>&#32;{
+50 &#32;&#32;&#32;&#32;std::string&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_column_info_1acc6b28006de5396fd26aaa79291c024d">name</link>;
+51 &#32;&#32;};
+52 
+53 &#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link>&#32;{
+54 &#32;&#32;&#32;&#32;std::string&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_table_info_1a6c2a40c9c7d5d3ac732365508bbf20e2">name</link>;
+55 &#32;&#32;&#32;&#32;std::string&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_table_info_1acad7204f43cf88e287ce1dd82c4369da">schemaName</link>;
+56 &#32;&#32;&#32;&#32;std::unordered_map&lt;std::string,&#32;ColumnInfo&gt;&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_table_info_1a954c077ad6b196fbacdff24a16fea937">columns</link>;
+57 &#32;&#32;&#32;&#32;std::vector&lt;Row&gt;&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_table_info_1a7ee7758cd92b037afc6751ec6647c843">rows</link>;
+58 &#32;&#32;};
+59 
+60 &#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link>&#32;{
+61 &#32;&#32;&#32;&#32;std::string&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info_1acba50063acf5de44aa298fa38749efd8">name</link>;
+62 &#32;&#32;&#32;&#32;std::unordered_map&lt;std::string,&#32;TableInfo&gt;&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info_1ab58f39d0e05b41ebe9b59bd8e6a4762f">tables</link>&#32;=&#32;{};
+63 
+64 &#32;&#32;&#32;&#32;std::optional&lt;TableInfo&gt;&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info_1a01c90ea533af1ad0912c28bed745f2c6">getTable</link>(<emphasis role="keyword">const</emphasis>&#32;std::string&#32;&amp;tableName)<emphasis role="keyword">&#32;const&#32;</emphasis>{
+65 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;it&#32;=&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info_1ab58f39d0e05b41ebe9b59bd8e6a4762f">tables</link>.find(tableName);
+66 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(it&#32;!=&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info_1ab58f39d0e05b41ebe9b59bd8e6a4762f">tables</link>.end())&#32;{
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;it-&gt;second;
+68 &#32;&#32;&#32;&#32;&#32;&#32;}
+69 &#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;std::nullopt;
+70 &#32;&#32;&#32;&#32;}
+71 &#32;&#32;};
+72 }<emphasis role="comment">//&#32;namespace&#32;HummingBird::Sql</emphasis>
+</programlisting></section>

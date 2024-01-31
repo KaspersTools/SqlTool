@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespace_settings" kind="namespace" language="C++">
+    <compoundname>Settings</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespace_settings_1af8df46cc2ffa19c6ca0ccc25c15bbdd5" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Settings::FetchTablesOnConnect</definition>
+        <argsstring></argsstring>
+        <name>FetchTablesOnConnect</name>
+        <qualifiedname>Settings::FetchTablesOnConnect</qualifiedname>
+        <initializer>= <ref refid="_config_8h_1aee25cbb1419b856d16a2713cd09e1d94" kindref="member">HUMMINGBIRD_SQL_SETTINGS_FETCH_TABLES_ON_CONNECT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="109" column="10" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_settings_1aba170b6586f1922b3883c09b9f8c9388" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Settings::FetchColumnsAndRowsOnConnect</definition>
+        <argsstring></argsstring>
+        <name>FetchColumnsAndRowsOnConnect</name>
+        <qualifiedname>Settings::FetchColumnsAndRowsOnConnect</qualifiedname>
+        <initializer>= <ref refid="_config_8h_1af2e140ca4b91e1925f7e7ca652e45b64" kindref="member">HUMMINGBIRD_SQL_SETTINGS_FETCH_COLUMNS_AND_ROWS_ON_CONNECT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="110" column="10" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_settings_1a07cc5f18e6ee3aaaadc757021f5b3538" prot="public" static="yes" mutable="no">
+        <type>struct Settings</type>
+        <definition>struct Settings Settings::OnConnect</definition>
+        <argsstring></argsstring>
+        <name>OnConnect</name>
+        <qualifiedname>Settings::OnConnect</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="111" column="13"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_settings_1a3f8daea41391188e8743c89b8558d50b" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Settings::DefaultRowLimit</definition>
+        <argsstring></argsstring>
+        <name>DefaultRowLimit</name>
+        <qualifiedname>Settings::DefaultRowLimit</qualifiedname>
+        <initializer>= <ref refid="_config_8h_1a36b93bb4ec221fb7728b2fb390c1535b" kindref="member">HUMMINGBIRD_SQL_SETTINGS_DEFAULT_ROW_LIMIT</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="114" column="14" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_settings_1aba4f3bfffe6d738eb9f3c5b777e5109d" prot="public" static="yes" mutable="no">
+        <type>struct Settings</type>
+        <definition>struct Settings Settings::Limits</definition>
+        <argsstring></argsstring>
+        <name>Limits</name>
+        <qualifiedname>Settings::Limits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="115" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Hummingbird_SQL/Config.h" line="95" column="1"/>
+  </compounddef>
+</doxygen>

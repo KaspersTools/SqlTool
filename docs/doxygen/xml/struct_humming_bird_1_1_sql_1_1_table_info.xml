@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="struct_humming_bird_1_1_sql_1_1_table_info" kind="struct" language="C++" prot="public">
+    <compoundname>HummingBird::Sql::TableInfo</compoundname>
+    <includes refid="_structures_8h" local="no">Structures.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_humming_bird_1_1_sql_1_1_table_info_1a6c2a40c9c7d5d3ac732365508bbf20e2" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string HummingBird::Sql::TableInfo::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>HummingBird::Sql::TableInfo::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Structures.h" line="54" column="17" bodyfile="include/Hummingbird_SQL/Structures.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2" compoundref="_sql_functions_8cpp" startline="101" endline="147">HummingBird::Sql::Server::getTableColumns</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f" compoundref="_sql_functions_8cpp" startline="149" endline="240">HummingBird::Sql::Server::getTableRows</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" compoundref="_sql_functions_8cpp" startline="54" endline="99">HummingBird::Sql::Server::getTables</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_humming_bird_1_1_sql_1_1_table_info_1acad7204f43cf88e287ce1dd82c4369da" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string HummingBird::Sql::TableInfo::schemaName</definition>
+        <argsstring></argsstring>
+        <name>schemaName</name>
+        <qualifiedname>HummingBird::Sql::TableInfo::schemaName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Structures.h" line="55" column="17" bodyfile="include/Hummingbird_SQL/Structures.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" compoundref="_sql_functions_8cpp" startline="54" endline="99">HummingBird::Sql::Server::getTables</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_humming_bird_1_1_sql_1_1_table_info_1a954c077ad6b196fbacdff24a16fea937" prot="public" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="struct_humming_bird_1_1_sql_1_1_column_info" kindref="compound">ColumnInfo</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string, ColumnInfo&gt; HummingBird::Sql::TableInfo::columns</definition>
+        <argsstring></argsstring>
+        <name>columns</name>
+        <qualifiedname>HummingBird::Sql::TableInfo::columns</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Structures.h" line="56" column="24" bodyfile="include/Hummingbird_SQL/Structures.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" compoundref="_connection_8cpp" startline="87" endline="90">HummingBird::Sql::Connection::fetchColumns</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f" compoundref="_sql_functions_8cpp" startline="149" endline="240">HummingBird::Sql::Server::getTableRows</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" compoundref="_sql_functions_8cpp" startline="54" endline="99">HummingBird::Sql::Server::getTables</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_humming_bird_1_1_sql_1_1_table_info_1a7ee7758cd92b037afc6751ec6647c843" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_humming_bird_1_1_sql_1_1_row" kindref="compound">Row</ref> &gt;</type>
+        <definition>std::vector&lt;Row&gt; HummingBird::Sql::TableInfo::rows</definition>
+        <argsstring></argsstring>
+        <name>rows</name>
+        <qualifiedname>HummingBird::Sql::TableInfo::rows</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Structures.h" line="57" column="17" bodyfile="include/Hummingbird_SQL/Structures.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631" compoundref="_connection_8cpp" startline="106" endline="109">HummingBird::Sql::Connection::fetchRows</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" compoundref="_sql_functions_8cpp" startline="54" endline="99">HummingBird::Sql::Server::getTables</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Hummingbird_SQL/Structures.h" line="53" column="3" bodyfile="include/Hummingbird_SQL/Structures.h" bodystart="53" bodyend="58"/>
+    <listofallmembers>
+      <member refid="struct_humming_bird_1_1_sql_1_1_table_info_1a954c077ad6b196fbacdff24a16fea937" prot="public" virt="non-virtual"><scope>HummingBird::Sql::TableInfo</scope><name>columns</name></member>
+      <member refid="struct_humming_bird_1_1_sql_1_1_table_info_1a6c2a40c9c7d5d3ac732365508bbf20e2" prot="public" virt="non-virtual"><scope>HummingBird::Sql::TableInfo</scope><name>name</name></member>
+      <member refid="struct_humming_bird_1_1_sql_1_1_table_info_1a7ee7758cd92b037afc6751ec6647c843" prot="public" virt="non-virtual"><scope>HummingBird::Sql::TableInfo</scope><name>rows</name></member>
+      <member refid="struct_humming_bird_1_1_sql_1_1_table_info_1acad7204f43cf88e287ce1dd82c4369da" prot="public" virt="non-virtual"><scope>HummingBird::Sql::TableInfo</scope><name>schemaName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

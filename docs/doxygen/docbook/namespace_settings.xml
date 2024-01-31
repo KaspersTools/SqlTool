@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_settings" xml:lang="en-US">
+<title>Settings Namespace Reference</title>
+<indexterm><primary>Settings</primary></indexterm>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_namespace_settings_1a3f8daea41391188e8743c89b8558d50b"/><section>
+    <title>DefaultRowLimit</title>
+<indexterm><primary>DefaultRowLimit</primary><secondary>Settings</secondary></indexterm>
+<indexterm><primary>Settings</primary><secondary>DefaultRowLimit</secondary></indexterm>
+<para><computeroutput>uint32_t Settings::DefaultRowLimit = <link linkend="__config_8h_1a36b93bb4ec221fb7728b2fb390c1535b">HUMMINGBIRD_SQL_SETTINGS_DEFAULT_ROW_LIMIT</link></computeroutput></para></section>
+<anchor xml:id="_namespace_settings_1aba170b6586f1922b3883c09b9f8c9388"/><section>
+    <title>FetchColumnsAndRowsOnConnect</title>
+<indexterm><primary>FetchColumnsAndRowsOnConnect</primary><secondary>Settings</secondary></indexterm>
+<indexterm><primary>Settings</primary><secondary>FetchColumnsAndRowsOnConnect</secondary></indexterm>
+<para><computeroutput>bool Settings::FetchColumnsAndRowsOnConnect = <link linkend="__config_8h_1af2e140ca4b91e1925f7e7ca652e45b64">HUMMINGBIRD_SQL_SETTINGS_FETCH_COLUMNS_AND_ROWS_ON_CONNECT</link></computeroutput></para></section>
+<anchor xml:id="_namespace_settings_1af8df46cc2ffa19c6ca0ccc25c15bbdd5"/><section>
+    <title>FetchTablesOnConnect</title>
+<indexterm><primary>FetchTablesOnConnect</primary><secondary>Settings</secondary></indexterm>
+<indexterm><primary>Settings</primary><secondary>FetchTablesOnConnect</secondary></indexterm>
+<para><computeroutput>bool Settings::FetchTablesOnConnect = <link linkend="__config_8h_1aee25cbb1419b856d16a2713cd09e1d94">HUMMINGBIRD_SQL_SETTINGS_FETCH_TABLES_ON_CONNECT</link></computeroutput></para></section>
+</section>
+</section>

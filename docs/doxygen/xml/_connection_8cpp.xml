@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_connection_8cpp" kind="file" language="C++">
+    <compoundname>Connection.cpp</compoundname>
+    <includes local="no">xdevapi.h</includes>
+    <includes refid="_config_8h" local="yes">../include/Hummingbird_SQL/Config.h</includes>
+    <includes refid="_connection_8h" local="yes">../include/Hummingbird_SQL/Connection.h</includes>
+    <includes refid="_structures_8h" local="yes">../include/Hummingbird_SQL/Structures.h</includes>
+    <includes refid="_sql_functions_8h" local="yes">SqlFunctions.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>../include/Hummingbird_SQL/Config.h</label>
+        <link refid="_config_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>../include/Hummingbird_SQL/Connection.h</label>
+        <link refid="_connection_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>../include/Hummingbird_SQL/Structures.h</label>
+        <link refid="_structures_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>SqlFunctions.h</label>
+        <link refid="_sql_functions_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/Connection.cpp</label>
+        <link refid="_connection_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>assert.h</label>
+      </node>
+      <node id="10">
+        <label>cctype</label>
+      </node>
+      <node id="4">
+        <label>exception</label>
+      </node>
+      <node id="8">
+        <label>iostream</label>
+      </node>
+      <node id="11">
+        <label>map</label>
+      </node>
+      <node id="5">
+        <label>optional</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="12">
+        <label>unordered_map</label>
+      </node>
+      <node id="13">
+        <label>utility</label>
+      </node>
+      <node id="15">
+        <label>variant</label>
+      </node>
+      <node id="16">
+        <label>vector</label>
+      </node>
+      <node id="2">
+        <label>xdevapi.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_humming_bird">HummingBird</innernamespace>
+    <innernamespace refid="namespace_humming_bird_1_1_sql">HummingBird::Sql</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>Kasper<sp/>de<sp/>Bruin<sp/>on<sp/>29/01/2024.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;xdevapi.h&gt;</highlight><highlight class="comment">//at<sp/>top<sp/>for<sp/>forward<sp/>declare</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_config_8h" kindref="compound">../include/Hummingbird_SQL/Config.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_connection_8h" kindref="compound">../include/Hummingbird_SQL/Connection.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_structures_8h" kindref="compound">../include/Hummingbird_SQL/Structures.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_sql_functions_8h" kindref="compound">SqlFunctions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_humming_bird_1_1_sql" kindref="compound">HummingBird::Sql</ref><sp/>{</highlight></codeline>
+<codeline lineno="13" refid="class_humming_bird_1_1_sql_1_1_connection_1a11dd47b3aa64db0e4818758d74e905e4" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1a11dd47b3aa64db0e4818758d74e905e4" kindref="member">Connection::Connection</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_humming_bird_1_1_sql_1_1_connection_1a119f44987d4e342f88eace7f9f0ce012" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1a119f44987d4e342f88eace7f9f0ce012" kindref="member">Connection::~Connection</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2" kindref="member">isConnected</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1a19f0aff4ef660d6025bb11eb0b810268" kindref="member">disconnect</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(session<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>session;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_humming_bird_1_1_sql_1_1_connection_1a8287ef082a37903e197d263a38a04d03" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1a8287ef082a37903e197d263a38a04d03" kindref="member">Connection::connect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;hostname,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;username,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;password,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;database,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>port)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2" kindref="member">isConnected</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_config_8h_1acf0f41eba0fd761746cf3eb9c900e030" kindref="member">HUMMINGBIRD_SQL_ASSERT</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Already<sp/>connected<sp/>to<sp/>database&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>m_host<sp/>=<sp/>hostname;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>m_user<sp/>=<sp/>username;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>m_password<sp/>=<sp/>password;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>m_port<sp/>=<sp/>port;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>mysqlx::SessionSettings<sp/>settings(hostname,<sp/>port,<sp/>username,<sp/>password);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>session<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>mysqlx::Session(settings);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_isConnected<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>mysqlx::Error<sp/>&amp;err)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_config_8h_1acf0f41eba0fd761746cf3eb9c900e030" kindref="member">HUMMINGBIRD_SQL_ASSERT</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>err.what());</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1af1ab3a26099425eaa7938109221f2099" kindref="member">fetchSchemas</ref>(Settings::OnConnect.FetchTablesOnConnect,<sp/>Settings::OnConnect.FetchColumnsAndRowsOnConnect);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" kindref="member">fetchColumns</ref>(</highlight><highlight class="stringliteral">&quot;DSU_Core&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;databasehistory&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="class_humming_bird_1_1_sql_1_1_connection_1a19f0aff4ef660d6025bb11eb0b810268" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1a19f0aff4ef660d6025bb11eb0b810268" kindref="member">Connection::disconnect</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2" kindref="member">isConnected</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_config_8h_1acf0f41eba0fd761746cf3eb9c900e030" kindref="member">HUMMINGBIRD_SQL_ASSERT</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Not<sp/>connected<sp/>to<sp/>database&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>session-&gt;close();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>mysqlx::Error<sp/>&amp;err)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_config_8h_1acf0f41eba0fd761746cf3eb9c900e030" kindref="member">HUMMINGBIRD_SQL_ASSERT</ref>(</highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Error<sp/>while<sp/>closing<sp/>connection&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>m_isConnected<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Fetch<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="class_humming_bird_1_1_sql_1_1_connection_1af1ab3a26099425eaa7938109221f2099" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1af1ab3a26099425eaa7938109221f2099" kindref="member">Connection::fetchSchemas</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>getTables,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>getColumnsAndRows)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>m_schemas.clear();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>m_schemas<sp/>=<sp/><ref refid="namespace_humming_bird_1_1_sql_1_1_server_1a7e0921ae2051d2cd1c1f231bc4173b61" kindref="member">Server::getSchemas</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>getTables,<sp/>getColumnsAndRows);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_schemas.empty())<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_config_8h_1af9aec3c5b10db82c21f96426322c6ab9" kindref="member">HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION</ref>(</highlight><highlight class="stringliteral">&quot;No<sp/>schemas<sp/>found&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="class_humming_bird_1_1_sql_1_1_connection_1ac6f602f44d586e7f9278af8b68c737f0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1ac6f602f44d586e7f9278af8b68c737f0" kindref="member">Connection::fetchTables</ref>(<ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>&amp;schema,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>getColumnsAndRows)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>schema.<ref refid="struct_humming_bird_1_1_sql_1_1_schema_info_1ab58f39d0e05b41ebe9b59bd8e6a4762f" kindref="member">tables</ref>.clear();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>schema.<ref refid="struct_humming_bird_1_1_sql_1_1_schema_info_1ab58f39d0e05b41ebe9b59bd8e6a4762f" kindref="member">tables</ref><sp/>=<sp/><ref refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" kindref="member">Server::getTables</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>schema,<sp/>getColumnsAndRows);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79" refid="class_humming_bird_1_1_sql_1_1_connection_1ab7d1c7bfae27629cbac4ec7a275cde50" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1ac6f602f44d586e7f9278af8b68c737f0" kindref="member">Connection::fetchTables</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;databaseName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>getColumnsAndRows)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>*schemaInfo<sp/>=<sp/>getSchemaPtr(databaseName);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(schemaInfo<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1ac6f602f44d586e7f9278af8b68c737f0" kindref="member">fetchTables</ref>(*schemaInfo,<sp/>getColumnsAndRows);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" kindref="member">Connection::fetchColumns</ref>(<ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>&amp;schema,<sp/><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref><sp/>&amp;table)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>table.<ref refid="struct_humming_bird_1_1_sql_1_1_table_info_1a954c077ad6b196fbacdff24a16fea937" kindref="member">columns</ref>.clear();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>table.<ref refid="struct_humming_bird_1_1_sql_1_1_table_info_1a954c077ad6b196fbacdff24a16fea937" kindref="member">columns</ref><sp/>=<sp/><ref refid="namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2" kindref="member">Server::getTableColumns</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>schema,<sp/>table);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91" refid="class_humming_bird_1_1_sql_1_1_connection_1a1330adfbdf07b4cf889bc9ce066b8176" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" kindref="member">Connection::fetchColumns</ref>(<ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>&amp;schema,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;tableName)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref><sp/>*tableInfo<sp/>=<sp/>getTablePtr(schema,<sp/>tableName);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tableInfo<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" kindref="member">fetchColumns</ref>(schema,<sp/>*tableInfo);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98" refid="class_humming_bird_1_1_sql_1_1_connection_1a0f5ed72c4e86064e01a9eff3eb50be10" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" kindref="member">Connection::fetchColumns</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;schemaName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;tableName)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>*schemaInfo<sp/>=<sp/>getSchemaPtr(schemaName);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(schemaInfo<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" kindref="member">fetchColumns</ref>(*schemaInfo,<sp/>tableName);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631" kindref="member">Connection::fetchRows</ref>(<ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>&amp;schema,<sp/><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref><sp/>&amp;table)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>table.<ref refid="struct_humming_bird_1_1_sql_1_1_table_info_1a7ee7758cd92b037afc6751ec6647c843" kindref="member">rows</ref>.clear();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>table.<ref refid="struct_humming_bird_1_1_sql_1_1_table_info_1a7ee7758cd92b037afc6751ec6647c843" kindref="member">rows</ref><sp/>=<sp/><ref refid="namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f" kindref="member">Server::getTableRows</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>schema,<sp/>table);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110" refid="class_humming_bird_1_1_sql_1_1_connection_1a9da9c12070223cdce58d7fbeb306d38c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631" kindref="member">Connection::fetchRows</ref>(<ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>&amp;schema,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;tableName)<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref><sp/>*tableInfo<sp/>=<sp/>getTablePtr(schema,<sp/>tableName);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tableInfo<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631" kindref="member">fetchRows</ref>(schema,<sp/>*tableInfo);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117" refid="class_humming_bird_1_1_sql_1_1_connection_1af2d5636e1d930c255b6c8ac67d363944" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631" kindref="member">Connection::fetchRows</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;databaseName,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;tableName)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>*schemaInfo<sp/>=<sp/>getSchemaPtr(databaseName);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(schemaInfo<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631" kindref="member">fetchRows</ref>(*schemaInfo,<sp/>tableName);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Cache<sp/>functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="class_humming_bird_1_1_sql_1_1_connection_1a07b5aeb9ea5dac4347c777a72c8e1eb2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>&amp;<ref refid="class_humming_bird_1_1_sql_1_1_connection_1a07b5aeb9ea5dac4347c777a72c8e1eb2" kindref="member">Connection::getSchema</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;schemaName)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>*schemaInfo<sp/>=<sp/>getSchemaPtr(schemaName);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(schemaInfo<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_config_8h_1af9aec3c5b10db82c21f96426322c6ab9" kindref="member">HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION</ref>(</highlight><highlight class="stringliteral">&quot;Schema<sp/>not<sp/>found<sp/>in<sp/>cache<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>schemaName);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*schemaInfo;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133" refid="class_humming_bird_1_1_sql_1_1_connection_1ad7d577e472d7bef648a105d5fff2b1d3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref><sp/>&amp;<ref refid="class_humming_bird_1_1_sql_1_1_connection_1ad7d577e472d7bef648a105d5fff2b1d3" kindref="member">Connection::getTable</ref>(<ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>&amp;schema,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;tableName)<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref><sp/>*tableInfo<sp/>=<sp/>getTablePtr(schema,<sp/>tableName);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tableInfo<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_config_8h_1af9aec3c5b10db82c21f96426322c6ab9" kindref="member">HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION</ref>(</highlight><highlight class="stringliteral">&quot;Table<sp/>not<sp/>found<sp/>in<sp/>cache<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>tableName);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*tableInfo;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>region<sp/>private_functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>*Connection::getSchemaPtr(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;schemaName)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref><sp/>*schemaInfo<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>m_schemas.find(schemaName);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>m_schemas.end())<sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>schemaInfo<sp/>=<sp/>it-&gt;second.get();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_config_8h_1af9aec3c5b10db82c21f96426322c6ab9" kindref="member">HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION</ref>(</highlight><highlight class="stringliteral">&quot;Schema<sp/>not<sp/>found&quot;</highlight><highlight class="normal"><sp/>+<sp/>schemaName);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>schemaInfo;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>TableInfo<sp/>*Connection::getTablePtr(SchemaInfo<sp/>&amp;schema,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;tableName)<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>TableInfo<sp/>*tableInfo<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>schema.<ref refid="struct_humming_bird_1_1_sql_1_1_schema_info_1ab58f39d0e05b41ebe9b59bd8e6a4762f" kindref="member">tables</ref>.find(tableName);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>schema.tables.end())<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tableInfo<sp/>=<sp/>&amp;it-&gt;second;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_config_8h_1af9aec3c5b10db82c21f96426322c6ab9" kindref="member">HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION</ref>(</highlight><highlight class="stringliteral">&quot;Table<sp/>not<sp/>found&quot;</highlight><highlight class="normal"><sp/>+<sp/>tableName);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tableInfo;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>endregion<sp/>private_functions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight><highlight class="comment">//<sp/>namespace<sp/>HummingBird::Sql</highlight></codeline>
+    </programlisting>
+    <location file="src/Connection.cpp"/>
+  </compounddef>
+</doxygen>

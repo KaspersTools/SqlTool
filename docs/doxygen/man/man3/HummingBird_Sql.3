@@ -1,0 +1,63 @@
+.TH "HummingBird::Sql" 3 "Version 0.1" "Hummingbird sql" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HummingBird::Sql
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBLocal\fP"
+.br
+.ti -1c
+.RI "namespace \fBServer\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBcase_insensitive_unordered_map\fP"
+.br
+.ti -1c
+.RI "struct \fBColumnInfo\fP"
+.br
+.ti -1c
+.RI "class \fBConnection\fP"
+.br
+.RI "\fBConnection\fP class for connecting to a MySQL database\&. "
+.ti -1c
+.RI "class \fBRow\fP"
+.br
+.ti -1c
+.RI "struct \fBSchemaInfo\fP"
+.br
+.ti -1c
+.RI "struct \fBTableInfo\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBColumnValue\fP"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "using \fBHummingBird::Sql::ColumnValue\fP"
+\fBInitial value:\fP.PP
+.nf
+ std::variant<uint64_t, int64_t,
+                                    float, double,
+                                    bool,
+                                    std::string,
+                                    std::nullopt_t>
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Hummingbird sql from the source code\&.

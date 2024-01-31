@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespace_humming_bird_1_1_sql_1_1_local" kind="namespace" language="C++">
+    <compoundname>HummingBird::Sql::Local</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_humming_bird_1_1_sql_1_1_local_1af37310181f24d67bbcb829c3b14166f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Local::getDatabases</definition>
+        <argsstring>()</argsstring>
+        <name>getDatabases</name>
+        <qualifiedname>HummingBird::Sql::Local::getDatabases</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="private/SqlFunctions.h" line="37" column="10" declfile="private/SqlFunctions.h" declline="37" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_humming_bird_1_1_sql_1_1_local_1a67c654b1b4944a9b182434ba6b5f276e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Local::getTables</definition>
+        <argsstring>()</argsstring>
+        <name>getTables</name>
+        <qualifiedname>HummingBird::Sql::Local::getTables</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="private/SqlFunctions.h" line="38" column="10" declfile="private/SqlFunctions.h" declline="38" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_humming_bird_1_1_sql_1_1_local_1aaec6c4a67b1dd87effea33ccdebada76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Local::getTableColumns</definition>
+        <argsstring>()</argsstring>
+        <name>getTableColumns</name>
+        <qualifiedname>HummingBird::Sql::Local::getTableColumns</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="private/SqlFunctions.h" line="39" column="10" declfile="private/SqlFunctions.h" declline="39" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_humming_bird_1_1_sql_1_1_local_1a6072e6c4e4d27043dcff8f8d91fbe54e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HummingBird::Sql::Local::getTableRows</definition>
+        <argsstring>()</argsstring>
+        <name>getTableRows</name>
+        <qualifiedname>HummingBird::Sql::Local::getTableRows</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="private/SqlFunctions.h" line="40" column="10" declfile="private/SqlFunctions.h" declline="40" declcolumn="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="private/SqlFunctions.h" line="36" column="3"/>
+  </compounddef>
+</doxygen>

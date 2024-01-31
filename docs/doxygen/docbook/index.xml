@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>Hummingbird sql</title>
+    </info>
+<chapter>
+    <title>Namespace Documentation</title>
+<xi:include href="namespace_humming_bird.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_humming_bird_1_1_sql.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_humming_bird_1_1_sql_1_1_local.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_humming_bird_1_1_sql_1_1_server.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_logging.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespacemysqlx.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespacemysqlx_1_1abi2.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespacemysqlx_1_1abi2_1_1r0.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_settings.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_humming_bird_1_1_sql_1_1_column_info.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_humming_bird_1_1_sql_1_1_connection.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_humming_bird_1_1_sql_1_1_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_humming_bird_1_1_sql_1_1_schema_info.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_logging_1_1source__loc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_humming_bird_1_1_sql_1_1_table_info.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>File Documentation</title>
+    <xi:include href="_c_make_c_compiler_id_8c.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_c_make_c_x_x_compiler_id_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_config_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_config_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_connection_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_connection_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_structures_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_structures_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_sql_functions_8h.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_sql_functions_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_connection_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_sql_functions_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="_structures_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="main_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

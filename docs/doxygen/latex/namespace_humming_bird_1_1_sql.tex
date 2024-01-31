@@ -1,0 +1,47 @@
+\doxysection{Humming\+Bird\+::Sql Namespace Reference}
+\label{namespace_humming_bird_1_1_sql}\index{HummingBird::Sql@{HummingBird::Sql}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \textbf{ Local}
+\item 
+namespace \textbf{ Server}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ case\+\_\+insensitive\+\_\+unordered\+\_\+map}
+\item 
+struct \textbf{ Column\+Info}
+\item 
+class \textbf{ Connection}
+\begin{DoxyCompactList}\small\item\em \doxyref{Connection}{p.}{class_humming_bird_1_1_sql_1_1_connection} class for connecting to a My\+SQL database. \end{DoxyCompactList}\item 
+class \textbf{ Row}
+\item 
+struct \textbf{ Schema\+Info}
+\item 
+struct \textbf{ Table\+Info}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \textbf{ Column\+Value}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\label{namespace_humming_bird_1_1_sql_a70077bf1cc07674412483dea62394fbc} 
+\index{HummingBird::Sql@{HummingBird::Sql}!ColumnValue@{ColumnValue}}
+\index{ColumnValue@{ColumnValue}!HummingBird::Sql@{HummingBird::Sql}}
+\doxysubsubsection{ColumnValue}
+{\footnotesize\ttfamily using \textbf{ Humming\+Bird\+::\+Sql\+::\+Column\+Value}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ std::variant<uint64\_t,\ int64\_t,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ float,\ double,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bool,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::nullopt\_t>}
+
+\end{DoxyCode}

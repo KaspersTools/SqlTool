@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespace_logging" kind="namespace" language="C++">
+    <compoundname>Logging</compoundname>
+    <innerclass refid="struct_logging_1_1source__loc" prot="public">Logging::source_loc</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_logging_1adbd755737db52bbf41bd8b2b3b2bb0eb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Logging::showTrace</definition>
+        <argsstring>(source_loc src, std::string msg)</argsstring>
+        <name>showTrace</name>
+        <qualifiedname>Logging::showTrace</qualifiedname>
+        <param>
+          <type><ref refid="struct_logging_1_1source__loc" kindref="compound">source_loc</ref></type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="36" column="15" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_logging_1a53abf260f2599ecdd1a950c434a980ef" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Logging::showLog</definition>
+        <argsstring>(source_loc src, std::string msg)</argsstring>
+        <name>showLog</name>
+        <qualifiedname>Logging::showLog</qualifiedname>
+        <param>
+          <type><ref refid="struct_logging_1_1source__loc" kindref="compound">source_loc</ref></type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="40" column="15" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_logging_1a4a62a00c4c9c2e26ee5e2856a52af7e8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Logging::showError</definition>
+        <argsstring>(source_loc src, std::string msg)</argsstring>
+        <name>showError</name>
+        <qualifiedname>Logging::showError</qualifiedname>
+        <param>
+          <type><ref refid="struct_logging_1_1source__loc" kindref="compound">source_loc</ref></type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="44" column="15" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="44" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_logging_1a1cf9cd5870d06e0f9041cef6c0ef36cd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Logging::showFatal</definition>
+        <argsstring>(source_loc src, std::string msg)</argsstring>
+        <name>showFatal</name>
+        <qualifiedname>Logging::showFatal</qualifiedname>
+        <param>
+          <type><ref refid="struct_logging_1_1source__loc" kindref="compound">source_loc</ref></type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="48" column="15" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="48" bodyend="50"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Hummingbird_SQL/Config.h" line="18" column="1"/>
+  </compounddef>
+</doxygen>

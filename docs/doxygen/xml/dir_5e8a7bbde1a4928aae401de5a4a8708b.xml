@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_5e8a7bbde1a4928aae401de5a4a8708b" kind="dir">
+    <compoundname>private</compoundname>
+    <innerfile refid="_sql_functions_8h">SqlFunctions.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="private/"/>
+  </compounddef>
+</doxygen>

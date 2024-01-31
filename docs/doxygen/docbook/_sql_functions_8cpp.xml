@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__sql_functions_8cpp" xml:lang="en-US">
+<title>src/SqlFunctions.cpp File Reference</title>
+<indexterm><primary>src/SqlFunctions.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;SqlFunctions.h&gt;<?linebreak?></programlisting><simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_humming_bird">HummingBird</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_humming_bird_1_1_sql">HummingBird::Sql</link></para>
+</listitem>
+            <listitem><para>namespace <link linkend="_namespace_humming_bird_1_1_sql_1_1_server">HummingBird::Sql::Server</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>std::unordered_map&lt; std::string, std::unique_ptr&lt; <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &gt;, <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">case_insensitive_unordered_map::hash</link>, <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp">case_insensitive_unordered_map::comp</link> &gt; <link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a7e0921ae2051d2cd1c1f231bc4173b61">HummingBird::Sql::Server::getSchemas</link> (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp;connection, const bool <link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc">getTables</link>, const bool getColumnsAndRows=false)</para>
+</listitem>
+            <listitem><para>std::unordered_map&lt; std::string, <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &gt; <link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc">HummingBird::Sql::Server::getTables</link> (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp;connection, const <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp;databaseInfo, const bool getColumnsAndRows=false)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

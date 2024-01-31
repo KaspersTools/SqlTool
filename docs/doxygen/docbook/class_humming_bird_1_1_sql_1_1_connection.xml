@@ -1,0 +1,680 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_humming_bird_1_1_sql_1_1_connection" xml:lang="en-US">
+<title>HummingBird::Sql::Connection Class Reference</title>
+<indexterm><primary>HummingBird::Sql::Connection</primary></indexterm>
+<para>
+
+<para><link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> class for connecting to a MySQL database. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Connection.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_humming_bird_1_1_sql_1_1_connection_1a11dd47b3aa64db0e4818758d74e905e4">Connection</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_class_humming_bird_1_1_sql_1_1_connection_1a119f44987d4e342f88eace7f9f0ce012">~Connection</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1a8287ef082a37903e197d263a38a04d03">connect</link> (const std::string &amp;hostname, const std::string &amp;username, const std::string &amp;password, const std::string &amp;schemaName, uint16_t port)</para>
+
+<para>Connect to a MySQL database. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1a19f0aff4ef660d6025bb11eb0b810268">disconnect</link> ()</para>
+
+<para>Disconnect from the MySQL database. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1af1ab3a26099425eaa7938109221f2099">fetchSchemas</link> (const bool <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1ac6f602f44d586e7f9278af8b68c737f0">fetchTables</link>, const bool fetchColumnsAndRows)</para>
+
+<para>Fetch all schemas, tables, columns and rows. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1ac6f602f44d586e7f9278af8b68c737f0">fetchTables</link> (<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp;schema, const bool fetchColumnsAndRows)</para>
+
+<para>Fetch all tables, columns and rows. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1ab7d1c7bfae27629cbac4ec7a275cde50">fetchTables</link> (const std::string &amp;schemaName, const bool fetchColumnsAndRows)</para>
+
+<para>Fetch all columns and rows. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a">fetchColumns</link> (<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp;schema, <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp;table)</para>
+
+<para>Fetch all tables, columns and rows. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1a1330adfbdf07b4cf889bc9ce066b8176">fetchColumns</link> (<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp;schema, const std::string &amp;tableName)</para>
+
+<para>Fetch all columns and rows. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1a0f5ed72c4e86064e01a9eff3eb50be10">fetchColumns</link> (const std::string &amp;schemaName, const std::string &amp;tableName)</para>
+
+<para>Fetch all columns and rows. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631">fetchRows</link> (<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp;schema, <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp;table)</para>
+
+<para>Fetch all rows. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1a9da9c12070223cdce58d7fbeb306d38c">fetchRows</link> (<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp;schema, const std::string &amp;tableName)</para>
+
+<para>Fetch all rows. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1af2d5636e1d930c255b6c8ac67d363944">fetchRows</link> (const std::string &amp;schemaNames, const std::string &amp;tableName)</para>
+
+<para>Fetch all rows. </para>
+</listitem>
+            <listitem><para>const <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp; <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1a07b5aeb9ea5dac4347c777a72c8e1eb2">getSchema</link> (const std::string &amp;schemaName)</para>
+
+<para>Get an schema by name. </para>
+</listitem>
+            <listitem><para>const <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp; <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1ad7d577e472d7bef648a105d5fff2b1d3">getTable</link> (<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp;schema, const std::string &amp;tableName)</para>
+
+<para>Get an table by name. </para>
+</listitem>
+            <listitem><para>const <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp; <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1ac542254dc7d946b92b5bf4da438a1d78">getTable</link> (const std::string &amp;schema, const std::string &amp;tableName)</para>
+
+<para>Get an table by name. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2">isConnected</link> () const</para>
+
+<para>Get connection status. </para>
+</listitem>
+            <listitem><para>mysqlx::Session &amp; <link linkend="_class_humming_bird_1_1_sql_1_1_connection_1ae64b880c6aefa583e1e5f86f56ca9e07">getSession</link> () const</para>
+
+<para>Get the current session ptr. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> class for connecting to a MySQL database. </para>
+
+
+
+<para>This class is used to connect to a MySQL database and fetch the schemas, tables, columns and rows. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1a11dd47b3aa64db0e4818758d74e905e4"/><section>
+    <title>Connection()</title>
+<indexterm><primary>Connection</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>Connection</secondary></indexterm>
+<para><computeroutput>HummingBird::Sql::Connection::Connection ( )</computeroutput></para></section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1a119f44987d4e342f88eace7f9f0ce012"/><section>
+    <title>~Connection()</title>
+<indexterm><primary>~Connection</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>~Connection</secondary></indexterm>
+<para><computeroutput>HummingBird::Sql::Connection::~Connection ( )</computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1a8287ef082a37903e197d263a38a04d03"/><section>
+    <title>connect()</title>
+<indexterm><primary>connect</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>connect</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Connection::connect (const std::string &amp; hostname, const std::string &amp; username, const std::string &amp; password, const std::string &amp; schemaName, uint16_t port)</computeroutput></para><para>
+
+<para>Connect to a MySQL database. </para>
+</para>
+
+<para>Connect to a MySQL database with the given hostname, username, password, schemaName and port. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>hostname</entry><entry>
+<para>The hostname of the MySQL database </para>
+</entry>
+                            </row>
+                            <row>
+<entry>username</entry><entry>
+<para>The username of the MySQL database </para>
+</entry>
+                            </row>
+                            <row>
+<entry>password</entry><entry>
+<para>The password of the MySQL database </para>
+</entry>
+                            </row>
+                            <row>
+<entry>schemaName</entry><entry>
+<para>The defaultSchemaName of the MySQL database </para>
+</entry>
+                            </row>
+                            <row>
+<entry>port</entry><entry>
+<para>The port of the MySQL database </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1a19f0aff4ef660d6025bb11eb0b810268"/><section>
+    <title>disconnect()</title>
+<indexterm><primary>disconnect</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>disconnect</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Connection::disconnect ( )</computeroutput></para><para>
+
+<para>Disconnect from the MySQL database. </para>
+</para>
+
+<para>Disconnect from the MySQL database </para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1a0f5ed72c4e86064e01a9eff3eb50be10"/><section>
+    <title>fetchColumns()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>fetchColumns</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>fetchColumns</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Connection::fetchColumns (const std::string &amp; schemaName, const std::string &amp; tableName)</computeroutput></para><para>
+
+<para>Fetch all columns and rows. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>schemaName</entry><entry>
+<para>The schemaName to fetch the columns and rows from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>tableName</entry><entry>
+<para>The tableName to fetch the columns and rows from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1a1330adfbdf07b4cf889bc9ce066b8176"/><section>
+    <title>fetchColumns()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>fetchColumns</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>fetchColumns</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Connection::fetchColumns (<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp; schema, const std::string &amp; tableName)</computeroutput></para><para>
+
+<para>Fetch all columns and rows. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>schema</entry><entry>
+<para>The schema to fetch the columns and rows from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>table</entry><entry>
+<para>The table name to fetch the columns and rows from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a"/><section>
+    <title>fetchColumns()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>fetchColumns</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>fetchColumns</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Connection::fetchColumns (<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp; schema, <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp; table)</computeroutput></para><para>
+
+<para>Fetch all tables, columns and rows. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>schema</entry><entry>
+<para>The schema to fetch the tables from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>table</entry><entry>
+<para>The table to fetch the columns and rows from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1af2d5636e1d930c255b6c8ac67d363944"/><section>
+    <title>fetchRows()<computeroutput>[1/3]</computeroutput></title>
+<indexterm><primary>fetchRows</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>fetchRows</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Connection::fetchRows (const std::string &amp; schemaNames, const std::string &amp; tableName)</computeroutput></para><para>
+
+<para>Fetch all rows. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>schemaName</entry><entry>
+<para>The schemaName to fetch the rows from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>tableName</entry><entry>
+<para>The tableName to fetch the rows from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1a9da9c12070223cdce58d7fbeb306d38c"/><section>
+    <title>fetchRows()<computeroutput>[2/3]</computeroutput></title>
+<indexterm><primary>fetchRows</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>fetchRows</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Connection::fetchRows (<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp; schema, const std::string &amp; tableName)</computeroutput></para><para>
+
+<para>Fetch all rows. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>schemaName</entry><entry>
+<para>The schemaName to fetch the rows from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>tableName</entry><entry>
+<para>The tableName to fetch the rows from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631"/><section>
+    <title>fetchRows()<computeroutput>[3/3]</computeroutput></title>
+<indexterm><primary>fetchRows</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>fetchRows</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Connection::fetchRows (<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp; schema, <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp; table)</computeroutput></para><para>
+
+<para>Fetch all rows. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>schema</entry><entry>
+<para>The schema to fetch the rows from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>table</entry><entry>
+<para>The table to fetch the rows from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1af1ab3a26099425eaa7938109221f2099"/><section>
+    <title>fetchSchemas()</title>
+<indexterm><primary>fetchSchemas</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>fetchSchemas</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Connection::fetchSchemas (const bool fetchTables, const bool fetchColumnsAndRows)</computeroutput></para><para>
+
+<para>Fetch all schemas, tables, columns and rows. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>fetchTables</entry><entry>
+<para>Fetch all tables </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fetchColumnsAndRows</entry><entry>
+<para>Fetch all columns and rows </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1ab7d1c7bfae27629cbac4ec7a275cde50"/><section>
+    <title>fetchTables()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>fetchTables</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>fetchTables</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Connection::fetchTables (const std::string &amp; schemaName, const bool fetchColumnsAndRows)</computeroutput></para><para>
+
+<para>Fetch all columns and rows. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>schemaName</entry><entry>
+<para>The schemaName to fetch the columns and rows from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fetchColumnsAndRows</entry><entry>
+<para>Fetch all columns and rows </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1ac6f602f44d586e7f9278af8b68c737f0"/><section>
+    <title>fetchTables()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>fetchTables</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>fetchTables</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Connection::fetchTables (<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp; schema, const bool fetchColumnsAndRows)</computeroutput></para><para>
+
+<para>Fetch all tables, columns and rows. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>schema</entry><entry>
+<para>The schema to fetch the tables from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fetchColumnsAndRows</entry><entry>
+<para>Fetch all columns and rows </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1a07b5aeb9ea5dac4347c777a72c8e1eb2"/><section>
+    <title>getSchema()</title>
+<indexterm><primary>getSchema</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>getSchema</secondary></indexterm>
+<para><computeroutput>const <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp; HummingBird::Sql::Connection::getSchema (const std::string &amp; schemaName)</computeroutput></para><para>
+
+<para>Get an schema by name. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>schemaName</entry><entry>
+<para>The name of the schema </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> The schema </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1ae64b880c6aefa583e1e5f86f56ca9e07"/><section>
+    <title>getSession()</title>
+<indexterm><primary>getSession</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>getSession</secondary></indexterm>
+<para><computeroutput>mysqlx::Session &amp; HummingBird::Sql::Connection::getSession ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get the current session ptr. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Session ptr The session ptr </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1ac542254dc7d946b92b5bf4da438a1d78"/><section>
+    <title>getTable()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getTable</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>getTable</secondary></indexterm>
+<para><computeroutput>const <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp; HummingBird::Sql::Connection::getTable (const std::string &amp; schema, const std::string &amp; tableName)</computeroutput></para><para>
+
+<para>Get an table by name. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>schemaName</entry><entry>
+<para>The schemaName to get the table from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>tableName</entry><entry>
+<para>The name of the table </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> The table </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1ad7d577e472d7bef648a105d5fff2b1d3"/><section>
+    <title>getTable()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getTable</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>getTable</secondary></indexterm>
+<para><computeroutput>const <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp; HummingBird::Sql::Connection::getTable (<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp; schema, const std::string &amp; tableName)</computeroutput></para><para>
+
+<para>Get an table by name. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>schema</entry><entry>
+<para>The schema to get the table from </para>
+</entry>
+                            </row>
+                            <row>
+<entry>tableName</entry><entry>
+<para>The name of the table </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para><link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> The table </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2"/><section>
+    <title>isConnected()</title>
+<indexterm><primary>isConnected</primary><secondary>HummingBird::Sql::Connection</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Connection</primary><secondary>isConnected</secondary></indexterm>
+<para><computeroutput>bool HummingBird::Sql::Connection::isConnected ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+
+<para>Get connection status. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>bool True if connected </para>
+</formalpara>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+include/Hummingbird_SQL/<link linkend="__connection_8h">Connection.h</link>src/<link linkend="__connection_8cpp">Connection.cpp</link></section>
+</section>

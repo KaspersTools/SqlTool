@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__sql_functions_8h_source" xml:lang="en-US">
+<title>SqlFunctions.h</title>
+<indexterm><primary>private/SqlFunctions.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">//</emphasis>
+2 <emphasis role="comment">//&#32;Created&#32;by&#32;Kasper&#32;de&#32;Bruin&#32;on&#32;31/01/2024.</emphasis>
+3 <emphasis role="comment">//</emphasis>
+4 
+5 <emphasis role="preprocessor">#ifndef&#32;HUMMINGBIRD_SQL_TOOL_SQLFUNCTIONS_H</emphasis>
+6 <emphasis role="preprocessor">#define&#32;HUMMINGBIRD_SQL_TOOL_SQLFUNCTIONS_H</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&lt;xdevapi.h&gt;</emphasis><emphasis role="comment">//at&#32;top&#32;for&#32;forward&#32;declare</emphasis>
+8 
+9 <emphasis role="preprocessor">#include&#32;&lt;<link linkend="__config_8h">Hummingbird_SQL/Config.h</link>&gt;</emphasis>
+10 <emphasis role="preprocessor">#include&#32;&lt;<link linkend="__connection_8h">Hummingbird_SQL/Connection.h</link>&gt;</emphasis>
+11 <emphasis role="preprocessor">#include&#32;&lt;<link linkend="__structures_8h">Hummingbird_SQL/Structures.h</link>&gt;</emphasis>
+12 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+13 
+14 <emphasis role="keyword">namespace&#32;</emphasis><link linkend="_namespace_humming_bird_1_1_sql">HummingBird::Sql</link>&#32;{
+15 &#32;&#32;<emphasis role="keyword">namespace&#32;</emphasis>Server&#32;{
+16 &#32;&#32;&#32;&#32;std::unordered_map&lt;std::string,&#32;std::unique_ptr&lt;SchemaInfo&gt;,
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">case_insensitive_unordered_map::hash</link>,
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp">case_insensitive_unordered_map::comp</link>&gt;
+19 &#32;&#32;&#32;&#32;<link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a7e0921ae2051d2cd1c1f231bc4173b61">getSchemas</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link>&#32;&amp;connection,
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc">getTables</link>,
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;getColumnsAndRows&#32;=&#32;<emphasis role="keyword">false</emphasis>);
+22 &#32;&#32;&#32;&#32;
+23 &#32;&#32;&#32;&#32;std::unordered_map&lt;std::string,&#32;TableInfo&gt;&#32;<link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc">getTables</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link>&#32;&amp;connection,
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link>&#32;&amp;databaseInfo,
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;getColumnsAndRows&#32;=&#32;<emphasis role="keyword">false</emphasis>);
+26 
+27 &#32;&#32;&#32;&#32;std::unordered_map&lt;std::string,&#32;ColumnInfo&gt;&#32;<link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2">getTableColumns</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link>&#32;&amp;connection,
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link>&#32;&amp;databaseInfo,
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link>&#32;&amp;tableInfo);
+30 &#32;&#32;&#32;&#32;std::vector&lt;Row&gt;&#32;<link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f">getTableRows</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link>&#32;&amp;connection,
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link>&#32;&amp;databaseInfo,
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link>&#32;&amp;tableInfo,
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;limit&#32;=&#32;Settings::Limits.DefaultRowLimit);
+34 &#32;&#32;};<emphasis role="comment">//&#32;namespace&#32;Server</emphasis>
+35 
+36 &#32;&#32;<emphasis role="keyword">namespace&#32;</emphasis>Local&#32;{
+37 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_namespace_humming_bird_1_1_sql_1_1_local_1af37310181f24d67bbcb829c3b14166f5">getDatabases</link>();
+38 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_namespace_humming_bird_1_1_sql_1_1_local_1a67c654b1b4944a9b182434ba6b5f276e">getTables</link>();
+39 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_namespace_humming_bird_1_1_sql_1_1_local_1aaec6c4a67b1dd87effea33ccdebada76">getTableColumns</link>();
+40 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_namespace_humming_bird_1_1_sql_1_1_local_1a6072e6c4e4d27043dcff8f8d91fbe54e">getTableRows</link>();
+41 &#32;&#32;}<emphasis role="comment">//&#32;namespace&#32;Local</emphasis>
+42 }<emphasis role="comment">//&#32;namespace&#32;HummingBird::Sql</emphasis>
+43 <emphasis role="preprocessor">#endif</emphasis><emphasis role="comment">//HUMMINGBIRD_SQL_TOOL_SQLFUNCTIONS_H</emphasis>
+</programlisting></section>

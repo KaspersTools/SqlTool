@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespace_humming_bird_1_1_sql" kind="namespace" language="C++">
+    <compoundname>HummingBird::Sql</compoundname>
+    <innerclass refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map" prot="public">HummingBird::Sql::case_insensitive_unordered_map</innerclass>
+    <innerclass refid="struct_humming_bird_1_1_sql_1_1_column_info" prot="public">HummingBird::Sql::ColumnInfo</innerclass>
+    <innerclass refid="class_humming_bird_1_1_sql_1_1_connection" prot="public">HummingBird::Sql::Connection</innerclass>
+    <innerclass refid="class_humming_bird_1_1_sql_1_1_row" prot="public">HummingBird::Sql::Row</innerclass>
+    <innerclass refid="struct_humming_bird_1_1_sql_1_1_schema_info" prot="public">HummingBird::Sql::SchemaInfo</innerclass>
+    <innerclass refid="struct_humming_bird_1_1_sql_1_1_table_info" prot="public">HummingBird::Sql::TableInfo</innerclass>
+    <innernamespace refid="namespace_humming_bird_1_1_sql_1_1_local">HummingBird::Sql::Local</innernamespace>
+    <innernamespace refid="namespace_humming_bird_1_1_sql_1_1_server">HummingBird::Sql::Server</innernamespace>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc" prot="public" static="no">
+        <type>std::variant&lt; uint64_t, int64_t, float, double, bool, std::string, std::nullopt_t &gt;</type>
+        <definition>using HummingBird::Sql::ColumnValue =  std::variant&lt;uint64_t, int64_t,
+                                    float, double,
+                                    bool,
+                                    std::string,
+                                    std::nullopt_t&gt;</definition>
+        <argsstring></argsstring>
+        <name>ColumnValue</name>
+        <qualifiedname>HummingBird::Sql::ColumnValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Structures.h" line="14" column="3" bodyfile="include/Hummingbird_SQL/Structures.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Hummingbird_SQL/Connection.h" line="10" column="1"/>
+  </compounddef>
+</doxygen>

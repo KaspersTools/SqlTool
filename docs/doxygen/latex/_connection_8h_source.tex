@@ -1,0 +1,123 @@
+\doxysection{Connection.\+h}
+\label{_connection_8h_source}\index{include/Hummingbird\_SQL/Connection.h@{include/Hummingbird\_SQL/Connection.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Kasper\ de\ Bruin\ on\ 29/01/2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//forward\ declare}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }mysqlx::abi2::r0\ \{}
+\DoxyCodeLine{00007\ \ \ \textcolor{keyword}{class\ }Session;}
+\DoxyCodeLine{00008\ \}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }HummingBird::Sql\ \{}
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{class\ }Row;}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{struct\ }ColumnInfo;}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{struct\ }TableInfo;}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{struct\ }SchemaInfo;}
+\DoxyCodeLine{00015\ \}\textcolor{comment}{//\ namespace\ HummingBird::Sql}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//aliasses}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }mysqlx\ \{}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{using\ }mysqlx::abi2::r0::Session;}
+\DoxyCodeLine{00020\ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <Hummingbird\_SQL/Config.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <cctype>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }HummingBird::Sql\ \{}
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ Makes\ unordered\ map\ keys\ case\ insensitive}}
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{struct\ }case\_insensitive\_unordered\_map\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{struct\ }comp\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator()(\textcolor{keyword}{const}\ std::string\ \&lhs,\ \textcolor{keyword}{const}\ std::string\ \&rhs)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ On\ non\ Windows\ OS,\ use\ the\ function\ "{}strcasecmp"{}\ in\ \#include\ <strings.h>}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ strcasecmp(lhs.c\_str(),\ rhs.c\_str())\ ==\ 0;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{struct\ }hash\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ std::size\_t\ operator()(std::string\ str)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ index\ =\ 0;\ index\ <\ str.size();\ ++index)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ch\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(str[index]);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ str[index]\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\textcolor{keyword}{>}(std::tolower(ch));}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::hash<std::string>\{\}(str);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \};}
+\DoxyCodeLine{00049\ \ \ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{class\ }Connection\ \{}
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ Connection();}
+\DoxyCodeLine{00058\ \ \ \ \ \string~Connection();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ connect(\textcolor{keyword}{const}\ std::string\ \&hostname,\ \textcolor{keyword}{const}\ std::string\ \&username,\ \textcolor{keyword}{const}\ std::string\ \&password,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&schemaName,\ uint16\_t\ port);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ disconnect();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ fetchSchemas(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ fetchTables,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ fetchColumnsAndRows);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ fetchTables(SchemaInfo\ \&schema,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ fetchColumnsAndRows);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ fetchTables(\textcolor{keyword}{const}\ std::string\ \&schemaName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ fetchColumnsAndRows);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ fetchColumns(SchemaInfo\ \&schema,\ TableInfo\ \&table);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ fetchColumns(SchemaInfo\ \&schema,\ \textcolor{keyword}{const}\ std::string\ \&tableName);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ fetchColumns(\textcolor{keyword}{const}\ std::string\ \&schemaName,\ \textcolor{keyword}{const}\ std::string\ \&tableName);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ fetchRows(SchemaInfo\ \&schema,\ TableInfo\ \&table);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ fetchRows(SchemaInfo\ \&schema,\ \textcolor{keyword}{const}\ std::string\ \&tableName);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ fetchRows(\textcolor{keyword}{const}\ std::string\ \&schemaNames,\ \textcolor{keyword}{const}\ std::string\ \&tableName);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//getters}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{const}\ SchemaInfo\ \&getSchema(\textcolor{keyword}{const}\ std::string\ \&schemaName);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{const}\ TableInfo\ \&getTable(SchemaInfo\ \&schema,\ \textcolor{keyword}{const}\ std::string\ \&tableName);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{const}\ TableInfo\ \&getTable(\textcolor{keyword}{const}\ std::string\ \&schema,\ \textcolor{keyword}{const}\ std::string\ \&tableName);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{bool}\ isConnected()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_isConnected;}
+\DoxyCodeLine{00183\ \ \ \ \ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00189\ \ \ \ \ mysqlx::Session\ \&getSession()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *session;}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00201\ \ \ \ \ SchemaInfo\ *getSchemaPtr(\textcolor{keyword}{const}\ std::string\ \&schemaName);}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00210\ \ \ \ \ TableInfo\ *getTablePtr(SchemaInfo\ \&schema,\ \textcolor{keyword}{const}\ std::string\ \&tableName);}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_isConnected\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ std::string\ m\_currentDatabaseName;}
+\DoxyCodeLine{00216\ \ \ \ \ std::string\ m\_host;}
+\DoxyCodeLine{00217\ \ \ \ \ std::string\ m\_user;}
+\DoxyCodeLine{00218\ \ \ \ \ std::string\ m\_password;}
+\DoxyCodeLine{00219\ \ \ \ \ uint16\_t\ m\_port;}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ mysqlx::Session\ *session;}
+\DoxyCodeLine{00222\ \ \ \ \ std::unordered\_map<std::string,\ std::unique\_ptr<SchemaInfo>,}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case\_insensitive\_unordered\_map::hash,}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case\_insensitive\_unordered\_map::comp>}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ m\_schemas;}
+\DoxyCodeLine{00226\ \ \ \};}
+\DoxyCodeLine{00227\ \}\textcolor{comment}{//\ namespace\ HummingBird::Sql}}
+
+\end{DoxyCode}

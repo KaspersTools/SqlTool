@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_humming_bird_1_1_sql_1_1_row" xml:lang="en-US">
+<title>HummingBird::Sql::Row Class Reference</title>
+<indexterm><primary>HummingBird::Sql::Row</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Structures.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_humming_bird_1_1_sql_1_1_row_1aef9918fd5095e36e999d5f32f4e0698c">Row</link> ()=default</para>
+</listitem>
+            <listitem><para><link linkend="_class_humming_bird_1_1_sql_1_1_row_1a9fcb94918d66e4f91f389e1adf320a95">~Row</link> ()=default</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_humming_bird_1_1_sql_1_1_row_1a075318c4cb28cab33d76b3de9428271a">addColumn</link> (const std::string &amp;columnName, const <link linkend="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc">ColumnValue</link> &amp;columnValue)</para>
+</listitem>
+            <listitem><para><link linkend="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc">ColumnValue</link> <link linkend="_class_humming_bird_1_1_sql_1_1_row_1a54fcce0c35a832a07ab0293ca8718eb4">getColumn</link> (const std::string &amp;columnName) const</para>
+</listitem>
+            <listitem><para>std::unordered_map&lt; std::string, <link linkend="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc">ColumnValue</link> &gt; <link linkend="_class_humming_bird_1_1_sql_1_1_row_1aa894eef940f9fecb4d774e411ddc9e27">getColumns</link> () const</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_humming_bird_1_1_sql_1_1_row_1ab9e18951c77f78f284f8ce2ba188943a">setColumns</link> (const std::unordered_map&lt; std::string, <link linkend="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc">ColumnValue</link> &gt; &amp;columns)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_row_1aef9918fd5095e36e999d5f32f4e0698c"/><section>
+    <title>Row()</title>
+<indexterm><primary>Row</primary><secondary>HummingBird::Sql::Row</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Row</primary><secondary>Row</secondary></indexterm>
+<para><computeroutput>HummingBird::Sql::Row::Row ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_row_1a9fcb94918d66e4f91f389e1adf320a95"/><section>
+    <title>~Row()</title>
+<indexterm><primary>~Row</primary><secondary>HummingBird::Sql::Row</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Row</primary><secondary>~Row</secondary></indexterm>
+<para><computeroutput>HummingBird::Sql::Row::~Row ( )<computeroutput>[default]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_row_1a075318c4cb28cab33d76b3de9428271a"/><section>
+    <title>addColumn()</title>
+<indexterm><primary>addColumn</primary><secondary>HummingBird::Sql::Row</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Row</primary><secondary>addColumn</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Row::addColumn (const std::string &amp; columnName, const <link linkend="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc">ColumnValue</link> &amp; columnValue)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_row_1a54fcce0c35a832a07ab0293ca8718eb4"/><section>
+    <title>getColumn()</title>
+<indexterm><primary>getColumn</primary><secondary>HummingBird::Sql::Row</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Row</primary><secondary>getColumn</secondary></indexterm>
+<para><computeroutput><link linkend="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc">ColumnValue</link> HummingBird::Sql::Row::getColumn (const std::string &amp; columnName) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_row_1aa894eef940f9fecb4d774e411ddc9e27"/><section>
+    <title>getColumns()</title>
+<indexterm><primary>getColumns</primary><secondary>HummingBird::Sql::Row</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Row</primary><secondary>getColumns</secondary></indexterm>
+<para><computeroutput>std::unordered_map&lt; std::string, <link linkend="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc">ColumnValue</link> &gt; HummingBird::Sql::Row::getColumns ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_humming_bird_1_1_sql_1_1_row_1ab9e18951c77f78f284f8ce2ba188943a"/><section>
+    <title>setColumns()</title>
+<indexterm><primary>setColumns</primary><secondary>HummingBird::Sql::Row</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Row</primary><secondary>setColumns</secondary></indexterm>
+<para><computeroutput>void HummingBird::Sql::Row::setColumns (const std::unordered_map&lt; std::string, <link linkend="_namespace_humming_bird_1_1_sql_1a70077bf1cc07674412483dea62394fbc">ColumnValue</link> &gt; &amp; columns)<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+include/Hummingbird_SQL/<link linkend="__structures_8h">Structures.h</link></section>
+</section>

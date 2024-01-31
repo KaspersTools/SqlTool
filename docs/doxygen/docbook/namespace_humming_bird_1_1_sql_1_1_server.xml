@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_humming_bird_1_1_sql_1_1_server" xml:lang="en-US">
+<title>HummingBird::Sql::Server Namespace Reference</title>
+<indexterm><primary>HummingBird::Sql::Server</primary></indexterm>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>std::unordered_map&lt; std::string, std::unique_ptr&lt; <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &gt;, <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">case_insensitive_unordered_map::hash</link>, <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp">case_insensitive_unordered_map::comp</link> &gt; <link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a7e0921ae2051d2cd1c1f231bc4173b61">getSchemas</link> (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp;connection, const bool <link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc">getTables</link>, const bool getColumnsAndRows=false)</para>
+</listitem>
+            <listitem><para>std::unordered_map&lt; std::string, <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &gt; <link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc">getTables</link> (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp;connection, const <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp;databaseInfo, const bool getColumnsAndRows=false)</para>
+</listitem>
+            <listitem><para>std::unordered_map&lt; std::string, <link linkend="_struct_humming_bird_1_1_sql_1_1_column_info">ColumnInfo</link> &gt; <link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2">getTableColumns</link> (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp;connection, const <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp;databaseInfo, const <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp;tableInfo)</para>
+</listitem>
+            <listitem><para>std::vector&lt; <link linkend="_class_humming_bird_1_1_sql_1_1_row">Row</link> &gt; <link linkend="_namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f">getTableRows</link> (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp;connection, const <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp;databaseInfo, const <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp;tableInfo, int limit=Settings::Limits.DefaultRowLimit)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_namespace_humming_bird_1_1_sql_1_1_server_1a7e0921ae2051d2cd1c1f231bc4173b61"/><section>
+    <title>getSchemas()</title>
+<indexterm><primary>getSchemas</primary><secondary>HummingBird::Sql::Server</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Server</primary><secondary>getSchemas</secondary></indexterm>
+<para><computeroutput>std::unordered_map&lt; std::string, std::unique_ptr&lt; <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &gt;, <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash">case_insensitive_unordered_map::hash</link>, <link linkend="_struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp">case_insensitive_unordered_map::comp</link> &gt; HummingBird::Sql::Server::getSchemas (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp; connection, const bool getTables, const bool getColumnsAndRows = <computeroutput>false</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2"/><section>
+    <title>getTableColumns()</title>
+<indexterm><primary>getTableColumns</primary><secondary>HummingBird::Sql::Server</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Server</primary><secondary>getTableColumns</secondary></indexterm>
+<para><computeroutput>std::unordered_map&lt; std::string, <link linkend="_struct_humming_bird_1_1_sql_1_1_column_info">ColumnInfo</link> &gt; HummingBird::Sql::Server::getTableColumns (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp; connection, const <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp; databaseInfo, const <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp; tableInfo)</computeroutput></para></section>
+<anchor xml:id="_namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f"/><section>
+    <title>getTableRows()</title>
+<indexterm><primary>getTableRows</primary><secondary>HummingBird::Sql::Server</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Server</primary><secondary>getTableRows</secondary></indexterm>
+<para><computeroutput>std::vector&lt; <link linkend="_class_humming_bird_1_1_sql_1_1_row">Row</link> &gt; HummingBird::Sql::Server::getTableRows (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp; connection, const <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp; databaseInfo, const <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &amp; tableInfo, int limit = <computeroutput>Settings::Limits.DefaultRowLimit</computeroutput>
+)</computeroutput></para>
+<para>&lt; Null value</para>
+
+<para>&lt; Unsigned integer</para>
+
+<para>&lt; Signed integer</para>
+
+<para>&lt; Float number</para>
+
+<para>&lt; Double number</para>
+
+<para>&lt; Boolean</para>
+
+<para>&lt; String</para>
+
+<para>&lt; Raw bytes</para>
+</section>
+<anchor xml:id="_namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc"/><section>
+    <title>getTables()</title>
+<indexterm><primary>getTables</primary><secondary>HummingBird::Sql::Server</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::Server</primary><secondary>getTables</secondary></indexterm>
+<para><computeroutput>std::unordered_map&lt; std::string, <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info">TableInfo</link> &gt; HummingBird::Sql::Server::getTables (const <link linkend="_class_humming_bird_1_1_sql_1_1_connection">Connection</link> &amp; connection, const <link linkend="_struct_humming_bird_1_1_sql_1_1_schema_info">SchemaInfo</link> &amp; databaseInfo, const bool getColumnsAndRows = <computeroutput>false</computeroutput>
+)</computeroutput></para></section>
+</section>
+</section>

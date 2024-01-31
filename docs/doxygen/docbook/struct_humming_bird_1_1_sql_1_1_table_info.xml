@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_humming_bird_1_1_sql_1_1_table_info" xml:lang="en-US">
+<title>HummingBird::Sql::TableInfo Struct Reference</title>
+<indexterm><primary>HummingBird::Sql::TableInfo</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Structures.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>std::string <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info_1a6c2a40c9c7d5d3ac732365508bbf20e2">name</link></para>
+</listitem>
+            <listitem><para>std::string <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info_1acad7204f43cf88e287ce1dd82c4369da">schemaName</link></para>
+</listitem>
+            <listitem><para>std::unordered_map&lt; std::string, <link linkend="_struct_humming_bird_1_1_sql_1_1_column_info">ColumnInfo</link> &gt; <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info_1a954c077ad6b196fbacdff24a16fea937">columns</link></para>
+</listitem>
+            <listitem><para>std::vector&lt; <link linkend="_class_humming_bird_1_1_sql_1_1_row">Row</link> &gt; <link linkend="_struct_humming_bird_1_1_sql_1_1_table_info_1a7ee7758cd92b037afc6751ec6647c843">rows</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_humming_bird_1_1_sql_1_1_table_info_1a954c077ad6b196fbacdff24a16fea937"/><section>
+    <title>columns</title>
+<indexterm><primary>columns</primary><secondary>HummingBird::Sql::TableInfo</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::TableInfo</primary><secondary>columns</secondary></indexterm>
+<para><computeroutput>std::unordered_map&lt;std::string, <link linkend="_struct_humming_bird_1_1_sql_1_1_column_info">ColumnInfo</link>&gt; HummingBird::Sql::TableInfo::columns</computeroutput></para></section>
+<anchor xml:id="_struct_humming_bird_1_1_sql_1_1_table_info_1a6c2a40c9c7d5d3ac732365508bbf20e2"/><section>
+    <title>name</title>
+<indexterm><primary>name</primary><secondary>HummingBird::Sql::TableInfo</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::TableInfo</primary><secondary>name</secondary></indexterm>
+<para><computeroutput>std::string HummingBird::Sql::TableInfo::name</computeroutput></para></section>
+<anchor xml:id="_struct_humming_bird_1_1_sql_1_1_table_info_1a7ee7758cd92b037afc6751ec6647c843"/><section>
+    <title>rows</title>
+<indexterm><primary>rows</primary><secondary>HummingBird::Sql::TableInfo</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::TableInfo</primary><secondary>rows</secondary></indexterm>
+<para><computeroutput>std::vector&lt;<link linkend="_class_humming_bird_1_1_sql_1_1_row">Row</link>&gt; HummingBird::Sql::TableInfo::rows</computeroutput></para></section>
+<anchor xml:id="_struct_humming_bird_1_1_sql_1_1_table_info_1acad7204f43cf88e287ce1dd82c4369da"/><section>
+    <title>schemaName</title>
+<indexterm><primary>schemaName</primary><secondary>HummingBird::Sql::TableInfo</secondary></indexterm>
+<indexterm><primary>HummingBird::Sql::TableInfo</primary><secondary>schemaName</secondary></indexterm>
+<para><computeroutput>std::string HummingBird::Sql::TableInfo::schemaName</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+include/Hummingbird_SQL/<link linkend="__structures_8h">Structures.h</link></section>
+</section>

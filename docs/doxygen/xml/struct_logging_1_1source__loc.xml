@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="struct_logging_1_1source__loc" kind="struct" language="C++" prot="public">
+    <compoundname>Logging::source_loc</compoundname>
+    <includes refid="_config_8h" local="no">Config.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_logging_1_1source__loc_1a43c4bb392c0ce7cb349dcefa1784374d" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* Logging::source_loc::filename</definition>
+        <argsstring></argsstring>
+        <name>filename</name>
+        <qualifiedname>Logging::source_loc::filename</qualifiedname>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="27" column="16" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="27" bodyend="27"/>
+        <referencedby refid="struct_logging_1_1source__loc_1ae9d456750e967fa8dc99d886b3950a4e" compoundref="_config_8h" startline="31" endline="33">toString</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_logging_1_1source__loc_1acb6ae2cbb3523d3932840d6dff63e3ef" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Logging::source_loc::line</definition>
+        <argsstring></argsstring>
+        <name>line</name>
+        <qualifiedname>Logging::source_loc::line</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="28" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="28" bodyend="28"/>
+        <referencedby refid="struct_logging_1_1source__loc_1a03355b8c2febac449f103bee39863580" compoundref="_config_8h" startline="26" endline="26">empty</referencedby>
+        <referencedby refid="struct_logging_1_1source__loc_1ae9d456750e967fa8dc99d886b3950a4e" compoundref="_config_8h" startline="31" endline="33">toString</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_logging_1_1source__loc_1a8028d4f344979c8fdfe177b4d54c8d06" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* Logging::source_loc::funcname</definition>
+        <argsstring></argsstring>
+        <name>funcname</name>
+        <qualifiedname>Logging::source_loc::funcname</qualifiedname>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="29" column="16" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="29" bodyend="29"/>
+        <referencedby refid="struct_logging_1_1source__loc_1ae9d456750e967fa8dc99d886b3950a4e" compoundref="_config_8h" startline="31" endline="33">toString</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_logging_1_1source__loc_1a830c5efc34cf67cc723e2e6cb272a57f" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr Logging::source_loc::source_loc</definition>
+        <argsstring>()=default</argsstring>
+        <name>source_loc</name>
+        <qualifiedname>Logging::source_loc::source_loc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="20" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_logging_1_1source__loc_1a466a91da264d27bcc4f174eb752722c8" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>constexpr Logging::source_loc::source_loc</definition>
+        <argsstring>(const char *filename_in, int line_in, const char *funcname_in)</argsstring>
+        <name>source_loc</name>
+        <qualifiedname>Logging::source_loc::source_loc</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>filename_in</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line_in</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>funcname_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="21" column="15" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_logging_1_1source__loc_1a03355b8c2febac449f103bee39863580" prot="public" static="no" constexpr="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>constexpr bool</type>
+        <definition>constexpr bool Logging::source_loc::empty</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>empty</name>
+        <qualifiedname>Logging::source_loc::empty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="26" column="20" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="26" bodyend="26"/>
+        <references refid="struct_logging_1_1source__loc_1acb6ae2cbb3523d3932840d6dff63e3ef" compoundref="_config_8h" startline="28" endline="28">line</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_logging_1_1source__loc_1ae9d456750e967fa8dc99d886b3950a4e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Logging::source_loc::toString</definition>
+        <argsstring>() const</argsstring>
+        <name>toString</name>
+        <qualifiedname>Logging::source_loc::toString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="31" column="17" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="31" bodyend="33"/>
+        <references refid="struct_logging_1_1source__loc_1a43c4bb392c0ce7cb349dcefa1784374d" compoundref="_config_8h" startline="27" endline="27">filename</references>
+        <references refid="struct_logging_1_1source__loc_1a8028d4f344979c8fdfe177b4d54c8d06" compoundref="_config_8h" startline="29" endline="29">funcname</references>
+        <references refid="struct_logging_1_1source__loc_1acb6ae2cbb3523d3932840d6dff63e3ef" compoundref="_config_8h" startline="28" endline="28">line</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Hummingbird_SQL/Config.h" line="19" column="3" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="19" bodyend="34"/>
+    <listofallmembers>
+      <member refid="struct_logging_1_1source__loc_1a03355b8c2febac449f103bee39863580" prot="public" virt="non-virtual"><scope>Logging::source_loc</scope><name>empty</name></member>
+      <member refid="struct_logging_1_1source__loc_1a43c4bb392c0ce7cb349dcefa1784374d" prot="public" virt="non-virtual"><scope>Logging::source_loc</scope><name>filename</name></member>
+      <member refid="struct_logging_1_1source__loc_1a8028d4f344979c8fdfe177b4d54c8d06" prot="public" virt="non-virtual"><scope>Logging::source_loc</scope><name>funcname</name></member>
+      <member refid="struct_logging_1_1source__loc_1acb6ae2cbb3523d3932840d6dff63e3ef" prot="public" virt="non-virtual"><scope>Logging::source_loc</scope><name>line</name></member>
+      <member refid="struct_logging_1_1source__loc_1a830c5efc34cf67cc723e2e6cb272a57f" prot="public" virt="non-virtual"><scope>Logging::source_loc</scope><name>source_loc</name></member>
+      <member refid="struct_logging_1_1source__loc_1a466a91da264d27bcc4f174eb752722c8" prot="public" virt="non-virtual"><scope>Logging::source_loc</scope><name>source_loc</name></member>
+      <member refid="struct_logging_1_1source__loc_1ae9d456750e967fa8dc99d886b3950a4e" prot="public" virt="non-virtual"><scope>Logging::source_loc</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

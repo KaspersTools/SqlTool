@@ -1,0 +1,37 @@
+\doxysection{private/\+Sql\+Functions.h File Reference}
+\label{_sql_functions_8h}\index{private/SqlFunctions.h@{private/SqlFunctions.h}}
+{\ttfamily \#include $<$xdevapi.\+h$>$}\newline
+{\ttfamily \#include $<$Hummingbird\+\_\+\+SQL/\+Config.\+h$>$}\newline
+{\ttfamily \#include $<$Hummingbird\+\_\+\+SQL/\+Connection.\+h$>$}\newline
+{\ttfamily \#include $<$Hummingbird\+\_\+\+SQL/\+Structures.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \textbf{ Humming\+Bird}
+\item 
+namespace \textbf{ Humming\+Bird\+::\+Sql}
+\item 
+namespace \textbf{ Humming\+Bird\+::\+Sql\+::\+Server}
+\item 
+namespace \textbf{ Humming\+Bird\+::\+Sql\+::\+Local}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \textbf{ Schema\+Info} $>$, \textbf{ case\+\_\+insensitive\+\_\+unordered\+\_\+map\+::hash}, \textbf{ case\+\_\+insensitive\+\_\+unordered\+\_\+map\+::comp} $>$ \textbf{ Humming\+Bird\+::\+Sql\+::\+Server\+::get\+Schemas} (const \textbf{ Connection} \&connection, const bool \textbf{ get\+Tables}, const bool get\+Columns\+And\+Rows=false)
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \textbf{ Table\+Info} $>$ \textbf{ Humming\+Bird\+::\+Sql\+::\+Server\+::get\+Tables} (const \textbf{ Connection} \&connection, const \textbf{ Schema\+Info} \&database\+Info, const bool get\+Columns\+And\+Rows=false)
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \textbf{ Column\+Info} $>$ \textbf{ Humming\+Bird\+::\+Sql\+::\+Server\+::get\+Table\+Columns} (const \textbf{ Connection} \&connection, const \textbf{ Schema\+Info} \&database\+Info, const \textbf{ Table\+Info} \&table\+Info)
+\item 
+std\+::vector$<$ \textbf{ Row} $>$ \textbf{ Humming\+Bird\+::\+Sql\+::\+Server\+::get\+Table\+Rows} (const \textbf{ Connection} \&connection, const \textbf{ Schema\+Info} \&database\+Info, const \textbf{ Table\+Info} \&table\+Info, int limit=Settings\+::\+Limits.\+Default\+Row\+Limit)
+\item 
+void \textbf{ Humming\+Bird\+::\+Sql\+::\+Local\+::get\+Databases} ()
+\item 
+void \textbf{ Humming\+Bird\+::\+Sql\+::\+Local\+::get\+Tables} ()
+\item 
+void \textbf{ Humming\+Bird\+::\+Sql\+::\+Local\+::get\+Table\+Columns} ()
+\item 
+void \textbf{ Humming\+Bird\+::\+Sql\+::\+Local\+::get\+Table\+Rows} ()
+\end{DoxyCompactItemize}

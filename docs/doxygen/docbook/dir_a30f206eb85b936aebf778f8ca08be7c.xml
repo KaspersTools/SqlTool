@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_a30f206eb85b936aebf778f8ca08be7c" xml:lang="en-US">
+<title>cmake-build-debug/CMakeFiles/3.27.8 Directory Reference</title>
+<indexterm><primary>cmake-build-debug/CMakeFiles/3.27.8 Directory Reference</primary></indexterm>
+<simplesect>
+    <title>Directories    </title>
+        <itemizedlist>
+            <listitem><para>directory <link linkend="_dir_36a319fdfa90daea3fe65386bde15ea1">CompilerIdC</link></para>
+</listitem>
+            <listitem><para>directory <link linkend="_dir_d27ff1c24db4b8ed35c08a97f94ed8ec">CompilerIdCXX</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

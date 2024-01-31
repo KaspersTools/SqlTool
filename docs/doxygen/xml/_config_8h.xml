@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="_config_8h" kind="file" language="C++">
+    <compoundname>Config.h</compoundname>
+    <includes local="no">exception</includes>
+    <includes local="no">optional</includes>
+    <includes local="no">string</includes>
+    <includes local="no">assert.h</includes>
+    <includes local="no">iostream</includes>
+    <includedby refid="_connection_8h" local="no">include/Hummingbird_SQL/Connection.h</includedby>
+    <includedby refid="_structures_8h" local="no">include/Hummingbird_SQL/Structures.h</includedby>
+    <includedby refid="_sql_functions_8h" local="no">private/SqlFunctions.h</includedby>
+    <includedby refid="_connection_8cpp" local="yes">src/Connection.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/Hummingbird_SQL/Config.h</label>
+        <link refid="_config_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>assert.h</label>
+      </node>
+      <node id="2">
+        <label>exception</label>
+      </node>
+      <node id="6">
+        <label>iostream</label>
+      </node>
+      <node id="3">
+        <label>optional</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/Hummingbird_SQL/Config.h</label>
+        <link refid="_config_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/Hummingbird_SQL/Connection.h</label>
+        <link refid="_connection_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>include/Hummingbird_SQL/Structures.h</label>
+        <link refid="_structures_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>private/SqlFunctions.h</label>
+        <link refid="_sql_functions_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>src/Connection.cpp</label>
+        <link refid="_connection_8cpp"/>
+      </node>
+      <node id="6">
+        <label>src/SqlFunctions.cpp</label>
+        <link refid="_sql_functions_8cpp"/>
+      </node>
+      <node id="7">
+        <label>src/Structures.cpp</label>
+        <link refid="_structures_8cpp"/>
+      </node>
+      <node id="8">
+        <label>tests/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_logging_1_1source__loc" prot="public">Logging::source_loc</innerclass>
+    <innernamespace refid="namespace_logging">Logging</innernamespace>
+    <innernamespace refid="namespace_settings">Settings</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="_config_8h_1acf0f41eba0fd761746cf3eb9c900e030" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_ASSERT</name>
+        <param><defname>_EXPR</defname></param>
+        <initializer>assert(_EXPR)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="15" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1a06d1258eda4150e8933668fb7db7cf96" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_LOG_LEVEL_TRACE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="54" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1ab123c15574a81f66ce36926c162c2cf8" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_LOG_LEVEL_LOG</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="55" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1ae357661fe0ff8bbd08cdf503400adc4c" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_LOG_LEVEL_ERROR</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="56" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1a585fb591d8027c09c18681a7e415cbe1" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_LOG_LEVEL_FATAL</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="57" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1aa3778262e4b8c744ab8b48ba9f9e6ebe" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_LOG_LEVEL_NONE</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="58" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1aff144c0ab491308722b9700f6622a4b3" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_LOG_LEVEL</name>
+        <initializer><ref refid="_config_8h_1a06d1258eda4150e8933668fb7db7cf96" kindref="member">HUMMINGBIRD_SQL_LOG_LEVEL_TRACE</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="59" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1a608df755229e6a3858530cd65c8bfffc" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_LOG_ACTIVE</name>
+        <initializer>true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="63" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1a7ca7c3f197541717d16a8755985fa1ec" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION</name>
+        <param><defname>...</defname></param>
+        <initializer>  if (<ref refid="_config_8h_1a608df755229e6a3858530cd65c8bfffc" kindref="member">HUMMINGBIRD_SQL_LOG_ACTIVE</ref> &amp;&amp; <ref refid="_config_8h_1aff144c0ab491308722b9700f6622a4b3" kindref="member">HUMMINGBIRD_SQL_LOG_LEVEL</ref> &lt;= <ref refid="_config_8h_1a06d1258eda4150e8933668fb7db7cf96" kindref="member">HUMMINGBIRD_SQL_LOG_LEVEL_TRACE</ref>) \
+  ::Logging::showTrace(<ref refid="struct_logging_1_1source__loc" kindref="compound">::Logging::source_loc</ref>(__FILE__, __LINE__, __FUNCTION__),                   \
+                       __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="67" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="67" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1a9c4811b8d6f3b58111a7fdac28766095" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION</name>
+        <param><defname>...</defname></param>
+        <initializer>  if (<ref refid="_config_8h_1a608df755229e6a3858530cd65c8bfffc" kindref="member">HUMMINGBIRD_SQL_LOG_ACTIVE</ref> &amp;&amp; <ref refid="_config_8h_1aff144c0ab491308722b9700f6622a4b3" kindref="member">HUMMINGBIRD_SQL_LOG_LEVEL</ref> &lt;= <ref refid="_config_8h_1ab123c15574a81f66ce36926c162c2cf8" kindref="member">HUMMINGBIRD_SQL_LOG_LEVEL_LOG</ref>) \
+  ::Logging::showLog(<ref refid="struct_logging_1_1source__loc" kindref="compound">::Logging::source_loc</ref>(__FILE__, __LINE__, __FUNCTION__),                   \
+                     __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="74" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1af9aec3c5b10db82c21f96426322c6ab9" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION</name>
+        <param><defname>...</defname></param>
+        <initializer>  if (<ref refid="_config_8h_1a608df755229e6a3858530cd65c8bfffc" kindref="member">HUMMINGBIRD_SQL_LOG_ACTIVE</ref> &amp;&amp; <ref refid="_config_8h_1aff144c0ab491308722b9700f6622a4b3" kindref="member">HUMMINGBIRD_SQL_LOG_LEVEL</ref> &lt;= <ref refid="_config_8h_1ae357661fe0ff8bbd08cdf503400adc4c" kindref="member">HUMMINGBIRD_SQL_LOG_LEVEL_ERROR</ref>) \
+  ::Logging::showError(<ref refid="struct_logging_1_1source__loc" kindref="compound">::Logging::source_loc</ref>(__FILE__, __LINE__, __FUNCTION__),                   \
+                       __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="81" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="81" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1a4d548edca0a2b9c8c0b14e5b20b35af6" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_SERVER_FATAL_FUNCTION</name>
+        <param><defname>...</defname></param>
+        <initializer>  if (<ref refid="_config_8h_1a608df755229e6a3858530cd65c8bfffc" kindref="member">HUMMINGBIRD_SQL_LOG_ACTIVE</ref> &amp;&amp; <ref refid="_config_8h_1aff144c0ab491308722b9700f6622a4b3" kindref="member">HUMMINGBIRD_SQL_LOG_LEVEL</ref> &lt;= <ref refid="_config_8h_1a585fb591d8027c09c18681a7e415cbe1" kindref="member">HUMMINGBIRD_SQL_LOG_LEVEL_FATAL</ref>) \
+  ::Logging::showFatal(<ref refid="struct_logging_1_1source__loc" kindref="compound">::Logging::source_loc</ref>(__FILE__, __LINE__, __FUNCTION__),                   \
+                       __VA_ARGS__)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="88" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1aee25cbb1419b856d16a2713cd09e1d94" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_SETTINGS_FETCH_TABLES_ON_CONNECT</name>
+        <initializer>true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="97" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1af2e140ca4b91e1925f7e7ca652e45b64" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_SETTINGS_FETCH_COLUMNS_AND_ROWS_ON_CONNECT</name>
+        <initializer>false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="101" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_config_8h_1a36b93bb4ec221fb7728b2fb390c1535b" prot="public" static="no">
+        <name>HUMMINGBIRD_SQL_SETTINGS_DEFAULT_ROW_LIMIT</name>
+        <initializer>1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Config.h" line="105" column="9" bodyfile="include/Hummingbird_SQL/Config.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>Kasper<sp/>de<sp/>Bruin<sp/>on<sp/>29/01/2024.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;exception&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;optional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;assert.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HUMMINGBIRD_SQL_ASSERT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="_config_8h_1acf0f41eba0fd761746cf3eb9c900e030" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_ASSERT(_EXPR)<sp/>assert(_EXPR)</highlight><highlight class="comment">//<sp/>You<sp/>can<sp/>override<sp/>in<sp/>your<sp/>Config.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="namespace_logging" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_logging" kindref="compound">Logging</ref><sp/>{</highlight></codeline>
+<codeline lineno="19" refid="struct_logging_1_1source__loc" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_logging_1_1source__loc" kindref="compound">source_loc</ref><sp/>{</highlight></codeline>
+<codeline lineno="20" refid="struct_logging_1_1source__loc_1a830c5efc34cf67cc723e2e6cb272a57f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="struct_logging_1_1source__loc_1a830c5efc34cf67cc723e2e6cb272a57f" kindref="member">source_loc</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21" refid="struct_logging_1_1source__loc_1a466a91da264d27bcc4f174eb752722c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="struct_logging_1_1source__loc_1a466a91da264d27bcc4f174eb752722c8" kindref="member">source_loc</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename_in,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line_in,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*funcname_in)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="struct_logging_1_1source__loc_1a43c4bb392c0ce7cb349dcefa1784374d" kindref="member">filename</ref>{filename_in},</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_logging_1_1source__loc_1acb6ae2cbb3523d3932840d6dff63e3ef" kindref="member">line</ref>{line_in},</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_logging_1_1source__loc_1a8028d4f344979c8fdfe177b4d54c8d06" kindref="member">funcname</ref>{funcname_in}<sp/>{}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="struct_logging_1_1source__loc_1a03355b8c2febac449f103bee39863580" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_logging_1_1source__loc_1a03355b8c2febac449f103bee39863580" kindref="member">empty</ref>()<sp/>const<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_logging_1_1source__loc_1acb6ae2cbb3523d3932840d6dff63e3ef" kindref="member">line</ref><sp/>==<sp/>0;<sp/>}</highlight></codeline>
+<codeline lineno="27" refid="struct_logging_1_1source__loc_1a43c4bb392c0ce7cb349dcefa1784374d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="struct_logging_1_1source__loc_1a43c4bb392c0ce7cb349dcefa1784374d" kindref="member">filename</ref>{</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28" refid="struct_logging_1_1source__loc_1acb6ae2cbb3523d3932840d6dff63e3ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_logging_1_1source__loc_1acb6ae2cbb3523d3932840d6dff63e3ef" kindref="member">line</ref>{0};</highlight></codeline>
+<codeline lineno="29" refid="struct_logging_1_1source__loc_1a8028d4f344979c8fdfe177b4d54c8d06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="struct_logging_1_1source__loc_1a8028d4f344979c8fdfe177b4d54c8d06" kindref="member">funcname</ref>{</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="struct_logging_1_1source__loc_1ae9d456750e967fa8dc99d886b3950a4e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="struct_logging_1_1source__loc_1ae9d456750e967fa8dc99d886b3950a4e" kindref="member">toString</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string(<ref refid="struct_logging_1_1source__loc_1a43c4bb392c0ce7cb349dcefa1784374d" kindref="member">filename</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::string(<ref refid="struct_logging_1_1source__loc_1a8028d4f344979c8fdfe177b4d54c8d06" kindref="member">funcname</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(<ref refid="struct_logging_1_1source__loc_1acb6ae2cbb3523d3932840d6dff63e3ef" kindref="member">line</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>|&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>showTrace(source_loc<sp/>src,<sp/>std::string<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TRACE:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>src.toString()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>msg<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>showLog(source_loc<sp/>src,<sp/>std::string<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;LOG:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>src.toString()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>msg<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>showError(source_loc<sp/>src,<sp/>std::string<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ERROR:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>src.toString()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>msg<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>showFatal(source_loc<sp/>src,<sp/>std::string<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;FATAL:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>src.toString()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>msg<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight><highlight class="comment">//<sp/>namespace<sp/>Logging</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HUMMINGBIRD_SQL_LOG_LEVEL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="_config_8h_1a06d1258eda4150e8933668fb7db7cf96" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_LOG_LEVEL_TRACE<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="_config_8h_1ab123c15574a81f66ce36926c162c2cf8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_LOG_LEVEL_LOG<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="_config_8h_1ae357661fe0ff8bbd08cdf503400adc4c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_LOG_LEVEL_ERROR<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="_config_8h_1a585fb591d8027c09c18681a7e415cbe1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_LOG_LEVEL_FATAL<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="_config_8h_1aa3778262e4b8c744ab8b48ba9f9e6ebe" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_LOG_LEVEL_NONE<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="_config_8h_1aff144c0ab491308722b9700f6622a4b3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_LOG_LEVEL<sp/>HUMMINGBIRD_SQL_LOG_LEVEL_TRACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HUMMINGBIRD_SQL_LOG_ACTIVE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="_config_8h_1a608df755229e6a3858530cd65c8bfffc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_LOG_ACTIVE<sp/>true</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="_config_8h_1a7ca7c3f197541717d16a8755985fa1ec" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION(...)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="68"><highlight class="preprocessor"><sp/><sp/>if<sp/>(HUMMINGBIRD_SQL_LOG_ACTIVE<sp/>&amp;&amp;<sp/>HUMMINGBIRD_SQL_LOG_LEVEL<sp/>&lt;=<sp/>HUMMINGBIRD_SQL_LOG_LEVEL_TRACE)<sp/>\</highlight></codeline>
+<codeline lineno="69"><highlight class="preprocessor"><sp/><sp/>::Logging::showTrace(::Logging::source_loc(__FILE__,<sp/>__LINE__,<sp/>__FUNCTION__),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="70"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="_config_8h_1a9c4811b8d6f3b58111a7fdac28766095" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION(...)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"><sp/><sp/>if<sp/>(HUMMINGBIRD_SQL_LOG_ACTIVE<sp/>&amp;&amp;<sp/>HUMMINGBIRD_SQL_LOG_LEVEL<sp/>&lt;=<sp/>HUMMINGBIRD_SQL_LOG_LEVEL_LOG)<sp/>\</highlight></codeline>
+<codeline lineno="76"><highlight class="preprocessor"><sp/><sp/>::Logging::showLog(::Logging::source_loc(__FILE__,<sp/>__LINE__,<sp/>__FUNCTION__),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="_config_8h_1af9aec3c5b10db82c21f96426322c6ab9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION(...)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="82"><highlight class="preprocessor"><sp/><sp/>if<sp/>(HUMMINGBIRD_SQL_LOG_ACTIVE<sp/>&amp;&amp;<sp/>HUMMINGBIRD_SQL_LOG_LEVEL<sp/>&lt;=<sp/>HUMMINGBIRD_SQL_LOG_LEVEL_ERROR)<sp/>\</highlight></codeline>
+<codeline lineno="83"><highlight class="preprocessor"><sp/><sp/>::Logging::showError(::Logging::source_loc(__FILE__,<sp/>__LINE__,<sp/>__FUNCTION__),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HUMMINGBIRD_SQL_SERVER_FATAL_FUNCTION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="_config_8h_1a4d548edca0a2b9c8c0b14e5b20b35af6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_SERVER_FATAL_FUNCTION(...)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"><sp/><sp/>if<sp/>(HUMMINGBIRD_SQL_LOG_ACTIVE<sp/>&amp;&amp;<sp/>HUMMINGBIRD_SQL_LOG_LEVEL<sp/>&lt;=<sp/>HUMMINGBIRD_SQL_LOG_LEVEL_FATAL)<sp/>\</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"><sp/><sp/>::Logging::showFatal(::Logging::source_loc(__FILE__,<sp/>__LINE__,<sp/>__FUNCTION__),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="91"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="namespace_settings" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_settings" kindref="compound">Settings</ref><sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HUMMINGBIRD_SQL_SETTINGS_FETCH_TABLES_ON_CONNECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="_config_8h_1aee25cbb1419b856d16a2713cd09e1d94" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_SETTINGS_FETCH_TABLES_ON_CONNECT<sp/>true</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HUMMINGBIRD_SQL_SETTINGS_FETCH_COLUMNS_ON_CONNECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="_config_8h_1af2e140ca4b91e1925f7e7ca652e45b64" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_SETTINGS_FETCH_COLUMNS_AND_ROWS_ON_CONNECT<sp/>false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HUMMINGBIRD_SQL_SETTINGS_DEFAULT_ROW_LIMIT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="_config_8h_1a36b93bb4ec221fb7728b2fb390c1535b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HUMMINGBIRD_SQL_SETTINGS_DEFAULT_ROW_LIMIT<sp/>1000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109" refid="namespace_settings_1af8df46cc2ffa19c6ca0ccc25c15bbdd5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespace_settings_1af8df46cc2ffa19c6ca0ccc25c15bbdd5" kindref="member">FetchTablesOnConnect</ref><sp/>=<sp/><ref refid="_config_8h_1aee25cbb1419b856d16a2713cd09e1d94" kindref="member">HUMMINGBIRD_SQL_SETTINGS_FETCH_TABLES_ON_CONNECT</ref>;</highlight></codeline>
+<codeline lineno="110" refid="namespace_settings_1aba170b6586f1922b3883c09b9f8c9388" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespace_settings_1aba170b6586f1922b3883c09b9f8c9388" kindref="member">FetchColumnsAndRowsOnConnect</ref><sp/>=<sp/><ref refid="_config_8h_1af2e140ca4b91e1925f7e7ca652e45b64" kindref="member">HUMMINGBIRD_SQL_SETTINGS_FETCH_COLUMNS_AND_ROWS_ON_CONNECT</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>}<sp/>OnConnect;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114" refid="namespace_settings_1a3f8daea41391188e8743c89b8558d50b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="namespace_settings_1a3f8daea41391188e8743c89b8558d50b" kindref="member">DefaultRowLimit</ref><sp/>=<sp/><ref refid="_config_8h_1a36b93bb4ec221fb7728b2fb390c1535b" kindref="member">HUMMINGBIRD_SQL_SETTINGS_DEFAULT_ROW_LIMIT</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>}<sp/>Limits;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight><highlight class="comment">//<sp/>namespace<sp/>Settings</highlight></codeline>
+    </programlisting>
+    <location file="include/Hummingbird_SQL/Config.h"/>
+  </compounddef>
+</doxygen>

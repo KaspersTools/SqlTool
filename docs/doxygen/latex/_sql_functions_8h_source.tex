@@ -1,0 +1,49 @@
+\doxysection{Sql\+Functions.\+h}
+\label{_sql_functions_8h_source}\index{private/SqlFunctions.h@{private/SqlFunctions.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Kasper\ de\ Bruin\ on\ 31/01/2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ HUMMINGBIRD\_SQL\_TOOL\_SQLFUNCTIONS\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ HUMMINGBIRD\_SQL\_TOOL\_SQLFUNCTIONS\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <xdevapi.h>}\textcolor{comment}{//at\ top\ for\ forward\ declare}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <Hummingbird\_SQL/Config.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <Hummingbird\_SQL/Connection.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <Hummingbird\_SQL/Structures.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }HummingBird::Sql\ \{}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{namespace\ }Server\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ std::unordered\_map<std::string,\ std::unique\_ptr<SchemaInfo>,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case\_insensitive\_unordered\_map::hash,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case\_insensitive\_unordered\_map::comp>}
+\DoxyCodeLine{00019\ \ \ \ \ getSchemas(\textcolor{keyword}{const}\ Connection\ \&connection,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ getTables,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ getColumnsAndRows\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00022\ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ std::unordered\_map<std::string,\ TableInfo>\ getTables(\textcolor{keyword}{const}\ Connection\ \&connection,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ SchemaInfo\ \&databaseInfo,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ getColumnsAndRows\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ std::unordered\_map<std::string,\ ColumnInfo>\ getTableColumns(\textcolor{keyword}{const}\ Connection\ \&connection,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ SchemaInfo\ \&databaseInfo,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TableInfo\ \&tableInfo);}
+\DoxyCodeLine{00030\ \ \ \ \ std::vector<Row>\ getTableRows(\textcolor{keyword}{const}\ Connection\ \&connection,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ SchemaInfo\ \&databaseInfo,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TableInfo\ \&tableInfo,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ limit\ =\ Settings::Limits.DefaultRowLimit);}
+\DoxyCodeLine{00034\ \ \ \};\textcolor{comment}{//\ namespace\ Server}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{namespace\ }Local\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ getDatabases();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ getTables();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ getTableColumns();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ getTableRows();}
+\DoxyCodeLine{00041\ \ \ \}\textcolor{comment}{//\ namespace\ Local}}
+\DoxyCodeLine{00042\ \}\textcolor{comment}{//\ namespace\ HummingBird::Sql}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}\textcolor{comment}{//HUMMINGBIRD\_SQL\_TOOL\_SQLFUNCTIONS\_H}}
+
+\end{DoxyCode}

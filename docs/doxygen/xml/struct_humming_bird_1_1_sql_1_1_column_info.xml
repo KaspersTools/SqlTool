@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="struct_humming_bird_1_1_sql_1_1_column_info" kind="struct" language="C++" prot="public">
+    <compoundname>HummingBird::Sql::ColumnInfo</compoundname>
+    <includes refid="_structures_8h" local="no">Structures.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_humming_bird_1_1_sql_1_1_column_info_1acc6b28006de5396fd26aaa79291c024d" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string HummingBird::Sql::ColumnInfo::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>HummingBird::Sql::ColumnInfo::name</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/Hummingbird_SQL/Structures.h" line="50" column="17" bodyfile="include/Hummingbird_SQL/Structures.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2" compoundref="_sql_functions_8cpp" startline="101" endline="147">HummingBird::Sql::Server::getTableColumns</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/Hummingbird_SQL/Structures.h" line="49" column="3" bodyfile="include/Hummingbird_SQL/Structures.h" bodystart="49" bodyend="51"/>
+    <listofallmembers>
+      <member refid="struct_humming_bird_1_1_sql_1_1_column_info_1acc6b28006de5396fd26aaa79291c024d" prot="public" virt="non-virtual"><scope>HummingBird::Sql::ColumnInfo</scope><name>name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

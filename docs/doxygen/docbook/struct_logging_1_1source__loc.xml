@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_logging_1_1source__loc" xml:lang="en-US">
+<title>Logging::source_loc Struct Reference</title>
+<indexterm><primary>Logging::source_loc</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Config.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>constexpr <link linkend="_struct_logging_1_1source__loc_1a830c5efc34cf67cc723e2e6cb272a57f">source_loc</link> ()=default</para>
+</listitem>
+            <listitem><para>constexpr <link linkend="_struct_logging_1_1source__loc_1a466a91da264d27bcc4f174eb752722c8">source_loc</link> (const char *filename_in, int line_in, const char *funcname_in)</para>
+</listitem>
+            <listitem><para>constexpr bool <link linkend="_struct_logging_1_1source__loc_1a03355b8c2febac449f103bee39863580">empty</link> () const noexcept</para>
+</listitem>
+            <listitem><para>std::string <link linkend="_struct_logging_1_1source__loc_1ae9d456750e967fa8dc99d886b3950a4e">toString</link> () const</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>const char * <link linkend="_struct_logging_1_1source__loc_1a43c4bb392c0ce7cb349dcefa1784374d">filename</link> {nullptr}</para>
+</listitem>
+            <listitem><para>int <link linkend="_struct_logging_1_1source__loc_1acb6ae2cbb3523d3932840d6dff63e3ef">line</link> {0}</para>
+</listitem>
+            <listitem><para>const char * <link linkend="_struct_logging_1_1source__loc_1a8028d4f344979c8fdfe177b4d54c8d06">funcname</link> {nullptr}</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_struct_logging_1_1source__loc_1a830c5efc34cf67cc723e2e6cb272a57f"/><section>
+    <title>source_loc()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>source_loc</primary><secondary>Logging::source_loc</secondary></indexterm>
+<indexterm><primary>Logging::source_loc</primary><secondary>source_loc</secondary></indexterm>
+<para><computeroutput>constexpr Logging::source_loc::source_loc ( )<computeroutput>[constexpr]</computeroutput>, <computeroutput>[default]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_logging_1_1source__loc_1a466a91da264d27bcc4f174eb752722c8"/><section>
+    <title>source_loc()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>source_loc</primary><secondary>Logging::source_loc</secondary></indexterm>
+<indexterm><primary>Logging::source_loc</primary><secondary>source_loc</secondary></indexterm>
+<para><computeroutput>constexpr Logging::source_loc::source_loc (const char * filename_in, int line_in, const char * funcname_in)<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_struct_logging_1_1source__loc_1a03355b8c2febac449f103bee39863580"/><section>
+    <title>empty()</title>
+<indexterm><primary>empty</primary><secondary>Logging::source_loc</secondary></indexterm>
+<indexterm><primary>Logging::source_loc</primary><secondary>empty</secondary></indexterm>
+<para><computeroutput>constexpr bool Logging::source_loc::empty ( ) const<computeroutput>[inline]</computeroutput>, <computeroutput>[constexpr]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_struct_logging_1_1source__loc_1ae9d456750e967fa8dc99d886b3950a4e"/><section>
+    <title>toString()</title>
+<indexterm><primary>toString</primary><secondary>Logging::source_loc</secondary></indexterm>
+<indexterm><primary>Logging::source_loc</primary><secondary>toString</secondary></indexterm>
+<para><computeroutput>std::string Logging::source_loc::toString ( ) const<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_logging_1_1source__loc_1a43c4bb392c0ce7cb349dcefa1784374d"/><section>
+    <title>filename</title>
+<indexterm><primary>filename</primary><secondary>Logging::source_loc</secondary></indexterm>
+<indexterm><primary>Logging::source_loc</primary><secondary>filename</secondary></indexterm>
+<para><computeroutput>const char* Logging::source_loc::filename {nullptr}</computeroutput></para></section>
+<anchor xml:id="_struct_logging_1_1source__loc_1a8028d4f344979c8fdfe177b4d54c8d06"/><section>
+    <title>funcname</title>
+<indexterm><primary>funcname</primary><secondary>Logging::source_loc</secondary></indexterm>
+<indexterm><primary>Logging::source_loc</primary><secondary>funcname</secondary></indexterm>
+<para><computeroutput>const char* Logging::source_loc::funcname {nullptr}</computeroutput></para></section>
+<anchor xml:id="_struct_logging_1_1source__loc_1acb6ae2cbb3523d3932840d6dff63e3ef"/><section>
+    <title>line</title>
+<indexterm><primary>line</primary><secondary>Logging::source_loc</secondary></indexterm>
+<indexterm><primary>Logging::source_loc</primary><secondary>line</secondary></indexterm>
+<para><computeroutput>int Logging::source_loc::line {0}</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+include/Hummingbird_SQL/<link linkend="__config_8h">Config.h</link></section>
+</section>

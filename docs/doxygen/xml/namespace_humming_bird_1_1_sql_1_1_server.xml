@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespace_humming_bird_1_1_sql_1_1_server" kind="namespace" language="C++">
+    <compoundname>HummingBird::Sql::Server</compoundname>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_humming_bird_1_1_sql_1_1_server_1a7e0921ae2051d2cd1c1f231bc4173b61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_map&lt; std::string, std::unique_ptr&lt; <ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> &gt;, <ref refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1hash" kindref="compound">case_insensitive_unordered_map::hash</ref>, <ref refid="struct_humming_bird_1_1_sql_1_1case__insensitive__unordered__map_1_1comp" kindref="compound">case_insensitive_unordered_map::comp</ref> &gt;</type>
+        <definition>std::unordered_map&lt; std::string, std::unique_ptr&lt; SchemaInfo &gt;, case_insensitive_unordered_map::hash, case_insensitive_unordered_map::comp &gt; HummingBird::Sql::Server::getSchemas</definition>
+        <argsstring>(const Connection &amp;connection, const bool getTables, const bool getColumnsAndRows=false)</argsstring>
+        <name>getSchemas</name>
+        <qualifiedname>HummingBird::Sql::Server::getSchemas</qualifiedname>
+        <param>
+          <type>const <ref refid="class_humming_bird_1_1_sql_1_1_connection" kindref="compound">Connection</ref> &amp;</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>getTables</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>getColumnsAndRows</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/SqlFunctions.cpp" line="12" column="5" bodyfile="src/SqlFunctions.cpp" bodystart="12" bodyend="52" declfile="private/SqlFunctions.h" declline="19" declcolumn="5"/>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1ae64b880c6aefa583e1e5f86f56ca9e07" compoundref="_connection_8h" startline="189" endline="191">HummingBird::Sql::Connection::getSession</references>
+        <references refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" compoundref="_sql_functions_8cpp" startline="54" endline="99">getTables</references>
+        <references refid="_config_8h_1acf0f41eba0fd761746cf3eb9c900e030" compoundref="_config_8h" startline="15">HUMMINGBIRD_SQL_ASSERT</references>
+        <references refid="_config_8h_1a9c4811b8d6f3b58111a7fdac28766095" compoundref="_config_8h" startline="74" endline="77">HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION</references>
+        <references refid="_config_8h_1a7ca7c3f197541717d16a8755985fa1ec" compoundref="_config_8h" startline="67" endline="70">HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION</references>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2" compoundref="_connection_8h" startline="181" endline="183">HummingBird::Sql::Connection::isConnected</references>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1af1ab3a26099425eaa7938109221f2099" compoundref="_connection_8cpp" startline="66" endline="73">HummingBird::Sql::Connection::fetchSchemas</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_map&lt; std::string, <ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref> &gt;</type>
+        <definition>std::unordered_map&lt; std::string, TableInfo &gt; HummingBird::Sql::Server::getTables</definition>
+        <argsstring>(const Connection &amp;connection, const SchemaInfo &amp;databaseInfo, const bool getColumnsAndRows=false)</argsstring>
+        <name>getTables</name>
+        <qualifiedname>HummingBird::Sql::Server::getTables</qualifiedname>
+        <param>
+          <type>const <ref refid="class_humming_bird_1_1_sql_1_1_connection" kindref="compound">Connection</ref> &amp;</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> &amp;</type>
+          <declname>databaseInfo</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>getColumnsAndRows</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/SqlFunctions.cpp" line="54" column="24" bodyfile="src/SqlFunctions.cpp" bodystart="54" bodyend="99" declfile="private/SqlFunctions.h" declline="23" declcolumn="24"/>
+        <references refid="struct_humming_bird_1_1_sql_1_1_table_info_1a954c077ad6b196fbacdff24a16fea937" compoundref="_structures_8h" startline="56">HummingBird::Sql::TableInfo::columns</references>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1ae64b880c6aefa583e1e5f86f56ca9e07" compoundref="_connection_8h" startline="189" endline="191">HummingBird::Sql::Connection::getSession</references>
+        <references refid="namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2" compoundref="_sql_functions_8cpp" startline="101" endline="147">getTableColumns</references>
+        <references refid="namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f" compoundref="_sql_functions_8cpp" startline="149" endline="240">getTableRows</references>
+        <references refid="_config_8h_1acf0f41eba0fd761746cf3eb9c900e030" compoundref="_config_8h" startline="15">HUMMINGBIRD_SQL_ASSERT</references>
+        <references refid="_config_8h_1a9c4811b8d6f3b58111a7fdac28766095" compoundref="_config_8h" startline="74" endline="77">HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION</references>
+        <references refid="_config_8h_1a7ca7c3f197541717d16a8755985fa1ec" compoundref="_config_8h" startline="67" endline="70">HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION</references>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2" compoundref="_connection_8h" startline="181" endline="183">HummingBird::Sql::Connection::isConnected</references>
+        <references refid="struct_humming_bird_1_1_sql_1_1_table_info_1a6c2a40c9c7d5d3ac732365508bbf20e2" compoundref="_structures_8h" startline="54">HummingBird::Sql::TableInfo::name</references>
+        <references refid="struct_humming_bird_1_1_sql_1_1_schema_info_1acba50063acf5de44aa298fa38749efd8" compoundref="_structures_8h" startline="61">HummingBird::Sql::SchemaInfo::name</references>
+        <references refid="struct_humming_bird_1_1_sql_1_1_table_info_1a7ee7758cd92b037afc6751ec6647c843" compoundref="_structures_8h" startline="57">HummingBird::Sql::TableInfo::rows</references>
+        <references refid="struct_humming_bird_1_1_sql_1_1_table_info_1acad7204f43cf88e287ce1dd82c4369da" compoundref="_structures_8h" startline="55">HummingBird::Sql::TableInfo::schemaName</references>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1ac6f602f44d586e7f9278af8b68c737f0" compoundref="_connection_8cpp" startline="75" endline="78">HummingBird::Sql::Connection::fetchTables</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a7e0921ae2051d2cd1c1f231bc4173b61" compoundref="_sql_functions_8cpp" startline="12" endline="52">getSchemas</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_humming_bird_1_1_sql_1_1_server_1ad7c9b1d96bc8e2398be9b958c49e60c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_map&lt; std::string, <ref refid="struct_humming_bird_1_1_sql_1_1_column_info" kindref="compound">ColumnInfo</ref> &gt;</type>
+        <definition>std::unordered_map&lt; std::string, ColumnInfo &gt; HummingBird::Sql::Server::getTableColumns</definition>
+        <argsstring>(const Connection &amp;connection, const SchemaInfo &amp;databaseInfo, const TableInfo &amp;tableInfo)</argsstring>
+        <name>getTableColumns</name>
+        <qualifiedname>HummingBird::Sql::Server::getTableColumns</qualifiedname>
+        <param>
+          <type>const <ref refid="class_humming_bird_1_1_sql_1_1_connection" kindref="compound">Connection</ref> &amp;</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> &amp;</type>
+          <declname>databaseInfo</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref> &amp;</type>
+          <declname>tableInfo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="private/SqlFunctions.h" line="27" column="24" bodyfile="src/SqlFunctions.cpp" bodystart="101" bodyend="147" declfile="private/SqlFunctions.h" declline="27" declcolumn="24"/>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1ae64b880c6aefa583e1e5f86f56ca9e07" compoundref="_connection_8h" startline="189" endline="191">HummingBird::Sql::Connection::getSession</references>
+        <references refid="_config_8h_1acf0f41eba0fd761746cf3eb9c900e030" compoundref="_config_8h" startline="15">HUMMINGBIRD_SQL_ASSERT</references>
+        <references refid="_config_8h_1a7ca7c3f197541717d16a8755985fa1ec" compoundref="_config_8h" startline="67" endline="70">HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION</references>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2" compoundref="_connection_8h" startline="181" endline="183">HummingBird::Sql::Connection::isConnected</references>
+        <references refid="struct_humming_bird_1_1_sql_1_1_column_info_1acc6b28006de5396fd26aaa79291c024d" compoundref="_structures_8h" startline="50">HummingBird::Sql::ColumnInfo::name</references>
+        <references refid="struct_humming_bird_1_1_sql_1_1_table_info_1a6c2a40c9c7d5d3ac732365508bbf20e2" compoundref="_structures_8h" startline="54">HummingBird::Sql::TableInfo::name</references>
+        <references refid="struct_humming_bird_1_1_sql_1_1_schema_info_1acba50063acf5de44aa298fa38749efd8" compoundref="_structures_8h" startline="61">HummingBird::Sql::SchemaInfo::name</references>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1a97058387622bc6460ad1fafea058524a" compoundref="_connection_8cpp" startline="87" endline="90">HummingBird::Sql::Connection::fetchColumns</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" compoundref="_sql_functions_8cpp" startline="54" endline="99">getTables</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_humming_bird_1_1_sql_1_1_server_1a7b2f2a4b166529086f53a89ad341731f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_humming_bird_1_1_sql_1_1_row" kindref="compound">Row</ref> &gt;</type>
+        <definition>std::vector&lt; Row &gt; HummingBird::Sql::Server::getTableRows</definition>
+        <argsstring>(const Connection &amp;connection, const SchemaInfo &amp;databaseInfo, const TableInfo &amp;tableInfo, int limit=Settings::Limits.DefaultRowLimit)</argsstring>
+        <name>getTableRows</name>
+        <qualifiedname>HummingBird::Sql::Server::getTableRows</qualifiedname>
+        <param>
+          <type>const <ref refid="class_humming_bird_1_1_sql_1_1_connection" kindref="compound">Connection</ref> &amp;</type>
+          <declname>connection</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_humming_bird_1_1_sql_1_1_schema_info" kindref="compound">SchemaInfo</ref> &amp;</type>
+          <declname>databaseInfo</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_humming_bird_1_1_sql_1_1_table_info" kindref="compound">TableInfo</ref> &amp;</type>
+          <declname>tableInfo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>limit</declname>
+          <defval>Settings::Limits.DefaultRowLimit</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>&lt; Null value</para>
+<para>&lt; Unsigned integer</para>
+<para>&lt; Signed integer</para>
+<para>&lt; Float number</para>
+<para>&lt; Double number</para>
+<para>&lt; Boolean</para>
+<para>&lt; String</para>
+<para>&lt; Raw bytes</para>
+        </inbodydescription>
+        <location file="private/SqlFunctions.h" line="30" column="17" bodyfile="src/SqlFunctions.cpp" bodystart="149" bodyend="240" declfile="private/SqlFunctions.h" declline="30" declcolumn="17"/>
+        <references refid="class_humming_bird_1_1_sql_1_1_row_1a075318c4cb28cab33d76b3de9428271a" compoundref="_structures_8h" startline="25" endline="27">HummingBird::Sql::Row::addColumn</references>
+        <references refid="struct_humming_bird_1_1_sql_1_1_table_info_1a954c077ad6b196fbacdff24a16fea937" compoundref="_structures_8h" startline="56">HummingBird::Sql::TableInfo::columns</references>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1ae64b880c6aefa583e1e5f86f56ca9e07" compoundref="_connection_8h" startline="189" endline="191">HummingBird::Sql::Connection::getSession</references>
+        <references refid="_config_8h_1acf0f41eba0fd761746cf3eb9c900e030" compoundref="_config_8h" startline="15">HUMMINGBIRD_SQL_ASSERT</references>
+        <references refid="_config_8h_1af9aec3c5b10db82c21f96426322c6ab9" compoundref="_config_8h" startline="81" endline="84">HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION</references>
+        <references refid="_config_8h_1a9c4811b8d6f3b58111a7fdac28766095" compoundref="_config_8h" startline="74" endline="77">HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION</references>
+        <references refid="_config_8h_1a7ca7c3f197541717d16a8755985fa1ec" compoundref="_config_8h" startline="67" endline="70">HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION</references>
+        <references refid="class_humming_bird_1_1_sql_1_1_connection_1addae0ad7881e55df7b0e1275ec6b78c2" compoundref="_connection_8h" startline="181" endline="183">HummingBird::Sql::Connection::isConnected</references>
+        <references refid="struct_humming_bird_1_1_sql_1_1_table_info_1a6c2a40c9c7d5d3ac732365508bbf20e2" compoundref="_structures_8h" startline="54">HummingBird::Sql::TableInfo::name</references>
+        <references refid="struct_humming_bird_1_1_sql_1_1_schema_info_1acba50063acf5de44aa298fa38749efd8" compoundref="_structures_8h" startline="61">HummingBird::Sql::SchemaInfo::name</references>
+        <referencedby refid="class_humming_bird_1_1_sql_1_1_connection_1ad864503f0c2cf6a9aced4e9bf0c6b631" compoundref="_connection_8cpp" startline="106" endline="109">HummingBird::Sql::Connection::fetchRows</referencedby>
+        <referencedby refid="namespace_humming_bird_1_1_sql_1_1_server_1a616ae81f35bc0bbf66d44665e44f25bc" compoundref="_sql_functions_8cpp" startline="54" endline="99">getTables</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="private/SqlFunctions.h" line="15" column="3"/>
+  </compounddef>
+</doxygen>

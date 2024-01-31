@@ -1,0 +1,78 @@
+\doxysection{Structures.\+h}
+\label{_structures_8h_source}\index{include/Hummingbird\_SQL/Structures.h@{include/Hummingbird\_SQL/Structures.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Kasper\ de\ Bruin\ on\ 29/01/2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <Hummingbird\_SQL/Config.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <Hummingbird\_SQL/Connection.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }HummingBird::Sql\ \{}
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{using\ }ColumnValue\ =\ std::variant<uint64\_t,\ int64\_t,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ float,\ double,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bool,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::nullopt\_t>;\textcolor{comment}{//\ Add\ more\ types\ as\ needed}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{class\ }Row\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ Row()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00023\ \ \ \ \ \string~Row()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ addColumn(\textcolor{keyword}{const}\ std::string\ \&columnName,\ \textcolor{keyword}{const}\ ColumnValue\ \&columnValue)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ m\_columns[columnName]\ =\ columnValue;}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ ColumnValue\ getColumn(\textcolor{keyword}{const}\ std::string\ \&columnName)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ m\_columns.find(columnName);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ m\_columns.end())\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::nullopt;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::unordered\_map<std::string,\ ColumnValue>\ getColumns()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_columns;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ setColumns(\textcolor{keyword}{const}\ std::unordered\_map<std::string,\ ColumnValue>\ \&columns)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ m\_columns\ =\ columns;}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ \ \ std::unordered\_map<std::string,\ ColumnValue>\ m\_columns;}
+\DoxyCodeLine{00047\ \ \ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{struct\ }ColumnInfo\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00051\ \ \ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keyword}{struct\ }TableInfo\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ schemaName;}
+\DoxyCodeLine{00056\ \ \ \ \ std::unordered\_map<std::string,\ ColumnInfo>\ columns;}
+\DoxyCodeLine{00057\ \ \ \ \ std::vector<Row>\ rows;}
+\DoxyCodeLine{00058\ \ \ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{keyword}{struct\ }SchemaInfo\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00062\ \ \ \ \ std::unordered\_map<std::string,\ TableInfo>\ tables\ =\ \{\};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ std::optional<TableInfo>\ getTable(\textcolor{keyword}{const}\ std::string\ \&tableName)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ tables.find(tableName);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ tables.end())\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::nullopt;}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \};}
+\DoxyCodeLine{00072\ \}\textcolor{comment}{//\ namespace\ HummingBird::Sql}}
+
+\end{DoxyCode}
