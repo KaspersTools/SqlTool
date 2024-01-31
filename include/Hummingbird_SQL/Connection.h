@@ -216,8 +216,8 @@ public:
      * @brief Get the current schema
      * @return SchemaInfo The schema
      */
-    const SchemaInfo &getCurrentSchema() const {
-      return *m_currentSchema;
+    const SchemaInfo *getCurrentSchema() const {
+      return m_currentSchema;
     }
 
     /**
@@ -241,8 +241,8 @@ public:
      * @brief Get the current table
      * @return TableInfo The table
      */
-    const TableInfo &getCurrentTable() const {
-      return *m_currentTable;
+    const TableInfo *getCurrentTable() const {
+      return m_currentTable;
     }
 
     /**
