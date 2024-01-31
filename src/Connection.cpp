@@ -154,6 +154,7 @@ namespace HummingBird::Sql {
     }
     return *schemaInfo;
   }
+
   const TableInfo &Connection::getTable(SchemaInfo &schema, const std::string &tableName) {
     TableInfo *tableInfo = getTablePtr(schema, tableName);
     if (tableInfo == nullptr) {
@@ -201,24 +202,22 @@ namespace HummingBird::Sql {
 
     fetchColumns(*m_currentSchema, *m_currentTable);
     fetchRows(*m_currentSchema, *m_currentTable, Settings::Limits.CurrentRowLimit);
-
-    //display data
-    if (!m_currentTable->columns.empty()) {
-      std::string rowStr;
-      for(const auto &row: m_currentTable->rows) {
-        rowStr += "\n";
-        //Example:
-        //id: 1   | name: Kasper | age: 21  |
-        //id: 2   | name: Kasper | age: 333 |
-        //id: 100 | name: er     | age: 3   |
-        for(const auto &column: m_currentTable->columns) {
-          std::string val = row.getColumnValueAsString(column.first);
-          rowStr += column.first + ": " + val + " | ";
-        }
-      }
-      HUMMINGBIRD_SQL_LOG_FUNCTION(rowStr);
-    }
   }
+
+  std::vector<std::string> Connection::getCurrentColumnLayout() const {
+    if (m_currentTable == nullptr) {
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("No current table set");
+      return {};
+    }
+
+    std::vector<std::string> columnLayout = {};
+    TableInfo &table = *m_currentTable;
+    for (auto &[columnName, column]: table.columns) {
+      columnLayout.push_back(columnName);
+    }
+    return columnLayout;
+  }
+
 
 #pragma region private_functions
   SchemaInfo *Connection::getSchemaPtr(const std::string &schemaName) {
@@ -231,6 +230,7 @@ namespace HummingBird::Sql {
     }
     return schemaInfo;
   }
+
   TableInfo *Connection::getTablePtr(SchemaInfo &schema, const std::string &tableName) {
     TableInfo *tableInfo = nullptr;
     auto it = schema.tables.find(tableName);

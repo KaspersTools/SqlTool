@@ -19,6 +19,7 @@ namespace mysqlx {
   using mysqlx::abi2::r0::Session;
 }
 
+#include "Structures.h"
 #include <Hummingbird_SQL/Config.h>
 #include <cctype>
 #include <exception>
@@ -27,6 +28,7 @@ namespace mysqlx {
 #include <string>
 #include <unordered_map>
 #include <utility>
+#include <vector>
 
 namespace HummingBird::Sql {
   // Makes unordered map keys case insensitive
@@ -186,6 +188,14 @@ public:
     const SchemaInfo &getSchema(const std::string &schemaName);
 
     /**
+     * @brief Get the current schema
+     * @return SchemaInfo The schema
+     */
+    const SchemaInfo &getCurrentSchema() const{
+      return *m_currentSchema;
+    }
+
+    /**
      * @brief Get an table by name
      * @param schema The schema to get the table from
      * @param tableName The name of the table
@@ -200,6 +210,22 @@ public:
      * @return TableInfo The table
      */
     const TableInfo &getTable(const std::string &schema, const std::string &tableName);
+
+
+    /**
+     * @brief Get the current table
+     * @return TableInfo The table
+     */
+    const TableInfo &getCurrentTable() const {
+      return *m_currentTable;
+    }
+
+    /**
+     * @brief Get the current column layout
+     * @return std::vector<std::string> The column layout
+     */
+    std::vector<std::string> getCurrentColumnLayout() const;
+
 
     /**
      * @brief Get connection status
@@ -239,7 +265,7 @@ private:
     bool m_isConnected = false;
 
     SchemaInfo *m_currentSchema = nullptr;
-    TableInfo *m_currentTable = nullptr;
+    TableInfo  *m_currentTable = nullptr;
     std::string m_host;
     std::string m_user;
     std::string m_password;
