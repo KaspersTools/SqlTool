@@ -23,8 +23,7 @@ namespace HummingBird::Sql {
       std::vector<mysqlx::Schema> serverSchemas = {};
 
       try {
-        //        HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION << "Fetching schemas from server" << std::endl;
-        HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION("Fetching schemas from server");
+        HUMMINGBIRD_SQL_LOG_FUNCTION("Fetching schemas from server");
         serverSchemas = connection.getSession().getSchemas();
       } catch (const mysqlx::Error &err) {
         HUMMINGBIRD_SQL_ASSERT(false && err.what());
@@ -35,9 +34,7 @@ namespace HummingBird::Sql {
 
       for (const mysqlx::Schema &schema: serverSchemas) {
         std::string schemaName = schema.getName();
-
-        //        HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION << "Fetching schema " << schemaName << " (" << schemaIndex + 1 << "/" << schemaCount << ")" << std::endl;
-        HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION("Fetching schema " + schemaName + " (" + std::to_string(schemaIndex + 1) + "/" + std::to_string(schemaCount) + ")");
+        HUMMINGBIRD_SQL_TRACE_FUNCTION("Fetching schema " + schemaName + " (" + std::to_string(schemaIndex + 1) + "/" + std::to_string(schemaCount) + ")");
         std::unique_ptr<SchemaInfo> schemaInfo = std::make_unique<SchemaInfo>();
         schemaInfo->name = schemaName;
         if (getTables) {
@@ -62,8 +59,7 @@ namespace HummingBird::Sql {
       std::vector<mysqlx::Table> serverTables = {};
 
       try {
-        //        HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION << "Fetching tables from database: " << databaseInfo.name << std::endl;
-        HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION("Fetching tables from database: " + databaseInfo.name);
+        HUMMINGBIRD_SQL_LOG_FUNCTION("Fetching tables from database: " + databaseInfo.name);
         serverTables = connection.getSession().getSchema(databaseInfo.name).getTables();
       } catch (const mysqlx::Error &err) {
         HUMMINGBIRD_SQL_ASSERT(false && err.what());
@@ -82,9 +78,7 @@ namespace HummingBird::Sql {
         tbInfo.schemaName = databaseInfo.name;
         tbInfo.name = table.getName();
 
-        //        HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION << "Fetching table from database: "
-        //                                              << databaseInfo.name << " table: " << tbInfo.name << " (" << tableIndex + 1 << "/" << serverTables.size() << ")" << std::endl;
-        HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION("Fetching table from database: " + databaseInfo.name + " table: " + tbInfo.name + " (" + std::to_string(tableIndex + 1) + "/" + std::to_string(serverTables.size()) + ")");
+        HUMMINGBIRD_SQL_TRACE_FUNCTION("Fetching table from database: " + databaseInfo.name + " table: " + tbInfo.name + " (" + std::to_string(tableIndex + 1) + "/" + std::to_string(serverTables.size()) + ")");
 
         if (getColumnsAndRows) {
           tbInfo.columns = Server::getTableColumns(connection, databaseInfo, tbInfo);
@@ -98,6 +92,9 @@ namespace HummingBird::Sql {
       return tableInfos;
     }
 
+    /**
+     * Used to get the "headers" of a table
+     */
     std::unordered_map<std::string, ColumnInfo> Server::getTableColumns(const Connection &connection,
                                                                         const SchemaInfo &databaseInfo,
                                                                         const TableInfo &tableInfo) {
@@ -110,7 +107,6 @@ namespace HummingBird::Sql {
       uint16_t columnCount = 0;
 
       try {
-        //        HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION << "Fetching columns from database: " << databaseInfo.name << " table: " << tableInfo.name << std::endl;
         mysqlx::Schema schema = connection.getSession().getSchema(databaseInfo.name);
         mysqlx::Table table = schema.getTable(tableInfo.name);
         rowResult = table.select("*").execute();
@@ -125,23 +121,15 @@ namespace HummingBird::Sql {
       }
 
       for (uint16_t i = 0; i < columnCount; i++) {
-        //        HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION << "Fetching column from database: "
-        //                                              << databaseInfo.name << " table: "
-        //                                              << tableInfo.name << " column: "
-        //                                              << rowResult.getColumn(i).getColumnLabel()
-        //                                              << " (" << i + 1 << "/" << columnCount << ")"
-        //                                              << std::endl;
         std::string lbl = rowResult.getColumn(i).getColumnLabel();
-        HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION("Fetching column from database: " + databaseInfo.name +
-                                              " table: " + tableInfo.name +
-                                              " column: " + lbl +
-                                              " (" + std::to_string(i + 1) + "/" + std::to_string(columnCount) + ")");
+        HUMMINGBIRD_SQL_TRACE_FUNCTION("Fetching column from database: " + databaseInfo.name +
+                                       " table: " + tableInfo.name +
+                                       " column: " + lbl +
+                                       " (" + std::to_string(i + 1) + "/" + std::to_string(columnCount) + ")");
 
-        ColumnInfo columnInfo = {};
-        //todo: fill with types and other info
-        columnInfo.name = lbl;
 
-        columnInfos[columnInfo.name] = columnInfo;
+        ColumnInfo clInfo(lbl, ColumnType::HEADER);
+        columnInfos[lbl] = clInfo;
       }
       return columnInfos;
     }
@@ -149,7 +137,7 @@ namespace HummingBird::Sql {
     std::vector<Row> Server::getTableRows(const Connection &connection,
                                           const SchemaInfo &databaseInfo,
                                           const TableInfo &tableInfo,
-                                          int limit) {
+                                          uint limit) {
       if (!connection.isConnected()) {
         HUMMINGBIRD_SQL_ASSERT(false && "Connection is not established");
         return {};
@@ -159,7 +147,7 @@ namespace HummingBird::Sql {
       std::vector<Row> rows = {};
 
       try {
-        HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION("Fetching rows from database: " + databaseInfo.name + " table: " + tableInfo.name);
+        HUMMINGBIRD_SQL_LOG_FUNCTION("Fetching rows from database: " + databaseInfo.name + " table: " + tableInfo.name);
         mysqlx::Schema schema = connection.getSession().getSchema(databaseInfo.name);
         mysqlx::Table table = schema.getTable(tableInfo.name);
         mysqlx::RowResult rowResult = table.select("*").limit(limit).execute();
@@ -184,51 +172,67 @@ namespace HummingBird::Sql {
 
         for (const auto &column: tableInfo.columns) {
           ColumnValue val = std::nullopt;
-          HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION("Fetching row from database: " + databaseInfo.name + " table: " + tableInfo.name + " column: " + column.first + " (" + std::to_string(rowIndex + 1) + "/" + std::to_string(serverRows.size()) + ")");
+          ColumnType type = ColumnType::NULL_TYPE;
+
+          HUMMINGBIRD_SQL_TRACE_FUNCTION("Fetching row from database: " + databaseInfo.name + " table: " + tableInfo.name + " column: " + column.first + " (" + std::to_string(rowIndex + 1) + "/" + std::to_string(serverRows.size()) + ")");
           try {
             switch (serverRow[columnIndex].getType()) {
               case mysqlx::Value::Type::VNULL:///< Null value
                 val = std::nullopt;
+                type = ColumnType::NULL_TYPE;
                 break;
               case mysqlx::Value::Type::UINT64:///< Unsigned integer
                 val = serverRow[columnIndex].get<uint64_t>();
+                type = ColumnType::UINT64;
                 break;
               case mysqlx::Value::Type::INT64:///< Signed integer
                 val = serverRow[columnIndex].get<int64_t>();
+                type = ColumnType::INT64;
                 break;
               case mysqlx::Value::Type::FLOAT:///< Float number
                 val = serverRow[columnIndex].get<float>();
+                type = ColumnType::FLOAT;
                 break;
               case mysqlx::Value::Type::DOUBLE:///< Double number
                 val = serverRow[columnIndex].get<double>();
+                type = ColumnType::DOUBLE;
                 break;
               case mysqlx::Value::Type::BOOL:///< Boolean
                 val = serverRow[columnIndex].get<bool>();
+                type = ColumnType::BOOL;
                 break;
               case mysqlx::Value::Type::STRING:///< String
                 val = serverRow[columnIndex].get<std::string>();
+                type = ColumnType::STRING;
                 break;
                 //todo: add support for document
-                //              case mysqlx::Value::Type::DOCUMENT:///< Document
-                //                val = serverRow[columnIndex].get<std::string>();
-                //                break;
-              case mysqlx::Value::Type::RAW:///< Raw bytes
-                val = serverRow[columnIndex].get<std::string>();
-                break;
+                // case mysqlx::Value::Type::DOCUMENT:///< Document
+                // val = serverRow[columnIndex].get<std::string>();
+                // break;
+
+                //todo: add support for raw
+                // case mysqlx::Value::Type::RAW:///< Raw bytes
+                // val = serverRow[columnIndex].get<std::string>();
+                // type = ColumnType::RAW;
+                // break;
+
                 //todo: add support for array
-                //              case mysqlx::Value::Type::ARRAY:///< Array of values
-                //                val = serverRow[columnIndex].get<std::string>();
-                //                break;
+                // case mysqlx::Value::Type::ARRAY:///< Array of values
+                // val = serverRow[columnIndex].get<std::string>();
+                // break;
               default:
-                HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION("Unkown column type: " + std::to_string(serverRow[columnIndex].getType()) + "for column: " + column.first);
+                HUMMINGBIRD_SQL_ERROR_FUNCTION("Unkown column type: " + std::to_string(serverRow[columnIndex].getType()) + "for column: " + column.first);
                 val = std::nullopt;
+                type = ColumnType::NULL_TYPE;
                 break;
             }
           } catch (const mysqlx::Error &err) {
             HUMMINGBIRD_SQL_ASSERT(false && err.what());
             val = std::nullopt;
           }
-          rowInfo.addColumn(column.first, val);
+
+          ColumnInfo clInfo(column.first, type, val);
+          rowInfo.addColumn(column.first, clInfo);
           columnIndex++;
         }
 

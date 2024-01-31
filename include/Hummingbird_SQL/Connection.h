@@ -76,6 +76,35 @@ public:
     void disconnect();
 
     /**
+     * @brief Use scheme
+     * @param schemaName The schemaName to use
+     */
+    void setSchema(const std::string &schemaName);
+
+    /**
+     * @brief Use table
+     * @param tableName The tableName to use
+     */
+    void setTable(const std::string &tableName);
+
+    /**
+     * @brief Fetch the current schema
+     * @param fetchTables Fetch all tables
+     * @param fetchColumnsAndRows Fetch all columns and rows
+     * @return void
+     */
+    void fetchCurrentSchema(const bool fetchTables, const bool fetchColumnsAndRows, const uint rowLimit = Settings::Limits.DefaultRowLimit);
+
+    //TODO: implement
+//    /**
+//     * @brief Fetch the current schema
+//     * @param fetchTables Fetch all tables
+//     * @param fetchColumnsAndRows Fetch all columns and rows
+//     * @return void
+//     */
+        // void fetchSchema(const std::string &schemaName, const bool fetchTables, const bool fetchColumnsAndRows);
+
+    /**
      * @brief Fetch all schemas, tables, columns and rows
      * @param fetchTables Fetch all tables
      * @param fetchColumnsAndRows Fetch all columns and rows
@@ -130,7 +159,7 @@ public:
      * @param table The table to fetch the rows from
      * @return void
      */
-    void fetchRows(SchemaInfo &schema, TableInfo &table);
+    void fetchRows(SchemaInfo &schema, TableInfo &table, uint limit = Settings::Limits.DefaultRowLimit);
 
     /**
      *
@@ -139,7 +168,7 @@ public:
      * @param tableName The tableName to fetch the rows from
      * @return void
      */
-    void fetchRows(SchemaInfo &schema, const std::string &tableName);
+    void fetchRows(SchemaInfo &schema, const std::string &tableName, uint limit = Settings::Limits.DefaultRowLimit);
 
     /**
      * @brief Fetch all rows
@@ -147,9 +176,7 @@ public:
      * @param tableName The tableName to fetch the rows from
      * @return void
      */
-    void fetchRows(const std::string &schemaNames, const std::string &tableName);
-
-    //getters
+    void fetchRows(const std::string &schemaNames, const std::string &tableName, uint limit = Settings::Limits.DefaultRowLimit);
 
     /**
       * @brief Get an schema by name
@@ -191,7 +218,6 @@ public:
     }
 
 private:
-
     /**
      * @brief Get an schema by name
      * @param schemaName The name of the schema
@@ -212,7 +238,8 @@ private:
 private:
     bool m_isConnected = false;
 
-    std::string m_currentDatabaseName;
+    SchemaInfo *m_currentSchema = nullptr;
+    TableInfo *m_currentTable = nullptr;
     std::string m_host;
     std::string m_user;
     std::string m_password;

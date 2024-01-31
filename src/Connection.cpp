@@ -20,6 +20,9 @@ namespace HummingBird::Sql {
     if (session != nullptr) {
       delete session;
     }
+    if (m_currentSchema != nullptr) {
+      m_currentSchema = nullptr;
+    }
   }
 
   void Connection::connect(const std::string &hostname, const std::string &username,
@@ -45,7 +48,9 @@ namespace HummingBird::Sql {
 
     fetchSchemas(Settings::OnConnect.FetchTablesOnConnect, Settings::OnConnect.FetchColumnsAndRowsOnConnect);
 
-    fetchColumns("DSU_Core", "databasehistory");
+    if (!database.empty() || database != "" || database != " ") {
+      setSchema(database);
+    }
   }
 
   void Connection::disconnect() {
@@ -63,19 +68,38 @@ namespace HummingBird::Sql {
   }
 
   //Fetch functions
+
+  void Connection::fetchCurrentSchema(const bool fetchTables, const bool fetchColumnsAndRows, const uint rowLimit) {
+    if (m_currentSchema == nullptr) {
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("No current schema set");
+      return;
+    }
+    if (fetchTables) {
+      Connection::fetchTables(*m_currentSchema, fetchColumnsAndRows);
+    }
+    if (fetchColumnsAndRows) {
+      for (auto &[tableName, table]: m_currentSchema->tables) {
+        Connection::fetchColumns(*m_currentSchema, table);
+        Connection::fetchRows(*m_currentSchema, table, rowLimit);
+      }
+    }
+  }
+
   void Connection::fetchSchemas(const bool getTables, const bool getColumnsAndRows) {
     m_schemas.clear();
     m_schemas = Server::getSchemas(*this, getTables, getColumnsAndRows);
 
     if (m_schemas.empty()) {
-      HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION("No schemas found");
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("No schemas found");
     }
   }
+
 
   void Connection::fetchTables(SchemaInfo &schema, const bool getColumnsAndRows) {
     schema.tables.clear();
     schema.tables = Server::getTables(*this, schema, getColumnsAndRows);
   }
+
   void Connection::fetchTables(const std::string &databaseName, const bool getColumnsAndRows) {
     SchemaInfo *schemaInfo = getSchemaPtr(databaseName);
     if (schemaInfo == nullptr) {
@@ -103,39 +127,97 @@ namespace HummingBird::Sql {
     fetchColumns(*schemaInfo, tableName);
   }
 
-  void Connection::fetchRows(SchemaInfo &schema, TableInfo &table) {
+  void Connection::fetchRows(SchemaInfo &schema, TableInfo &table, const uint limit) {
     table.rows.clear();
-    table.rows = Server::getTableRows(*this, schema, table);
+    table.rows = Server::getTableRows(*this, schema, table, limit);
   }
-  void Connection::fetchRows(SchemaInfo &schema, const std::string &tableName) {
+  void Connection::fetchRows(SchemaInfo &schema, const std::string &tableName, const uint limit) {
     TableInfo *tableInfo = getTablePtr(schema, tableName);
     if (tableInfo == nullptr) {
       return;
     }
-    fetchRows(schema, *tableInfo);
+    fetchRows(schema, *tableInfo, limit);
   }
-  void Connection::fetchRows(const std::string &databaseName, const std::string &tableName) {
+  void Connection::fetchRows(const std::string &databaseName, const std::string &tableName, const uint limit) {
     SchemaInfo *schemaInfo = getSchemaPtr(databaseName);
     if (schemaInfo == nullptr) {
       return;
     }
-    fetchRows(*schemaInfo, tableName);
+    fetchRows(*schemaInfo, tableName, limit);
   }
 
   //Cache functions
   const SchemaInfo &Connection::getSchema(const std::string &schemaName) {
     SchemaInfo *schemaInfo = getSchemaPtr(schemaName);
     if (schemaInfo == nullptr) {
-      HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION("Schema not found in cache " + schemaName);
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("Schema not found in cache " + schemaName);
     }
     return *schemaInfo;
   }
   const TableInfo &Connection::getTable(SchemaInfo &schema, const std::string &tableName) {
     TableInfo *tableInfo = getTablePtr(schema, tableName);
     if (tableInfo == nullptr) {
-      HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION("Table not found in cache " + tableName);
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("Table not found in cache " + tableName);
     }
     return *tableInfo;
+  }
+
+  void Connection::setSchema(const std::string &schemaName) {
+    HUMMINGBIRD_SQL_LOG_FUNCTION("Setting schema to " + schemaName);
+
+    SchemaInfo *schemaInfo = getSchemaPtr(schemaName);
+    m_currentSchema = schemaInfo;
+
+    if (schemaInfo == nullptr) {
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("Schema not found in cache " + schemaName);
+      return;
+    }
+
+    fetchCurrentSchema(true, false);
+    m_currentTable = nullptr;
+
+    if (m_currentSchema->tables.empty()) {
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("No tables found in schema " + schemaName);
+      return;
+    }
+
+    setTable(m_currentSchema->tables.begin()->first);
+  }
+
+  void Connection::setTable(const std::string &tableName) {
+    HUMMINGBIRD_SQL_LOG_FUNCTION("Setting table to " + tableName);
+
+    if (m_currentSchema == nullptr) {
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("No current schema set");
+      return;
+    }
+    TableInfo *tableInfo = getTablePtr(*m_currentSchema, tableName);
+    m_currentTable = tableInfo;
+
+    if (tableInfo == nullptr) {
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("Table not found in cache " + tableName);
+      return;
+    }
+
+    fetchColumns(*m_currentSchema, *m_currentTable);
+    fetchRows(*m_currentSchema, *m_currentTable, Settings::Limits.CurrentRowLimit);
+
+    //display data
+    if (!m_currentTable->columns.empty()) {
+      std::string rowStr;
+      for(const auto &row: m_currentTable->rows) {
+        rowStr += "\n";
+        //Example:
+        //id: 1   | name: Kasper | age: 21  |
+        //id: 2   | name: Kasper | age: 333 |
+        //id: 100 | name: er     | age: 3   |
+        for(const auto &column: m_currentTable->columns) {
+          std::string val = row.getColumnValueAsString(column.first);
+          rowStr += column.first + ": " + val + " | ";
+        }
+      }
+      HUMMINGBIRD_SQL_LOG_FUNCTION(rowStr);
+    }
   }
 
 #pragma region private_functions
@@ -145,7 +227,7 @@ namespace HummingBird::Sql {
     if (it != m_schemas.end()) {
       schemaInfo = it->second.get();
     } else {
-      HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION("Schema not found" + schemaName);
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("Schema not found" + schemaName);
     }
     return schemaInfo;
   }
@@ -155,7 +237,7 @@ namespace HummingBird::Sql {
     if (it != schema.tables.end()) {
       tableInfo = &it->second;
     } else {
-      HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION("Table not found" + tableName);
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("Table not found" + tableName);
     }
     return tableInfo;
   }

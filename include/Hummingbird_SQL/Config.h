@@ -63,29 +63,29 @@ namespace Logging {
 #define HUMMINGBIRD_SQL_LOG_ACTIVE true
 #endif
 
-#ifndef HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION
-#define HUMMINGBIRD_SQL_SERVER_TRACE_FUNCTION(...)                                                \
+#ifndef HUMMINGBIRD_SQL_TRACE_FUNCTION
+#define HUMMINGBIRD_SQL_TRACE_FUNCTION(...)                                                \
   if (HUMMINGBIRD_SQL_LOG_ACTIVE && HUMMINGBIRD_SQL_LOG_LEVEL <= HUMMINGBIRD_SQL_LOG_LEVEL_TRACE) \
   ::Logging::showTrace(::Logging::source_loc(__FILE__, __LINE__, __FUNCTION__),                   \
                        __VA_ARGS__)
 #endif
 
-#ifndef HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION
-#define HUMMINGBIRD_SQL_SERVER_LOG_FUNCTION(...)                                                \
+#ifndef HUMMINGBIRD_SQL_LOG_FUNCTION
+#define HUMMINGBIRD_SQL_LOG_FUNCTION(...)                                                \
   if (HUMMINGBIRD_SQL_LOG_ACTIVE && HUMMINGBIRD_SQL_LOG_LEVEL <= HUMMINGBIRD_SQL_LOG_LEVEL_LOG) \
   ::Logging::showLog(::Logging::source_loc(__FILE__, __LINE__, __FUNCTION__),                   \
                      __VA_ARGS__)
 #endif
 
-#ifndef HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION
-#define HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION(...)                                                \
+#ifndef HUMMINGBIRD_SQL_ERROR_FUNCTION
+#define HUMMINGBIRD_SQL_ERROR_FUNCTION(...)                                                \
   if (HUMMINGBIRD_SQL_LOG_ACTIVE && HUMMINGBIRD_SQL_LOG_LEVEL <= HUMMINGBIRD_SQL_LOG_LEVEL_ERROR) \
   ::Logging::showError(::Logging::source_loc(__FILE__, __LINE__, __FUNCTION__),                   \
                        __VA_ARGS__)
 #endif
 
-#ifndef HUMMINGBIRD_SQL_SERVER_FATAL_FUNCTION
-#define HUMMINGBIRD_SQL_SERVER_FATAL_FUNCTION(...)                                                \
+#ifndef HUMMINGBIRD_SQL_FATAL_FUNCTION
+#define HUMMINGBIRD_SQL_FATAL_FUNCTION(...)                                                \
   if (HUMMINGBIRD_SQL_LOG_ACTIVE && HUMMINGBIRD_SQL_LOG_LEVEL <= HUMMINGBIRD_SQL_LOG_LEVEL_FATAL) \
   ::Logging::showFatal(::Logging::source_loc(__FILE__, __LINE__, __FUNCTION__),                   \
                        __VA_ARGS__)
@@ -112,5 +112,6 @@ namespace Settings {
 
   static struct {
     uint32_t DefaultRowLimit = HUMMINGBIRD_SQL_SETTINGS_DEFAULT_ROW_LIMIT;
+    uint32_t CurrentRowLimit = DefaultRowLimit;
   } Limits;
 }// namespace Settings

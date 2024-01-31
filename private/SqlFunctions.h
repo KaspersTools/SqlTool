@@ -19,7 +19,7 @@ namespace HummingBird::Sql {
     getSchemas(const Connection &connection,
                const bool getTables,
                const bool getColumnsAndRows = false);
-    
+
     std::unordered_map<std::string, TableInfo> getTables(const Connection &connection,
                                                          const SchemaInfo &databaseInfo,
                                                          const bool getColumnsAndRows = false);
@@ -30,7 +30,7 @@ namespace HummingBird::Sql {
     std::vector<Row> getTableRows(const Connection &connection,
                                   const SchemaInfo &databaseInfo,
                                   const TableInfo &tableInfo,
-                                  int limit = Settings::Limits.DefaultRowLimit);
+                                  uint limit = Settings::Limits.DefaultRowLimit);
   };// namespace Server
 
   namespace Local {
