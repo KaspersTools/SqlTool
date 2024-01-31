@@ -60,18 +60,107 @@ namespace HummingBird::Sql {
     m_isConnected = false;
   }
 
+
+#pragma region Server_Functions
+
+#pragma region Schema functions
   void Connection::fetchSchemas(const bool getTables, const bool getColumnsAndRows) {
     m_schemas.clear();
     m_schemas = Server::getSchemas(*this, getTables, getColumnsAndRows);
+
+    if (m_schemas.empty()) {
+      HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION("No schemas found");
+    }
+  }
+#pragma endregion Schema functions
+
+#pragma region Table functions
+  void Connection::fetchTables(SchemaInfo &schema, const bool getColumnsAndRows) {
+    schema.tables = Server::getTables(*this, schema, getColumnsAndRows);
+  }
+  void Connection::fetchTables(const std::string &databaseName, const bool getColumnsAndRows) {
+    SchemaInfo *schemaInfo = getSchema(databaseName);
+    if (schemaInfo == nullptr) {
+      return;
+    }
+
+    fetchTables(*schemaInfo, getColumnsAndRows);
+  }
+#pragma endregion Table functions
+
+#pragma region Column and Row functions
+  void Connection::fetchColumns(SchemaInfo &schema, const std::string &tableName) {
+    TableInfo *tableInfo = getTable(schema, tableName);
+    if (tableInfo == nullptr) {
+      return;
+    }
+
+    tableInfo->columns = Server::getTableColumns(*this, schema, *tableInfo);
+  }
+  void Connection::fetchColumns(const std::string &schemaName, const std::string &tableName) {
+    SchemaInfo *schemaInfo = getSchema(schemaName);
+    if (schemaInfo == nullptr) {
+      return;
+    }
+
+    fetchColumns(*schemaInfo, tableName);
   }
 
-  void Connection::fetchTables(const std::string& databaseName, const bool getColumnsAndRows){
-  }
+  void Connection::fetchRows(SchemaInfo &schema, const std::string &tableName) {
+    TableInfo *tableInfo = getTable(schema, tableName);
+    if (tableInfo == nullptr) {
+      return;
+    }
 
-  void Connection::fetchColumns(const std::string& databaseName, const std::string &tableName) {
+    tableInfo->rows = Server::getTableRows(*this, schema, *tableInfo);
   }
+  void Connection::fetchRows(const std::string &databaseName, const std::string &tableName) {
+    SchemaInfo *schemaInfo = getSchema(databaseName);
+    if (schemaInfo == nullptr) {
+      return;
+    }
 
-  void Connection::fetchRows(const std::string& databaseName, const std::string &tableName) {
+    fetchRows(*schemaInfo, tableName);
   }
+#pragma endregion Column and Row functions
+
+#pragma endregion Server_Functions
+
+#pragma region Local_Functions
+
+#pragma region Schema functions
+  SchemaInfo *Connection::getSchema(const std::string &schemaName) {
+    if (m_schemas.find(schemaName) == m_schemas.end()) {
+      HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION("Schema: " + schemaName + " not found");
+      return nullptr;
+    }
+    return m_schemas[schemaName].get();
+  }
+#pragma endregion Schema functions
+#pragma region Table functions
+  TableInfo *Connection::getTable(HummingBird::Sql::SchemaInfo &schema, const std::string &tableName) {
+    if (schema.tables.find(tableName) == schema.tables.end()) {
+      HUMMINGBIRD_SQL_SERVER_ERROR_FUNCTION("Table: " + tableName + " not found");
+      return nullptr;
+    }
+    return &schema.tables[tableName];
+  }
+  TableInfo *Connection::getTable(const std::string &schemaName, const std::string &tableName) {
+    SchemaInfo *schemaInfo = getSchema(schemaName);
+    if (schemaInfo == nullptr) {
+      return nullptr;
+    }
+
+    return getTable(*schemaInfo, tableName);
+  }
+#pragma endregion Table functions
+
+#pragma region Column and Row Functions
+
+
+#pragma endregion Column and Row Functions
+
+
+#pragma endregion Local_Functions
 
 }// namespace HummingBird::Sql
