@@ -85,6 +85,11 @@ public:
 
     /**
      * @brief Use table
+     * @param table The table to use
+     */
+    void setTable(TableInfo *table);
+    /**
+     * @brief Use table
      * @param tableName The tableName to use
      */
     void setTable(const std::string &tableName);
