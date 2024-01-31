@@ -183,6 +183,7 @@ public:
     ///Getters///
     /**
      * @brief Get all schema names
+     * @return std::vector<std::string> The schema names
      */
     std::vector<std::string> getSchemaNames() const {
       std::vector<std::string> schemaNames;
@@ -190,6 +191,18 @@ public:
         schemaNames.push_back(schema.first);
       }
       return schemaNames;
+    }
+
+    /**
+     * @brief Get all schemas
+     * @return std::vector<SchemaInfo> The schemas
+     */
+    std::vector<SchemaInfo *> getSchemas() const {
+      std::vector<SchemaInfo *> schemas;
+      for (auto &schema: m_schemas) {
+        schemas.push_back(schema.second.get());
+      }
+      return schemas;
     }
 
     /**
