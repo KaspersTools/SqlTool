@@ -245,6 +245,9 @@ namespace HummingBird::Sql {
       HUMMINGBIRD_SQL_ERROR_FUNCTION("Table not found in cache " + table->name);
       return;
     }
+
+    fetchColumns(*m_currentSchema, *m_currentTable);
+    fetchRows(*m_currentSchema, *m_currentTable, Settings::Limits.CurrentRowLimit);
   }
 
 
