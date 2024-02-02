@@ -75,18 +75,27 @@ public:
     void disconnect();
 
     /**
-     * @brief Use scheme
-     * @param schemaName The schemaName to use
-     */
-    void setSchema(const std::string& schemaName);
-
-    /**
      * @brief Fetch all schemas, tables, columns and rows
      * @param fetchTables Fetch all tables
      * @param fetchColumnsAndRows Fetch all columns and rows
      * @return void
      */
     void fetchSchemas(const bool fetchTables, const bool fetchColumnsAndRows);
+
+    ///Setters///
+    /**
+     * @brief Use scheme
+     * @param schemaName The schemaName to use
+     */
+    void setSchema(const std::string& schemaName);
+
+    /**
+     * @brief Set table
+     * @param schemaName The schemaName to use
+     * @param tableName The tableName to use
+     */
+    void setTable(const std::string& schemaName, const std::string& tableName);
+
 
    ///Getters///
     /**

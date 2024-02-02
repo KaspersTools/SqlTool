@@ -131,6 +131,7 @@ public:
 private:
     std::string name;
     std::unordered_map<std::string, std::unique_ptr<TableInfo>> tables = {};
+    TableInfo *m_currentTable = nullptr;
 
 public:
     SchemaInfo(const std::string &name, std::unordered_map<std::string, std::unique_ptr<TableInfo>> tables)
@@ -148,6 +149,17 @@ public:
 
     const std::unordered_map<std::string, std::unique_ptr<TableInfo>> &getTables() const {
       return tables;
+    }
+
+    void setTable(const std::string &tableName) {
+      auto table = tables.find(tableName);
+      if (table != tables.end()) {
+        m_currentTable = table->second.get();
+      }
+    }
+
+    const TableInfo &getCurrentTable() const {
+      return *m_currentTable;
     }
 
     std::unique_ptr<SchemaInfo> getCopy() {

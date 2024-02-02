@@ -112,6 +112,11 @@ namespace HummingBird::Sql {
     m_currentSchema = schemaInfo;
   }
 
+  void Connection::setTable(const std::string& schameName, const std::string& tableName){
+    setSchema(schameName);
+    m_currentSchema->setTable(tableName);
+  }
+
 #pragma region private_functions
   SchemaInfo *Connection::getSchemaPtrByName(const std::string &schemaName) {
     SchemaInfo *schemaInfo = nullptr;
