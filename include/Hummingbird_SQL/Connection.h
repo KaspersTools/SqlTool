@@ -105,7 +105,7 @@ public:
      * @brief Get the list of schemas in the database
      * @return std::vector<SchemaInfo> The list of schemas
      */
-    const std::vector<SchemaInfo> getSchemas() const;
+    const std::vector<std::unique_ptr<SchemaInfo>> getSchemas() const;
 
     /**
      * @brief Get connection status

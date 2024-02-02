@@ -136,10 +136,6 @@ public:
     SchemaInfo(const std::string &name, std::unordered_map<std::string, std::unique_ptr<TableInfo>> tables)
         : name(name), tables(std::move(tables)) {}
 
-    static SchemaInfo getEmptySchema() {
-      return SchemaInfo("", {});
-    }
-
     SchemaInfo(SchemaInfo *schemaInfo) : name(schemaInfo->getName()) {
       for (const auto &table: schemaInfo->getTables()) {
         tables[table.first] = std::make_unique<TableInfo>(table.second->getName(), table.second->getSchemaName());
@@ -152,6 +148,10 @@ public:
 
     const std::unordered_map<std::string, std::unique_ptr<TableInfo>> &getTables() const {
       return tables;
+    }
+
+    std::unique_ptr<SchemaInfo> getCopy() {
+      return std::make_unique<SchemaInfo>(this);
     }
   };
 }// namespace HummingBird::Sql

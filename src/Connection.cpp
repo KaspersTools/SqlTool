@@ -84,26 +84,26 @@ namespace HummingBird::Sql {
     return schemaNames;
   }
 
-  /**
-     * @brief Get the current schema
-     * @return SchemaInfo ref The current schema
-     */
-  const SchemaInfo &Connection::getCurrentSchema() const {
-    return SchemaInfo::getEmptySchema();
-  }
-
 
   /**
      * @brief Get the list of schemas in the database
      * @return std::vector<SchemaInfo> The list of schemas
      */
-  const std::vector<SchemaInfo> Connection::getSchemas() const {
-    std::vector<SchemaInfo> schemas;
-    for (auto &schema: m_schemas) {
-      SchemaInfo copy = *schema.second;
-      schemas.push_back(copy);
-    }
-    return schemas;
+  const std::vector<std::unique_ptr<SchemaInfo>> Connection::getSchemas() const {
+//    std::vector<SchemaInfo> schemas;
+//    for (auto &schema: m_schemas) {
+//      SchemaInfo copy = *schema.second;
+//      schemas.push_back(copy);
+//    }
+//    return schemas;
+
+      std::vector<std::unique_ptr<SchemaInfo>> schemas;
+      for(const auto& [schemaName, schemaInfo] : m_schemas){
+        std::unique_ptr<SchemaInfo> schemaInfoCopy = schemaInfo->getCopy();
+        schemas.push_back(std::move(schemaInfoCopy));
+      }
+
+      return schemas;
   }
 
   //setters
