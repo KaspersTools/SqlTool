@@ -93,27 +93,19 @@ public:
      * @brief Get all schema names
      * @return std::vector<std::string> The schema names
      */
-    std::vector<std::string> getSchemaNames() const {
-      std::vector<std::string> schemaNames;
-      for (auto &schema: m_schemas) {
-        schemaNames.push_back(schema.first);
-      }
-      return schemaNames;
-    }
-
-    /**
-     * @brief Get all schemas
-     * @return std::vector<SchemaInfo> The schemas
-     */
-    const std::vector<SchemaInfo*> getSchemas() const;
+    const std::vector<std::string> getSchemaNames() const;
 
     /**
      * @brief Get the current schema
-     * @return SchemaInfo The schema
+     * @return SchemaInfo ref The current schema
      */
-    const SchemaInfo *getCurrentSchema() const {
-      return m_currentSchema;
-    }
+    const SchemaInfo &getCurrentSchema() const;
+
+    /**
+     * @brief Get the list of schemas in the database
+     * @return std::vector<SchemaInfo> The list of schemas
+     */
+    const std::vector<SchemaInfo> getSchemas() const;
 
     /**
      * @brief Get connection status

@@ -76,13 +76,13 @@ public:
     Row() = default;
     ~Row() = default;
 
-    const ColumnInfo& getColumn(const std::string &columnName) const {
+    const ColumnInfo &getColumn(const std::string &columnName) const {
     }
 
-    const std::string& getColumnValueAsString(const std::string &columnName) const {
+    const std::string &getColumnValueAsString(const std::string &columnName) const {
     }
 
-    const ColumnValue& getColumnValue(const std::string &columnName) const {
+    const ColumnValue &getColumnValue(const std::string &columnName) const {
     }
 
     const void setColumn(const std::string &columnName, const ColumnInfo &column) {
@@ -125,16 +125,26 @@ public:
 
     void fetchRows() {
     }
-
   };
 
   struct SchemaInfo {
 private:
     std::string name;
     std::unordered_map<std::string, std::unique_ptr<TableInfo>> tables = {};
+
 public:
     SchemaInfo(const std::string &name, std::unordered_map<std::string, std::unique_ptr<TableInfo>> tables)
         : name(name), tables(std::move(tables)) {}
+
+    static SchemaInfo getEmptySchema() {
+      return SchemaInfo("", {});
+    }
+
+    SchemaInfo(SchemaInfo *schemaInfo) : name(schemaInfo->getName()) {
+      for (const auto &table: schemaInfo->getTables()) {
+        tables[table.first] = std::make_unique<TableInfo>(table.second->getName(), table.second->getSchemaName());
+      }
+    }
 
     const std::string &getName() const {
       return name;
@@ -142,10 +152,6 @@ public:
 
     const std::unordered_map<std::string, std::unique_ptr<TableInfo>> &getTables() const {
       return tables;
-    }
-
-    void fetchTables() {
-
     }
   };
 }// namespace HummingBird::Sql

@@ -71,10 +71,44 @@ namespace HummingBird::Sql {
 
   //Cache functions
   //getters
-  const std::vector<SchemaInfo *> Connection::getSchemas() const {
-    std::vector<SchemaInfo *> schemas;
+  std::vector<std::string> Connection::getSchemaNames() const {
+    std::vector<std::string> schemaNames;
     for (auto &schema: m_schemas) {
-      schemas.push_back(schema.second.get());
+      schemaNames.push_back(schema.first);
+    }
+    return schemaNames;
+  }
+
+  /**
+     * @brief Get all schema names
+     * @return std::vector<std::string> The schema names
+     */
+  const std::vector<std::string> Connection::getSchemaNames() const {
+    std::vector<std::string> schemaNames;
+    for (auto &schema: m_schemas) {
+      schemaNames.push_back(schema.first);
+    }
+    return schemaNames;
+  }
+
+  /**
+     * @brief Get the current schema
+     * @return SchemaInfo ref The current schema
+     */
+  const SchemaInfo &Connection::getCurrentSchema() const {
+    return SchemaInfo::getEmptySchema();
+  }
+
+
+  /**
+     * @brief Get the list of schemas in the database
+     * @return std::vector<SchemaInfo> The list of schemas
+     */
+  const std::vector<SchemaInfo> Connection::getSchemas() const {
+    std::vector<SchemaInfo> schemas;
+    for (auto &schema: m_schemas) {
+      SchemaInfo copy = *schema.second;
+      schemas.push_back(copy);
     }
     return schemas;
   }
