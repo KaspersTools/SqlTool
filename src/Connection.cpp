@@ -70,14 +70,7 @@ namespace HummingBird::Sql {
 
 
   //Cache functions
-  //getters
-  std::vector<std::string> Connection::getSchemaNames() const {
-    std::vector<std::string> schemaNames;
-    for (auto &schema: m_schemas) {
-      schemaNames.push_back(schema.first);
-    }
-    return schemaNames;
-  }
+  //gettersxw
 
   /**
      * @brief Get all schema names
