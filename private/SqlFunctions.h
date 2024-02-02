@@ -13,24 +13,18 @@
 
 namespace HummingBird::Sql {
   namespace Server {
-    std::unordered_map<std::string, std::unique_ptr<SchemaInfo>,
-                       case_insensitive_unordered_map::hash,
-                       case_insensitive_unordered_map::comp>
-    getSchemas(const Connection &connection,
-               const bool getTables,
-               const bool getColumnsAndRows = false);
+    std::unordered_map<std::string, std::unique_ptr<SchemaInfo>, case_insensitive_unordered_map::hash, case_insensitive_unordered_map::comp>
+    fetchSchemas(const Connection &connection, const bool getTables = true, const bool getColumnsAndRows = false);
 
-    std::unordered_map<std::string, TableInfo> getTables(const Connection &connection,
-                                                         const SchemaInfo &databaseInfo,
-                                                         const bool getColumnsAndRows = false);
+    std::unordered_map<std::string, std::unique_ptr<TableInfo>>
+    fetchTables(const Connection &connection, const std::string &schemaName, const bool getColumnsAndRows = false);
 
-    std::unordered_map<std::string, ColumnInfo> getTableColumns(const Connection &connection,
-                                                                const SchemaInfo &databaseInfo,
-                                                                const TableInfo &tableInfo);
-    std::vector<Row> getTableRows(const Connection &connection,
-                                  const SchemaInfo &databaseInfo,
-                                  const TableInfo &tableInfo,
-                                  uint limit = Settings::Limits.DefaultRowLimit);
+    std::vector<std::unique_ptr<ColumnInfo>>
+    fetchColumns(const Connection &connection, const std::string &schemaName, const std::string &tableName);
+
+    std::vector<std::unique_ptr<Row>>
+    fetchRows(const Connection &connection, const std::string &schemaName, const std::string &tableName);
+
   };// namespace Server
 
   namespace Local {

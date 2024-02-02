@@ -8,9 +8,6 @@ namespace mysqlx::abi2::r0 {
 }
 
 namespace HummingBird::Sql {
-  class Row;
-  struct ColumnInfo;
-  struct TableInfo;
   struct SchemaInfo;
 }// namespace HummingBird::Sql
 
@@ -19,7 +16,6 @@ namespace mysqlx {
   using mysqlx::abi2::r0::Session;
 }
 
-#include "Structures.h"
 #include <Hummingbird_SQL/Config.h>
 #include <cctype>
 #include <exception>
@@ -39,6 +35,7 @@ namespace HummingBird::Sql {
         return strcasecmp(lhs.c_str(), rhs.c_str()) == 0;
       }
     };
+
     struct hash {
       std::size_t operator()(std::string str) const {
         for (std::size_t index = 0; index < str.size(); ++index) {
@@ -81,30 +78,7 @@ public:
      * @brief Use scheme
      * @param schemaName The schemaName to use
      */
-    void setSchema(SchemaInfo* chema);
-
-    /**
-     * @brief Use table
-     * @param table The table to use
-     */
-    void setTable(TableInfo *table);
-
-    /**
-     * @brief Fetch the current schema
-     * @param fetchTables Fetch all tables
-     * @param fetchColumnsAndRows Fetch all columns and rows
-     * @return void
-     */
-    void fetchCurrentSchema(const bool fetchTables, const bool fetchColumnsAndRows, const uint rowLimit = Settings::Limits.DefaultRowLimit);
-
-    //TODO: implement
-    //    /**
-    //     * @brief Fetch the current schema
-    //     * @param fetchTables Fetch all tables
-    //     * @param fetchColumnsAndRows Fetch all columns and rows
-    //     * @return void
-    //     */
-    // void fetchSchema(const std::string &schemaName, const bool fetchTables, const bool fetchColumnsAndRows);
+    void setSchema(const std::string& schemaName);
 
     /**
      * @brief Fetch all schemas, tables, columns and rows
@@ -114,73 +88,7 @@ public:
      */
     void fetchSchemas(const bool fetchTables, const bool fetchColumnsAndRows);
 
-    /**
-     * @brief Fetch all tables, columns and rows
-     * @param schema The schema to fetch the tables from
-     * @param fetchColumnsAndRows Fetch all columns and rows
-     * @return void
-     */
-    void fetchTables(SchemaInfo &schema, const bool fetchColumnsAndRows);
-
-    /**
-     * @brief Fetch all columns and rows
-     * @param schemaName The schemaName to fetch the columns and rows from
-     * @param fetchColumnsAndRows Fetch all columns and rows
-     * @return void
-     */
-    void fetchTables(const std::string &schemaName, const bool fetchColumnsAndRows);
-
-    /**
-     * @brief Fetch all tables, columns and rows
-     * @param schema The schema to fetch the tables from
-     * @param table The table to fetch the columns and rows from
-     * @return void
-     */
-    void fetchColumns(SchemaInfo &schema, TableInfo &table);
-
-    /**
-     * @brief Fetch all columns and rows
-     * @param schema The schema to fetch the columns and rows from
-     * @param table The table name to fetch the columns and rows from
-     * @return void
-     */
-    void fetchColumns(SchemaInfo &schema, const std::string &tableName);
-
-    /**
-     * @brief Fetch all columns and rows
-     * @param schemaName The schemaName to fetch the columns and rows from
-     * @param tableName The tableName to fetch the columns and rows from
-     * @return void
-     */
-    void fetchColumns(const std::string &schemaName, const std::string &tableName);
-
-
-    /**
-     * @brief Fetch all rows
-     * @param schema The schema to fetch the rows from
-     * @param table The table to fetch the rows from
-     * @return void
-     */
-    void fetchRows(SchemaInfo &schema, TableInfo &table, uint limit = Settings::Limits.DefaultRowLimit);
-
-    /**
-     *
-     * @brief Fetch all rows
-     * @param schemaName The schemaName to fetch the rows from
-     * @param tableName The tableName to fetch the rows from
-     * @return void
-     */
-    void fetchRows(SchemaInfo &schema, const std::string &tableName, uint limit = Settings::Limits.DefaultRowLimit);
-
-    /**
-     * @brief Fetch all rows
-     * @param schemaName The schemaName to fetch the rows from
-     * @param tableName The tableName to fetch the rows from
-     * @return void
-     */
-    void fetchRows(const std::string &schemaNames, const std::string &tableName, uint limit = Settings::Limits.DefaultRowLimit);
-
-    ///Getters///
+   ///Getters///
     /**
      * @brief Get all schema names
      * @return std::vector<std::string> The schema names
@@ -197,20 +105,7 @@ public:
      * @brief Get all schemas
      * @return std::vector<SchemaInfo> The schemas
      */
-    std::vector<SchemaInfo *> getSchemas() const {
-      std::vector<SchemaInfo *> schemas;
-      for (auto &schema: m_schemas) {
-        schemas.push_back(schema.second.get());
-      }
-      return schemas;
-    }
-
-    /**
-      * @brief Get an schema by name
-      * @param schemaName The name of the schema
-      * @return SchemaInfo The schema
-      */
-    const SchemaInfo &getSchema(const std::string &schemaName);
+    const std::vector<SchemaInfo*> getSchemas() const;
 
     /**
      * @brief Get the current schema
@@ -219,45 +114,6 @@ public:
     const SchemaInfo *getCurrentSchema() const {
       return m_currentSchema;
     }
-
-    /**
-     * @brief Get an table by name
-     * @param schema The schema to get the table from
-     * @param tableName The name of the table
-     * @return TableInfo The table
-     */
-    const TableInfo &getTable(SchemaInfo &schema, const std::string &tableName);
-
-    /**
-     * @brief Get an list of tables
-     * @param schema The schema to get the table from
-     * @return std::vector<TableInfo> The tables
-     */
-    std::vector<TableInfo *> getTables(SchemaInfo *schema);
-
-    /**
-     * @brief Get an table by name
-     * @param schemaName The schemaName to get the table from
-     * @param tableName The name of the table
-     * @return TableInfo The table
-     */
-    const TableInfo &getTable(const std::string &schema, const std::string &tableName);
-
-
-    /**
-     * @brief Get the current table
-     * @return TableInfo The table
-     */
-    const TableInfo *getCurrentTable() const {
-      return m_currentTable;
-    }
-
-    /**
-     * @brief Get the current column layout
-     * @return std::vector<std::string> The column layout
-     */
-    std::vector<std::string> getCurrentColumnLayout() const;
-
 
     /**
      * @brief Get connection status
@@ -282,22 +138,13 @@ private:
      * @return SchemaInfo ptr The schema
      * @return nullptr if the schema is not found
      */
-    SchemaInfo *getSchemaPtr(const std::string &schemaName);
-
-    /**
-     * @brief Get an table by name
-     * @param schema The schema to get the table from
-     * @param tableName The name of the table
-     * @return TableInfo ptr The table
-     * @return nullptr if the table is not found
-     */
-    TableInfo *getTablePtr(SchemaInfo &schema, const std::string &tableName);
+    SchemaInfo *getSchemaPtrByName(const std::string &schemaName);
 
 private:
     bool m_isConnected = false;
 
     SchemaInfo *m_currentSchema = nullptr;
-    TableInfo *m_currentTable = nullptr;
+
     std::string m_host;
     std::string m_user;
     std::string m_password;

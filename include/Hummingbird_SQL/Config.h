@@ -33,19 +33,19 @@ namespace Logging {
     }
   };
 
-  static void showTrace(source_loc src, std::string msg) {
+  static void showTrace(source_loc src, const std::string& msg) {
     std::cout << "TRACE: " << src.toString() << " " << msg << std::endl;
   }
 
-  static void showLog(source_loc src, std::string msg) {
+  static void showLog(source_loc src, const std::string& msg) {
     std::cout << "LOG: " << src.toString() << " " << msg << std::endl;
   }
 
-  static void showError(source_loc src, std::string msg) {
+  static void showError(source_loc src, const  std::string& msg) {
     std::cerr << "ERROR: " << src.toString() << " " << msg << std::endl;
   }
 
-  static void showFatal(source_loc src, std::string msg) {
+  static void showFatal(source_loc src, const std::string &msg) {
     std::cerr << "FATAL: " << src.toString() << " " << msg << std::endl;
   }
 }// namespace Logging

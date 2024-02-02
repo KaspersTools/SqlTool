@@ -37,7 +37,14 @@ public:
      * @param value ColumnValue of the column
      * @param type ColumnType of the column
      */
-    ColumnInfo(const std::string &name = "", ColumnType type = ColumnType::NULL_TYPE, const ColumnValue &value = std::nullopt) : name(name), value(value), type(type) {
+    ColumnInfo(const std::string &name,
+               const ColumnType columnType)
+        : ColumnInfo(name, columnType, std::nullopt, ColumnType::NULL_TYPE) {}
+
+    ColumnInfo(const std::string &name,
+               const ColumnType columnType,
+               const ColumnValue &value,
+               const ColumnType &currentType) : name(name), value(value), columnType(columnType), currentType(currentType) {
     }
 
 public:
@@ -49,75 +56,19 @@ public:
       return value;
     }
 
-    ColumnType getType() const {
-      return type;
+    const ColumnType &getCurrentType() const {
+      return currentType;
     }
 
-    const std::string getTypeAsString() const {
-      switch (type) {
-        case HEADER:
-          return "HEADER";
-        case UINT64:
-          return "UINT64";
-        case INT64:
-          return "INT64";
-        case INT:
-          return "INT";
-        case FLOAT:
-          return "FLOAT";
-        case DOUBLE:
-          return "DOUBLE";
-        case BOOL:
-          return "BOOL";
-        case STRING:
-          return "STRING";
-        case NULL_TYPE:
-          return "NULL";
-      }
-      return "NULL";
+    const ColumnType &getType() const {
+      return columnType;
     }
-
-    const std::string getValueAsString() const {
-      switch (type) {
-        case HEADER:
-          return "HEADER";
-        case UINT64:
-          return std::to_string(std::get<uint64_t>(value));
-        case INT64:
-          return std::to_string(std::get<int64_t>(value));
-        case INT:
-          return std::to_string(std::get<int>(value));
-        case FLOAT:
-          return std::to_string(std::get<float>(value));
-        case DOUBLE:
-          return std::to_string(std::get<double>(value));
-        case BOOL:
-          return std::to_string(std::get<bool>(value));
-        case STRING:
-          return std::get<std::string>(value);
-        case NULL_TYPE:
-          return "NULL";
-        default:
-          return "Unkown type: " +
-                 std::to_string(type) + " for value: " +
-                 "UNKOWN TYPE" +
-                 " in column: " + name + " with type: " +
-                 getTypeAsString();
-      }
-
-    }
-//    ColumnInfo(){
-//      name = "";
-//      value = std::nullopt;
-//      type = NULL_TYPE;
-//    }
-
-
 
 private:
-    std::string name;
-    ColumnValue value;
-    ColumnType type;
+    std::string name = "";
+    ColumnValue value = std::nullopt;
+    ColumnType columnType = NULL_TYPE;
+    ColumnType currentType = NULL_TYPE;
   };
 
   class Row {
@@ -125,54 +76,76 @@ public:
     Row() = default;
     ~Row() = default;
 
-    void addColumn(const std::string &columnName, const ColumnInfo &columnValue) {
-      m_columns[columnName] = columnValue;
+    const ColumnInfo& getColumn(const std::string &columnName) const {
     }
 
-    ColumnInfo getColumn(const std::string &columnName) const {
-      auto it = m_columns.find(columnName);
-      if (it != m_columns.end()) {
-        return it->second;
-      }
-      HUMMINGBIRD_SQL_ERROR_FUNCTION("Column not found: " + columnName);
-      return ColumnInfo("", NULL_TYPE, std::nullopt);
+    const std::string& getColumnValueAsString(const std::string &columnName) const {
     }
-    std::string getColumnValueAsString(const std::string &columnName) const {
-      auto it = m_columns.find(columnName);
-      if (it != m_columns.end()) {
-        return it->second.getValueAsString();
-      }
-      HUMMINGBIRD_SQL_ERROR_FUNCTION("Column not found: " + columnName);
-      return "";
+
+    const ColumnValue& getColumnValue(const std::string &columnName) const {
     }
-    std::unordered_map<std::string, ColumnInfo> getColumns() const {
-      return m_columns;
-    }
-    void setColumns(const std::unordered_map<std::string, ColumnInfo> &columns) {
-      m_columns = columns;
+
+    const void setColumn(const std::string &columnName, const ColumnInfo &column) {
+      m_columns[columnName] = std::make_unique<ColumnInfo>(column);
     }
 
 private:
-    std::unordered_map<std::string, ColumnInfo> m_columns;
+    std::unordered_map<std::string, std::unique_ptr<ColumnInfo>> m_columns = {};
   };
 
   struct TableInfo {
+private:
     std::string name;
     std::string schemaName;
-    std::unordered_map<std::string, ColumnInfo> columns;
-    std::vector<Row> rows;
+    std::vector<std::unique_ptr<ColumnInfo>> columns;
+    std::vector<std::unique_ptr<Row>> rows;
+
+public:
+    TableInfo(const std::string &name, const std::string &schemaName)
+        : name(name), schemaName(schemaName) {}
+
+    const std::string &getName() const {
+      return name;
+    }
+
+    const std::string &getSchemaName() const {
+      return schemaName;
+    }
+
+    const std::vector<std::unique_ptr<ColumnInfo>> &getColumns() const {
+      return columns;
+    }
+
+    const std::vector<std::unique_ptr<Row>> &getRows() const {
+      return rows;
+    }
+
+    void fetchColumns() {
+    }
+
+    void fetchRows() {
+    }
+
   };
 
   struct SchemaInfo {
+private:
     std::string name;
-    std::unordered_map<std::string, TableInfo> tables = {};
+    std::unordered_map<std::string, std::unique_ptr<TableInfo>> tables = {};
+public:
+    SchemaInfo(const std::string &name, std::unordered_map<std::string, std::unique_ptr<TableInfo>> tables)
+        : name(name), tables(std::move(tables)) {}
 
-    std::optional<TableInfo> getTable(const std::string &tableName) const {
-      auto it = tables.find(tableName);
-      if (it != tables.end()) {
-        return it->second;
-      }
-      return std::nullopt;
+    const std::string &getName() const {
+      return name;
+    }
+
+    const std::unordered_map<std::string, std::unique_ptr<TableInfo>> &getTables() const {
+      return tables;
+    }
+
+    void fetchTables() {
+
     }
   };
 }// namespace HummingBird::Sql
