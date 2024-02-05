@@ -67,7 +67,7 @@ public:
             result = "NULL";
             break;
         }
-      }catch(std::bad_variant_access &e){
+      } catch (std::bad_variant_access &e) {
         result = "BADD VARIANT ACCES";
       }
       return result;
@@ -97,10 +97,17 @@ public:
     }
 
     ColumnInfo &getColumn(const int index) const {
+      if (this == nullptr) {
+        ColumnInfo *columnInfo = new ColumnInfo("EMPTY", NULL_TYPE);
+        return *columnInfo;
+      }
       return *columns[index];
     }
 
     int getColumnCount() const {
+      if (this == nullptr) {
+        return 0;
+      }
       return columns.size();
     }
 
@@ -136,7 +143,7 @@ public:
     }
 
     std::vector<Row> getRows() const {
-      if(this == nullptr){
+      if (this == nullptr) {
         HUMMINGBIRD_SQL_ERROR_FUNCTION("TableInfo is nullptr");
         return {};
       }
@@ -178,15 +185,15 @@ public:
     }
 
     std::vector<std::string> getTableNames() const {
-      if(this == nullptr){
+      if (this == nullptr) {
         return {};
       }
 
-      if(tables.size() <= 0){
+      if (tables.size() <= 0) {
         return {};
       }
 
-      if(tables.empty()){
+      if (tables.empty()) {
         return {};
       }
       std::vector<std::string> tableNames;
@@ -198,7 +205,7 @@ public:
     }
 
     void setTable(const std::string &tableName, const Connection &connection) {
-      if(this == nullptr){
+      if (this == nullptr) {
         return;
       }
       auto table = tables.find(tableName);
@@ -215,8 +222,8 @@ public:
     }
 
     TableInfo &getCurrentTable() const {
-      if(!this || !isTableSet()){
-        TableInfo* tableInfo = new TableInfo("EMPTY", "EMPTY", {});
+      if (!this || !isTableSet()) {
+        TableInfo *tableInfo = new TableInfo("EMPTY", "EMPTY", {});
         return *tableInfo;
       }
       return *m_currentTable;
