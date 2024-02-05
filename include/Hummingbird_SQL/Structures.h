@@ -208,6 +208,14 @@ public:
       if (this == nullptr) {
         return;
       }
+      if(this->m_currentTable != nullptr && this->m_currentTable->getName() == tableName){
+        return;
+      }
+      if (tableName.empty()) {
+        HUMMINGBIRD_SQL_ERROR_FUNCTION("Table name is empty");
+        return;
+      }
+
       auto table = tables.find(tableName);
       if (table != tables.end()) {
         m_currentTable = table->second.get();
