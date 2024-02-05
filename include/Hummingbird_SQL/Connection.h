@@ -132,6 +132,13 @@ public:
      */
     void setSchema(const std::string &schemaName);
 
+    /**
+     * @brief Set the current table
+     * @param schemaName The name of the schema
+     * @param tableName The name of the table
+     * @return void
+     */
+    void setTable(const std::string &schemaName, const std::string &tableName);
 
 private:
     /**

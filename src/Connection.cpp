@@ -136,6 +136,9 @@ namespace HummingBird::Sql {
       HUMMINGBIRD_SQL_ERROR_FUNCTION("Not connected to database");
     }
     if (m_currentSchema != nullptr) {
+      if(m_currentSchema->getName() == schemaName){
+        return;
+      }
       m_currentSchema = nullptr;
     }
 
@@ -150,6 +153,18 @@ namespace HummingBird::Sql {
       std::string tableName = m_currentSchema->getTableNames()[0];
       m_currentSchema->setTable(tableName, *this);
     }
+  }
+
+  void Connection::setTable(const std::string &schemaName, const std::string &tableName) {
+    if (!isConnected()) {
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("Not connected to database");
+    }
+    setSchema(schemaName);
+    if(m_currentSchema == nullptr){
+      const std::string err = "Schema not found" + schemaName;
+      HUMMINGBIRD_SQL_ASSERT(false&&err.c_str());
+    }
+    m_currentSchema->setTable(tableName, *this);
   }
 
 #pragma region private_functions
