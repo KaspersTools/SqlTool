@@ -4,10 +4,6 @@
 #pragma once
 
 #include <Hummingbird_SQL/Config.h>
-#include <Hummingbird_SQL/Connection.h>
-#include <iostream>
-#include <unordered_map>
-#include <variant>
 #include <vector>
 
 namespace HummingBird::Sql {
@@ -18,8 +14,6 @@ namespace HummingBird::Sql {
                                    std::nullopt_t>;// Add more types as needed
 
   enum ColumnType {
-    HEADER,
-    UINT64,
     INT64,
     INT,
     FLOAT,
@@ -31,20 +25,11 @@ namespace HummingBird::Sql {
 
   class ColumnInfo {
 public:
-    /*
-     * @brief Constructor for ColumnInfo
-     * @param name Name of the column
-     * @param value ColumnValue of the column
-     * @param type ColumnType of the column
-     */
-    ColumnInfo(const std::string &name,
-               const ColumnType columnType)
+    ColumnInfo(const std::string &name, const ColumnType columnType)
         : ColumnInfo(name, columnType, std::nullopt, ColumnType::NULL_TYPE) {}
 
-    ColumnInfo(const std::string &name,
-               const ColumnType columnType,
-               const ColumnValue &value,
-               const ColumnType &currentType) : name(name), value(value), columnType(columnType), currentType(currentType) {
+    ColumnInfo(const std::string &name, const ColumnType columnType, const ColumnValue &value, const ColumnType &currentType)
+        : name(name), value(value), columnType(columnType), currentType(currentType) {
     }
 
 public:
@@ -54,6 +39,38 @@ public:
 
     const ColumnValue &getValue() const {
       return value;
+    }
+
+    std::string getValueAsString() const {
+      std::string result = "NULL";
+      try {
+        switch (currentType) {
+          case ColumnType::INT64:
+            result = std::to_string(std::get<int64_t>(value));
+            break;
+          case ColumnType::INT:
+            result = std::to_string(std::get<int>(value));
+            break;
+          case ColumnType::FLOAT:
+            result = std::to_string(std::get<float>(value));
+            break;
+          case ColumnType::DOUBLE:
+            result = std::to_string(std::get<double>(value));
+            break;
+          case ColumnType::BOOL:
+            result = std::to_string(std::get<bool>(value));
+            break;
+          case ColumnType::STRING:
+            result = std::get<std::string>(value);
+            break;
+          case ColumnType::NULL_TYPE:
+            result = "NULL";
+            break;
+        }
+      }catch(std::bad_variant_access &e){
+        result = "BADD VARIANT ACCES";
+      }
+      return result;
     }
 
     const ColumnType &getCurrentType() const {
@@ -71,38 +88,40 @@ private:
     ColumnType currentType = NULL_TYPE;
   };
 
-  class Row {
+  struct Row {
 public:
-    Row() = default;
-    ~Row() = default;
-
-    const ColumnInfo &getColumn(const std::string &columnName) const {
+    Row(const std::vector<ColumnInfo> &columns) {
+      for (const auto &column: columns) {
+        this->columns.push_back(std::make_shared<ColumnInfo>(column));
+      }
     }
 
-    const std::string &getColumnValueAsString(const std::string &columnName) const {
+    ColumnInfo &getColumn(const int index) const {
+      return *columns[index];
     }
 
-    const ColumnValue &getColumnValue(const std::string &columnName) const {
-    }
-
-    const void setColumn(const std::string &columnName, const ColumnInfo &column) {
-      m_columns[columnName] = std::make_unique<ColumnInfo>(column);
+    int getColumnCount() const {
+      return columns.size();
     }
 
 private:
-    std::unordered_map<std::string, std::unique_ptr<ColumnInfo>> m_columns = {};
+    std::vector<std::shared_ptr<ColumnInfo>> columns;
   };
 
   struct TableInfo {
 private:
     std::string name;
     std::string schemaName;
-    std::vector<std::unique_ptr<ColumnInfo>> columns;
-    std::vector<std::unique_ptr<Row>> rows;
+    std::vector<std::shared_ptr<Row>> rows;
+    int columnCount = 0;
 
 public:
-    TableInfo(const std::string &name, const std::string &schemaName)
-        : name(name), schemaName(schemaName) {}
+    TableInfo(const std::string &name, const std::string &schemaName, const std::vector<Row> &rows, const int columnCount = -1)
+        : name(name), schemaName(schemaName), columnCount(columnCount) {
+      for (const auto &row: rows) {
+        this->rows.push_back(std::make_shared<Row>(row));
+      }
+    }
 
     const std::string &getName() const {
       return name;
@@ -112,34 +131,44 @@ public:
       return schemaName;
     }
 
-    const std::vector<std::unique_ptr<ColumnInfo>> &getColumns() const {
-      return columns;
+    const int getColumnCount() const {
+      return columnCount;
     }
 
-    const std::vector<std::unique_ptr<Row>> &getRows() const {
-      return rows;
+    std::vector<Row> getRows() const {
+      if(this == nullptr){
+        HUMMINGBIRD_SQL_ERROR_FUNCTION("TableInfo is nullptr");
+        return {};
+      }
+      std::vector<Row> _rows;
+      for (const auto &row: rows) {
+        _rows.push_back(*row);
+      }
+      return _rows;
     }
 
-    void fetchColumns() {
-    }
-
-    void fetchRows() {
-    }
+    void fetchRows(const Connection &connection);
   };
 
   struct SchemaInfo {
 private:
     std::string name;
-    std::unordered_map<std::string, std::unique_ptr<TableInfo>> tables = {};
+    //std::unordered_map<std::string, std::unique_ptr<TableInfo>> tables = {};
+    std::unordered_map<std::string, std::shared_ptr<TableInfo>> tables = {};
     TableInfo *m_currentTable = nullptr;
 
 public:
-    SchemaInfo(const std::string &name, std::unordered_map<std::string, std::unique_ptr<TableInfo>> tables)
-        : name(name), tables(std::move(tables)) {}
+    SchemaInfo(const std::string &name, std::vector<TableInfo> tables)
+        : name(name) {
+      for (const auto &table: tables) {
+        this->tables[table.getName()] = std::make_shared<TableInfo>(table);
+      }
+    }
 
-    SchemaInfo(SchemaInfo *schemaInfo) : name(schemaInfo->getName()) {
-      for (const auto &table: schemaInfo->getTables()) {
-        tables[table.first] = std::make_unique<TableInfo>(table.second->getName(), table.second->getSchemaName());
+    SchemaInfo(const SchemaInfo *schemaInfo) {
+      name = schemaInfo->name;
+      for (const auto &table: schemaInfo->tables) {
+        tables[table.first] = table.second;
       }
     }
 
@@ -147,23 +176,45 @@ public:
       return name;
     }
 
-    const std::unordered_map<std::string, std::unique_ptr<TableInfo>> &getTables() const {
-      return tables;
+    std::vector<std::string> getTableNames() const {
+      if(this == nullptr){
+        return {};
+      }
+
+      if(tables.size() <= 0){
+        return {};
+      }
+
+      if(tables.empty()){
+        return {};
+      }
+      std::vector<std::string> tableNames;
+
+      for (const auto &pair: tables) {
+        tableNames.push_back(pair.first);
+      }
+      return tableNames;
     }
 
-    void setTable(const std::string &tableName) {
+    void setTable(const std::string &tableName, const Connection &connection) {
+      if(this == nullptr){
+        return;
+      }
       auto table = tables.find(tableName);
       if (table != tables.end()) {
         m_currentTable = table->second.get();
+        m_currentTable->fetchRows(connection);
+      } else {
+        HUMMINGBIRD_SQL_ERROR_FUNCTION("Table not found: " + tableName);
       }
     }
 
-    const TableInfo &getCurrentTable() const {
+    TableInfo &getCurrentTable() const {
+      if(!this){
+        TableInfo* tableInfo = new TableInfo("", "", {});
+        return *tableInfo;
+      }
       return *m_currentTable;
-    }
-
-    std::unique_ptr<SchemaInfo> getCopy() {
-      return std::make_unique<SchemaInfo>(this);
     }
   };
 }// namespace HummingBird::Sql

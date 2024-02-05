@@ -43,10 +43,28 @@ namespace HummingBird::Sql {
       session = new mysqlx::Session(settings);
       m_isConnected = true;
       fetchSchemas(true, false);
-
     } catch (const mysqlx::Error &err) {
       HUMMINGBIRD_SQL_ASSERT(false && err.what());
     }
+
+    if (database != "") {
+      setSchema(database);
+    } else {
+      if(getSchemaNames().size() == 0){
+        HUMMINGBIRD_SQL_ERROR_FUNCTION("No schemas found");
+        return;
+      }
+
+      std::string schemaName = getSchemaNames()[0];
+      setSchema(schemaName);
+
+      if(getCurrentSchema().getTableNames().size() == 0){
+        HUMMINGBIRD_SQL_ERROR_FUNCTION("No tables found in schema: " + schemaName);
+        return;
+      }
+      std::string tableName = getCurrentSchema().getTableNames()[0];
+      getCurrentSchema().setTable(tableName, *this);
+    };
   }
 
   void Connection::disconnect() {
@@ -65,56 +83,38 @@ namespace HummingBird::Sql {
   //Fetch functions
   void Connection::fetchSchemas(const bool getTables, const bool getColumnsAndRows) {
     m_schemas.clear();
-    m_schemas = Server::fetchSchemas(*this, getTables, getColumnsAndRows);
+    std::vector<SchemaInfo> schemas = Server::fetchSchemas(*this, getTables, getColumnsAndRows);
+    for (SchemaInfo &schema: schemas) {
+      m_schemas[schema.getName()] = std::make_unique<SchemaInfo>(schema);
+    }
   }
 
 
   //Cache functions
-  //gettersxw
-
-  /**
-     * @brief Get all schema names
-     * @return std::vector<std::string> The schema names
-     */
-  const std::vector<std::string> Connection::getSchemaNames() const {
+  //getters
+  std::vector<std::string> Connection::getSchemaNames() const {
     std::vector<std::string> schemaNames;
-    for (auto &schema: m_schemas) {
+    for (const auto &schema: m_schemas) {
       schemaNames.push_back(schema.first);
     }
     return schemaNames;
   }
 
-
-  /**
-     * @brief Get the list of schemas in the database
-     * @return std::vector<SchemaInfo> The list of schemas
-     */
-  const std::vector<std::unique_ptr<SchemaInfo>> Connection::getSchemas() const {
-//    std::vector<SchemaInfo> schemas;
-//    for (auto &schema: m_schemas) {
-//      SchemaInfo copy = *schema.second;
-//      schemas.push_back(copy);
-//    }
-//    return schemas;
-
-      std::vector<std::unique_ptr<SchemaInfo>> schemas;
-      for(const auto& [schemaName, schemaInfo] : m_schemas){
-        std::unique_ptr<SchemaInfo> schemaInfoCopy = schemaInfo->getCopy();
-        schemas.push_back(std::move(schemaInfoCopy));
-      }
-
-      return schemas;
-  }
-
   //setters
   void Connection::setSchema(const std::string &schemaName) {
-    SchemaInfo *schemaInfo = getSchemaPtrByName(schemaName);
-    m_currentSchema = schemaInfo;
-  }
+    if (!isConnected()) {
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("Not connected to database");
+    }
+    if (m_currentSchema != nullptr) {
+      m_currentSchema = nullptr;
+    }
 
-  void Connection::setTable(const std::string& schameName, const std::string& tableName){
-    setSchema(schameName);
-    m_currentSchema->setTable(tableName);
+    m_currentSchema = getSchemaPtrByName(schemaName);
+
+    if (m_currentSchema == nullptr) {
+      HUMMINGBIRD_SQL_ERROR_FUNCTION("Schema not found" + schemaName);
+      return;
+    }
   }
 
 #pragma region private_functions

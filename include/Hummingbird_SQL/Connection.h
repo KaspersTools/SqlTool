@@ -2,12 +2,15 @@
 // Created by Kasper de Bruin on 29/01/2024.
 //
 #pragma once
+
 //forward declare
 namespace mysqlx::abi2::r0 {
   class Session;
 }
 
 namespace HummingBird::Sql {
+  struct Row;
+  struct TableInfo;
   struct SchemaInfo;
 }// namespace HummingBird::Sql
 
@@ -15,16 +18,9 @@ namespace HummingBird::Sql {
 namespace mysqlx {
   using mysqlx::abi2::r0::Session;
 }
-
-#include <Hummingbird_SQL/Config.h>
-#include <cctype>
-#include <exception>
 #include <iostream>
-#include <map>
-#include <string>
+#include <memory>
 #include <unordered_map>
-#include <utility>
-#include <vector>
 
 namespace HummingBird::Sql {
   // Makes unordered map keys case insensitive
@@ -83,39 +79,9 @@ public:
     void fetchSchemas(const bool fetchTables, const bool fetchColumnsAndRows);
 
     ///Setters///
-    /**
-     * @brief Use scheme
-     * @param schemaName The schemaName to use
-     */
-    void setSchema(const std::string& schemaName);
-
-    /**
-     * @brief Set table
-     * @param schemaName The schemaName to use
-     * @param tableName The tableName to use
-     */
-    void setTable(const std::string& schemaName, const std::string& tableName);
 
 
    ///Getters///
-    /**
-     * @brief Get all schema names
-     * @return std::vector<std::string> The schema names
-     */
-    const std::vector<std::string> getSchemaNames() const;
-
-    /**
-     * @brief Get the current schema
-     * @return SchemaInfo ref The current schema
-     */
-    const SchemaInfo &getCurrentSchema() const;
-
-    /**
-     * @brief Get the list of schemas in the database
-     * @return std::vector<SchemaInfo> The list of schemas
-     */
-    const std::vector<std::unique_ptr<SchemaInfo>> getSchemas() const;
-
     /**
      * @brief Get connection status
      * @return bool True if connected
@@ -131,6 +97,28 @@ public:
     mysqlx::Session &getSession() const {
       return *session;
     }
+
+    /**
+     * @brief Get all schema names
+     * @return std::vector<std::string> The schema names
+     */
+    std::vector<std::string> getSchemaNames() const;
+
+    /**
+     * @brief Get the current schema
+     * @return SchemaInfo the current schema
+     */
+    SchemaInfo &getCurrentSchema() const {
+      return *m_currentSchema;
+    }
+
+    ///Setters///
+    /**
+     * @brief Set the current schema
+     * @param schemaName The name of the schema
+     * @return void
+     */
+    void setSchema(const std::string &schemaName);
 
 private:
     /**
@@ -152,7 +140,7 @@ private:
     uint16_t m_port;
 
     mysqlx::Session *session;
-    std::unordered_map<std::string, std::unique_ptr<SchemaInfo>,
+    std::unordered_map<std::string, std::shared_ptr<SchemaInfo>,
                        case_insensitive_unordered_map::hash,
                        case_insensitive_unordered_map::comp>
             m_schemas;

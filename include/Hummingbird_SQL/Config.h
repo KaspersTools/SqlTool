@@ -3,12 +3,6 @@
 //
 
 #pragma once
-
-#include <exception>
-#include <optional>
-#include <string>
-
-#include <assert.h>
 #include <iostream>
 
 #ifndef HUMMINGBIRD_SQL_ASSERT
@@ -33,15 +27,19 @@ namespace Logging {
     }
   };
 
-  static void showTrace(source_loc src, const std::string& msg) {
+  static void showTrace(source_loc src, const std::string &msg) {
     std::cout << "TRACE: " << src.toString() << " " << msg << std::endl;
   }
 
-  static void showLog(source_loc src, const std::string& msg) {
+  static void showLog(source_loc src, const std::string &msg) {
     std::cout << "LOG: " << src.toString() << " " << msg << std::endl;
   }
 
-  static void showError(source_loc src, const  std::string& msg) {
+  static void showWarning(source_loc src, const std::string &msg) {
+    std::cerr << "WARNING: " << src.toString() << " " << msg << std::endl;
+  }
+
+  static void showError(source_loc src, const std::string &msg) {
     std::cerr << "ERROR: " << src.toString() << " " << msg << std::endl;
   }
 
@@ -53,9 +51,10 @@ namespace Logging {
 #ifndef HUMMINGBIRD_SQL_LOG_LEVEL
 #define HUMMINGBIRD_SQL_LOG_LEVEL_TRACE 0
 #define HUMMINGBIRD_SQL_LOG_LEVEL_LOG 1
-#define HUMMINGBIRD_SQL_LOG_LEVEL_ERROR 2
-#define HUMMINGBIRD_SQL_LOG_LEVEL_FATAL 3
-#define HUMMINGBIRD_SQL_LOG_LEVEL_NONE 4
+#define HUMMINGBIRD_SQL_LOG_LEVEL_WARNING 2
+#define HUMMINGBIRD_SQL_LOG_LEVEL_ERROR 3
+#define HUMMINGBIRD_SQL_LOG_LEVEL_FATAL 4
+#define HUMMINGBIRD_SQL_LOG_LEVEL_NONE 5
 #define HUMMINGBIRD_SQL_LOG_LEVEL HUMMINGBIRD_SQL_LOG_LEVEL_TRACE
 #endif
 
@@ -64,28 +63,35 @@ namespace Logging {
 #endif
 
 #ifndef HUMMINGBIRD_SQL_TRACE_FUNCTION
-#define HUMMINGBIRD_SQL_TRACE_FUNCTION(...)                                                \
+#define HUMMINGBIRD_SQL_TRACE_FUNCTION(...)                                                       \
   if (HUMMINGBIRD_SQL_LOG_ACTIVE && HUMMINGBIRD_SQL_LOG_LEVEL <= HUMMINGBIRD_SQL_LOG_LEVEL_TRACE) \
   ::Logging::showTrace(::Logging::source_loc(__FILE__, __LINE__, __FUNCTION__),                   \
                        __VA_ARGS__)
 #endif
 
 #ifndef HUMMINGBIRD_SQL_LOG_FUNCTION
-#define HUMMINGBIRD_SQL_LOG_FUNCTION(...)                                                \
+#define HUMMINGBIRD_SQL_LOG_FUNCTION(...)                                                       \
   if (HUMMINGBIRD_SQL_LOG_ACTIVE && HUMMINGBIRD_SQL_LOG_LEVEL <= HUMMINGBIRD_SQL_LOG_LEVEL_LOG) \
   ::Logging::showLog(::Logging::source_loc(__FILE__, __LINE__, __FUNCTION__),                   \
                      __VA_ARGS__)
 #endif
 
+#ifndef HUMMINGBIRD_SQL_WARNING_FUNCTION
+#define HUMMINGBIRD_SQL_WARNING_FUNCTION(...)                                                       \
+  if (HUMMINGBIRD_SQL_LOG_ACTIVE && HUMMINGBIRD_SQL_LOG_LEVEL <= HUMMINGBIRD_SQL_LOG_LEVEL_WARNING) \
+  ::Logging::showWarning(::Logging::source_loc(__FILE__, __LINE__, __FUNCTION__),                   \
+                         __VA_ARGS__)
+#endif
+
 #ifndef HUMMINGBIRD_SQL_ERROR_FUNCTION
-#define HUMMINGBIRD_SQL_ERROR_FUNCTION(...)                                                \
+#define HUMMINGBIRD_SQL_ERROR_FUNCTION(...)                                                       \
   if (HUMMINGBIRD_SQL_LOG_ACTIVE && HUMMINGBIRD_SQL_LOG_LEVEL <= HUMMINGBIRD_SQL_LOG_LEVEL_ERROR) \
   ::Logging::showError(::Logging::source_loc(__FILE__, __LINE__, __FUNCTION__),                   \
                        __VA_ARGS__)
 #endif
 
 #ifndef HUMMINGBIRD_SQL_FATAL_FUNCTION
-#define HUMMINGBIRD_SQL_FATAL_FUNCTION(...)                                                \
+#define HUMMINGBIRD_SQL_FATAL_FUNCTION(...)                                                       \
   if (HUMMINGBIRD_SQL_LOG_ACTIVE && HUMMINGBIRD_SQL_LOG_LEVEL <= HUMMINGBIRD_SQL_LOG_LEVEL_FATAL) \
   ::Logging::showFatal(::Logging::source_loc(__FILE__, __LINE__, __FUNCTION__),                   \
                        __VA_ARGS__)
