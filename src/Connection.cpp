@@ -100,6 +100,36 @@ namespace HummingBird::Sql {
     return schemaNames;
   }
 
+  SchemaInfo Connection::getSchema(const std::string &schemaName) const {
+    if(m_schemas.size() <= 0){
+      HUMMINGBIRD_SQL_ASSERT(false && "No schemas found");
+      return SchemaInfo();
+    }
+
+    if(m_schemas.empty()){
+      HUMMINGBIRD_SQL_ASSERT(false && "No schemas found");
+      return SchemaInfo();
+    }
+
+    auto it = m_schemas.find(schemaName);
+    if (it != m_schemas.end()) {
+      return *it->second;
+    } else {
+      std::string err = "Schema not found" + schemaName;
+      HUMMINGBIRD_SQL_ASSERT(false && err.c_str());
+      return SchemaInfo();
+    }
+  }
+
+  SchemaInfo Connection::getCurrentSchema() const {
+    if(m_currentSchema == nullptr){
+      HUMMINGBIRD_SQL_ASSERT(false && "No schema set");
+      return SchemaInfo();
+    }
+
+    return *m_currentSchema;
+  }
+
   //setters
   void Connection::setSchema(const std::string &schemaName) {
     if (!isConnected()) {

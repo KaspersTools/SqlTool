@@ -158,6 +158,7 @@ private:
     TableInfo *m_currentTable = nullptr;
 
 public:
+    SchemaInfo() = default;
     SchemaInfo(const std::string &name, std::vector<TableInfo> tables)
         : name(name) {
       for (const auto &table: tables) {

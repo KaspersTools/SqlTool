@@ -108,17 +108,13 @@ public:
      * @brief Get an schema by name
      * @param schemaName The name of the schema
      */
-    SchemaInfo &getSchema(const std::string &schemaName) const {
-      return *getSchemaPtrByName(schemaName);
-    }
+    SchemaInfo getSchema(const std::string &schemaName) const;
 
     /**
      * @brief Get the current schema
      * @return SchemaInfo the current schema
      */
-    SchemaInfo &getCurrentSchema() const {
-      return *m_currentSchema;
-    }
+    SchemaInfo getCurrentSchema() const;
 
     ///Setters///
     /**
