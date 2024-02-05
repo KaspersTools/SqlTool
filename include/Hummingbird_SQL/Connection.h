@@ -105,6 +105,14 @@ public:
     std::vector<std::string> getSchemaNames() const;
 
     /**
+     * @brief Get an schema by name
+     * @param schemaName The name of the schema
+     */
+    SchemaInfo &getSchema(const std::string &schemaName) const {
+      return *getSchemaPtrByName(schemaName);
+    }
+
+    /**
      * @brief Get the current schema
      * @return SchemaInfo the current schema
      */
@@ -127,7 +135,7 @@ private:
      * @return SchemaInfo ptr The schema
      * @return nullptr if the schema is not found
      */
-    SchemaInfo *getSchemaPtrByName(const std::string &schemaName);
+    SchemaInfo *getSchemaPtrByName(const std::string &schemaName) const;
 
 private:
     bool m_isConnected = false;

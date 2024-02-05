@@ -118,7 +118,7 @@ namespace HummingBird::Sql {
   }
 
 #pragma region private_functions
-  SchemaInfo *Connection::getSchemaPtrByName(const std::string &schemaName) {
+  SchemaInfo *Connection::getSchemaPtrByName(const std::string &schemaName) const {
     SchemaInfo *schemaInfo = nullptr;
     auto it = m_schemas.find(schemaName);
     if (it != m_schemas.end()) {
