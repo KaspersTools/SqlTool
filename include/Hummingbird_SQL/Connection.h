@@ -124,6 +124,22 @@ public:
       return m_currentSchema != nullptr;
     }
 
+    /**
+     * @brief Get the hostname
+     * @return std::string The hostname
+     */
+    std::string getHostname() const {
+      return m_host;
+    }
+
+    /**
+     * @brief Get the username
+     * @return std::string The username
+     */
+    std::string getUser() const {
+      return m_user;
+    }
+
     ///Setters///
     /**
      * @brief Set the current schema
