@@ -50,7 +50,7 @@ namespace HummingBird::Sql {
     if (database != "") {
       setSchema(database);
     } else {
-      if(getSchemaNames().size() == 0){
+      if (getSchemaNames().size() == 0) {
         HUMMINGBIRD_SQL_ERROR_FUNCTION("No schemas found");
         return;
       }
@@ -58,7 +58,7 @@ namespace HummingBird::Sql {
       std::string schemaName = getSchemaNames()[0];
       setSchema(schemaName);
 
-      if(getCurrentSchema().getTableNames().size() == 0){
+      if (getCurrentSchema().getTableNames().size() == 0) {
         HUMMINGBIRD_SQL_ERROR_FUNCTION("No tables found in schema: " + schemaName);
         return;
       }
@@ -101,12 +101,12 @@ namespace HummingBird::Sql {
   }
 
   SchemaInfo Connection::getSchema(const std::string &schemaName) const {
-    if(m_schemas.size() <= 0){
+    if (m_schemas.size() <= 0) {
       HUMMINGBIRD_SQL_ASSERT(false && "No schemas found");
       return SchemaInfo();
     }
 
-    if(m_schemas.empty()){
+    if (m_schemas.empty()) {
       HUMMINGBIRD_SQL_ASSERT(false && "No schemas found");
       return SchemaInfo();
     }
@@ -122,7 +122,7 @@ namespace HummingBird::Sql {
   }
 
   SchemaInfo Connection::getCurrentSchema() const {
-    if(m_currentSchema == nullptr){
+    if (m_currentSchema == nullptr) {
       HUMMINGBIRD_SQL_ASSERT(false && "No schema set");
       return SchemaInfo();
     }
@@ -142,8 +142,13 @@ namespace HummingBird::Sql {
     m_currentSchema = getSchemaPtrByName(schemaName);
 
     if (m_currentSchema == nullptr) {
-      HUMMINGBIRD_SQL_ERROR_FUNCTION("Schema not found" + schemaName);
+      HUMMINGBIRD_SQL_ASSERT(false && std::string("Schema not found" + schemaName).c_str());
       return;
+    }
+
+    if (!m_currentSchema->getTableNames().empty()) {
+      std::string tableName = m_currentSchema->getTableNames()[0];
+      m_currentSchema->setTable(tableName, *this);
     }
   }
 

@@ -81,7 +81,7 @@ public:
     ///Setters///
 
 
-   ///Getters///
+    ///Getters///
     /**
      * @brief Get connection status
      * @return bool True if connected
@@ -116,6 +116,14 @@ public:
      */
     SchemaInfo getCurrentSchema() const;
 
+    /**
+     * @brief Check  if Current Schema is set
+     * @return bool True if current schema is set
+     */
+    const bool isCurrentSchemaSet() const {
+      return m_currentSchema != nullptr;
+    }
+
     ///Setters///
     /**
      * @brief Set the current schema
@@ -123,6 +131,7 @@ public:
      * @return void
      */
     void setSchema(const std::string &schemaName);
+
 
 private:
     /**

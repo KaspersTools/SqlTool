@@ -210,9 +210,13 @@ public:
       }
     }
 
+    const bool isTableSet() const {
+      return m_currentTable != nullptr;
+    }
+
     TableInfo &getCurrentTable() const {
-      if(!this){
-        TableInfo* tableInfo = new TableInfo("", "", {});
+      if(!this || !isTableSet()){
+        TableInfo* tableInfo = new TableInfo("EMPTY", "EMPTY", {});
         return *tableInfo;
       }
       return *m_currentTable;
