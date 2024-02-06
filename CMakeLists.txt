@@ -31,6 +31,8 @@ target_link_libraries(HummingBird_Sql PRIVATE ${MySQLConnectorCPP_LIBRARIES})
 message(STATUS "MySQLConnectorCPP_INCLUDE_DIRS: ${MySQLConnectorCPP_INCLUDE_DIRS}")
 message(STATUS "MySQLConnectorCPP_LIBRARIES: ${MySQLConnectorCPP_LIBRARIES}")
 
-
-add_executable(HummingBird_Sql_Tests tests/main.cpp)
-target_link_libraries(HummingBird_Sql_Tests PRIVATE HummingBird_Sql)
+option(BUILD_TESTS "Build the tests" OFF)
+if (BUILD_TESTS)
+    add_executable(HummingBird_Sql_Tests tests/main.cpp)
+    target_link_libraries(HummingBird_Sql_Tests PRIVATE HummingBird_Sql)
+endif ()
